@@ -1,8 +1,3 @@
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 # Je me log
 # J’arrive sur le dashboard avec 2 programmes en cours, 1 challenges, 1 challengers
 # Je me rends sur programmes index
@@ -12,6 +7,7 @@
 # Je montre mes badges (3badges)
 # J’accepte un ami
 # Je crée un challenge avec cet ami
+
 puts "Destroy all instances"
 Challenger.destroy_all
 UserChallenge.destroy_all
@@ -129,6 +125,57 @@ vivre_avec_saison = Program.create!(
   )
 # vivre_avec_saison = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
+
+puts "Creating tasks"
+
+task_1_un_etat_desprit = Task.create!(
+  title: "Je colle un autocollant STOP-PUB sur ma boîte aux lettres",
+  position: 1,
+  program: un_etat_desprit,
+  )
+
+task_2_un_etat_desprit = Task.create!(
+  title: "Je dématérialise mon courrier : relevés de compte, factures, etc",
+  position: 2,
+  program: un_etat_desprit,
+  )
+
+task_3_un_etat_desprit = Task.create!(
+  title: "Je refuse les tickets de caisse et de carte bancaire",
+  position: 3,
+  program: un_etat_desprit,
+  )
+
+task_4_un_etat_desprit = Task.create!(
+  title: "Je refuse les tickets de caisse et de carte bancaire",
+  position: 4,
+  program: un_etat_desprit,
+  )
+
+task_5_un_etat_desprit = Task.create!(
+  title: "Je trie mes mails et me désabonne des newsletters et mailings commerciaux inutiles",
+  position: 5,
+  program: un_etat_desprit,
+  )
+
+task_6_un_etat_desprit = Task.create!(
+  title: "J'achète une gourde et je privilégie l'eau du robinet",
+  position: 6,
+  program: un_etat_desprit,
+  )
+
+task_7_un_etat_desprit = Task.create!(
+  title: "J'achète des cotons réutilisables et un oriculi",
+  position: 7,
+  program: un_etat_desprit,
+  )
+
+task_8_un_etat_desprit = Task.create!(
+  title: "Je privilégie l'achat de savon solide",
+  position: 8,
+  program: un_etat_desprit,
+  )
+
 puts "Creating users programs"
 
 # programme complété
@@ -151,10 +198,71 @@ program_completed3 = UserProgram.create!(
   completed: false,
   )
 
+puts "Creating Challenges"
 
+# challenge à créer
+arrete_fast_foods = Challenge.create!(
+  title: "J'arrête les fast-foods",
+  description: "McDonalds, KFC, Burger King, etc, je décide enfin de laisser tout ça derrière mois. Une cure aussi bonne pour l'estomac que le porte monnaie !",
+  category: "Nourriture",
+  position: 1,
+  )
 
+# Challenge à refuser
+achete_en_vrac = Challenge.create!(
+  title: "J'achète en vrac",
+  description: "Les sacs en plastique et autres emballages ne manquent pas, acheter en vrac est l'un des premiers gestes pour en limiter l'impact !",
+  category: "Déchets",
+  position: 1,
+  )
 
+# Challenge terminé
+lumieres_vertes = Challenge.create!(
+  title: "Lumières vertes",
+  description: "",
+  category: "Energie",
+  position: 1,
+  )
 
+# Challenge en cours
+jarrete_lavion = Challenge.create!(
+  title: "J'arrête l'avion",
+  description: "",
+  category: "Transport",
+  position: 1,
+  )
 
+puts "Creating User Challenges"
+
+user_challenge_lumieres_vertes = UserChallenge.create!(
+  start_date: Date.today - 7,
+  end_date: Date.today,
+  duration: 7,
+  user: corentin,
+  challenge: lumieres_vertes,
+  )
+
+user_challenge_jarrete_lavion = UserChallenge.create!(
+  start_date: Date.today - 14,
+  end_date: Date.today + 14,
+  duration: 28,
+  user: corentin,
+  challenge: jarrete_lavion,
+  )
+
+user_challenge_achete_en_vrac = UserChallenge.create!(
+  start_date: Date.today - 14,
+  end_date: Date.today + 14,
+  duration: 28,
+  user: remi,
+  challenge: achete_en_vrac,
+  )
+
+puts "Creating challengers"
+remi_challengers = Challenger.create!(
+  challenge: achete_en_vrac,
+  friend: corentin,
+  status: "En attente",
+  )
 
 
