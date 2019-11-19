@@ -175,6 +175,25 @@ task_8_un_etat_desprit = Task.create!(
   program: un_etat_desprit,
   )
 
+
+task_1_vivre_avec_saison = Task.create!(
+  title: "J'achète un calendrier avec la saisonnalité des produits",
+  position: 1,
+  program: vivre_avec_saison,
+  )
+
+task_2_vivre_avec_saison = Task.create!(
+  title: "Je ne mange pas de tomates en hiver",
+  position: 2,
+  program: vivre_avec_saison,
+  )
+
+task_3_vivre_avec_saison = Task.create!(
+  title: "Je ne mange pas d'oranges en été",
+  position: 3,
+  program: vivre_avec_saison
+)
+
 puts "Creating users programs"
 
 # programme complété
@@ -185,17 +204,21 @@ program_completed1 = UserProgram.create!(
   )
 
 # programme en cours
-program_completed2 = UserProgram.create!(
+program_ongoing1 = UserProgram.create!(
   user: corentin,
   program: premieres_economies,
   completed: false,
   )
 
-program_completed3 = UserProgram.create!(
+program_ongoing2 = UserProgram.create!(
   user: corentin,
   program: vivre_avec_saison,
   completed: false,
   )
+
+UserTask.create!(user_program: program_ongoing2, task: task_1_vivre_avec_saison, completed: true)
+UserTask.create!(user_program: program_ongoing2, task: task_2_vivre_avec_saison, completed: false)
+
 
 puts "Creating Challenges"
 

@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Nourriture</h2>
+  <% @programs_food.each do |program| %>
+    <%= link_to program_path(program) do %>
+      <%= program.title %>
+  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
+    <% end %>
+    <%= program.status %>
+  <% end %>
+
+  <h2>Déchets</h2>
+  <% @programs_waste.each do |program| %>
+     <%= link_to program_path(program) do %>
+      <%= program.title %>
+  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
+    <% end %>
+    <%= program.status %>
+  <% end %>
+
+  <h2>Energie</h2>
+  <% @programs_energy.each do |program| %>
+    <%= link_to program_path(program) do %>
+      <%= program.title %>
+  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
+    <% end %>
+    <%= program.status %>
+  <% end %>
+
+  <h2>Transport</h2>
+  <% @programs_transport.each do |program| %>
+    <%= link_to program_path(program) do %>
+      <%= program.title %>
+  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
+    <% end %>
+    <%= program.status %>
+  <% end %>
+</div>
