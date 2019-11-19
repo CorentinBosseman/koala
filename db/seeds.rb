@@ -27,7 +27,7 @@ corentin = User.create!(
   pseudo: "corentin",
   email: "corentin@example.com",
   password: "password",
-  avatar: "",
+  # avatar: File.open(Rails.root.join("db/fixtures/users/corentin.jpg")),
   )
 
 remi = User.create!(
@@ -36,7 +36,6 @@ remi = User.create!(
   password: "password",
   avatar: "",
   )
-# corentin.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 # remi.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
