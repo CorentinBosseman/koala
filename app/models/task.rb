@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  belongs_to :programme
+  belongs_to :program
 end
