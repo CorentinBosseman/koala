@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :challengers
   has_many :user_programs
   has_many :user_challenges
+
+  mount_uploader :avatar, PhotoUploader
 end
