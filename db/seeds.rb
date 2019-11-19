@@ -231,7 +231,7 @@ jarrete_lavion = Challenge.create!(
   position: 1,
   )
 
-puts "Creating User Challenges"
+puts "Creating User Challenges + Challengers"
 
 user_challenge_lumieres_vertes = UserChallenge.create!(
   start_date: Date.today - 7,
@@ -241,6 +241,13 @@ user_challenge_lumieres_vertes = UserChallenge.create!(
   challenge: lumieres_vertes,
   )
 
+Challenger.create!(
+  user_challenge: user_challenge_lumieres_vertes,
+  friend: corentin,
+  status: "Accepté",
+)
+
+
 user_challenge_jarrete_lavion = UserChallenge.create!(
   start_date: Date.today - 14,
   end_date: Date.today + 14,
@@ -248,6 +255,12 @@ user_challenge_jarrete_lavion = UserChallenge.create!(
   user: corentin,
   challenge: jarrete_lavion,
   )
+
+Challenger.create!(
+  user_challenge: user_challenge_jarrete_lavion,
+  friend: corentin,
+  status: "Accepté",
+)
 
 user_challenge_achete_en_vrac = UserChallenge.create!(
   start_date: Date.today - 14,
@@ -257,11 +270,16 @@ user_challenge_achete_en_vrac = UserChallenge.create!(
   challenge: achete_en_vrac,
   )
 
-puts "Creating challengers"
-remi_challengers = Challenger.create!(
-  challenge: achete_en_vrac,
+Challenger.create!(
+  user_challenge: user_challenge_achete_en_vrac,
+  friend: remi,
+  status: "Accepté",
+)
+
+Challenger.create!(
+  user_challenge: user_challenge_achete_en_vrac,
   friend: corentin,
   status: "En attente",
-  )
+)
 
 
