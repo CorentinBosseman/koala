@@ -13,15 +13,21 @@
 # J’accepte un ami
 # Je crée un challenge avec cet ami
 puts "Destroy all instances"
+Challenger.destroy_all
+UserChallenge.destroy_all
+UserTask.destroy_all
+UserProgram.destroy_all
+
 Friendship.destroy_all
 User.destroy_all
+
+
+Task.destroy_all
 Program.destroy_all
 Challenge.destroy_all
-Task.destroy_all
 
 puts "Creating users"
 corentin = User.create!(
-  id: 1,
   pseudo: "corentin",
   email: "corentin@example.com",
   password: "password",
@@ -29,7 +35,6 @@ corentin = User.create!(
   )
 
 remi = User.create!(
-  id: 2,
   pseudo: "remi",
   email: "remi@example.com",
   password: "password",
@@ -40,7 +45,6 @@ remi = User.create!(
 # remi.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 laszlo = User.create!(
-  id: 3,
   pseudo: "laszlo",
   email: "laszlo@example.com",
   password: "password",
@@ -49,7 +53,6 @@ laszlo = User.create!(
 # laszlo.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 christophe = User.create!(
-  id: 4,
   pseudo: "christophe",
   email: "christophe@example.com",
   password: "password",
@@ -58,7 +61,6 @@ christophe = User.create!(
 # christophe.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 daphnee = User.create!(
-  id: 5,
   pseudo: "daphnée",
   email: "daphnee@example.com",
   password: "password",
@@ -70,32 +72,31 @@ puts "Creating friendships"
 
 corentin_remi = Friendship.create!(
   status: "Accepted",
-  user_id: 1,
-  friend_id: 2,
+  user: corentin,
+  friend: remi,
   )
 
 corentin_laszlo = Friendship.create!(
   status: "Accepted",
-  user_id: 1,
-  friend_id: 3,
+  user: corentin,
+  friend: laszlo,
   )
 
 corentin_christophe = Friendship.create!(
   status: "Accepted",
-  user_id: 1,
-  friend_id: 4,
+  user: remi,
+  friend: christophe,
   )
 
 corentin_daphnee = Friendship.create!(
   status: "Pending",
-  user_id: 1,
-  friend_id: 5,
+  user: corentin,
+  friend: daphnee,
   )
 
 puts "Creating programs"
 
 un_nouveau_depart = Program.create!(
-  id: 1,
   title: "Un nouveau départ",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
@@ -105,7 +106,6 @@ un_nouveau_depart = Program.create!(
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 un_etat_desprit = Program.create!(
-  id: 2,
   title: "Un état d'esprit",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Déchets",
@@ -114,8 +114,7 @@ un_etat_desprit = Program.create!(
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 premieres_economies = Program.create!(
-  id: 3,
-  title: "L'eau coule à flot",
+  title: "Mes premières économies",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Energie",
   position: 1,
@@ -123,7 +122,6 @@ premieres_economies = Program.create!(
 # premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 vivre_avec_saison = Program.create!(
-  id: 4,
   title: "Vivre avec les saisons",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Nourriture",
@@ -133,14 +131,25 @@ vivre_avec_saison = Program.create!(
 
 puts "Creating users programs"
 
-program_completed = User_program.create!(
+# programme complété
+program_completed1 = UserProgram.create!(
+  user: corentin,
+  program: un_nouveau_depart,
   completed: true,
   )
 
+# programme en cours
+program_completed2 = UserProgram.create!(
+  user: corentin,
+  program: premieres_economies,
+  completed: false,
+  )
 
-
-
-
+program_completed3 = UserProgram.create!(
+  user: corentin,
+  program: vivre_avec_saison,
+  completed: false,
+  )
 
 
 
