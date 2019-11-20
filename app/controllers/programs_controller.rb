@@ -17,14 +17,12 @@ class ProgramsController < ApplicationController
     @programs_waste = @programs.where(category: 'Déchets').order(:position)
     @programs_energy = @programs.where(category: 'Energie').order(:position)
     @programs_transport = @programs.where(category: 'Transport').order(:position)
-    @programs_food.disponible?
   end
 
   def show
     @program = Program.find(params[:id])
   end
-
-
+end
 
 # l'affichage des programmes change lorsque le programme est disponible ou pas
 #   def disponible?
