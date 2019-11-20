@@ -1,37 +1,61 @@
 <div class="container">
   <h2>Nourriture</h2>
-  <% @programs_food.each do |program| %>
-    <%= link_to program_path(program) do %>
+  <% @programs_food.each_with_index do |program, index| %>
       <%= program.title %>
-  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
-    <% end %>
-    <%= program.status %>
+
+<!--
+      CONDITIONS pour cliquer
+      - programme démarré ou complété
+      - 1er programme
+      - précédent programme complété
+ -->
+      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
+        <%= link_to "go", program_path(program) %>
+      <% end %>
   <% end %>
 
   <h2>Déchets</h2>
-  <% @programs_waste.each do |program| %>
-     <%= link_to program_path(program) do %>
+  <% @programs_waste.each_with_index do |program, index| %>
       <%= program.title %>
-  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
-    <% end %>
-    <%= program.status %>
+
+<!--
+      CONDITIONS pour cliquer
+      - programme démarré ou complété
+      - 1er programme
+      - précédent programme complété
+ -->
+      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
+        <%= link_to "go", program_path(program) %>
+      <% end %>
   <% end %>
 
   <h2>Energie</h2>
-  <% @programs_energy.each do |program| %>
-    <%= link_to program_path(program) do %>
+   <% @programs_energy.each_with_index do |program, index| %>
       <%= program.title %>
-  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
-    <% end %>
-    <%= program.status %>
+
+<!--
+      CONDITIONS pour cliquer
+      - programme démarré ou complété
+      - 1er programme
+      - précédent programme complété
+ -->
+      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
+        <%= link_to "go", program_path(program) %>
+      <% end %>
   <% end %>
 
   <h2>Transport</h2>
-  <% @programs_transport.each do |program| %>
-    <%= link_to program_path(program) do %>
+  <% @programs_transport.each_with_index do |program, index| %>
       <%= program.title %>
-  <%#= cl_image_tag program.photo, height: 200, width: 300, crop: :fill%>
+
+<!--
+      CONDITIONS pour cliquer
+      - programme démarré ou complété
+      - 1er programme
+      - précédent programme complété
+ -->
+      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
+        <%= link_to "go", program_path(program) %>
+      <% end %>
     <% end %>
-    <%= program.status %>
-  <% end %>
 </div>
