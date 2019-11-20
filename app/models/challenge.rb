@@ -1,5 +1,5 @@
 class Challenge < ApplicationRecord
-  has_many :Challengers
+  has_many :user_challenges
 
   mount_uploader :picture, PhotoUploader
 end
