@@ -2,4 +2,10 @@
   <h1><%= @challenge.title  %></h1>
   <p><%= @challenge.description %></p>
   <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
+  <%= simple_form_for [@challenge, @user_challenge] do |f| %>
+    <%= f.input :duration, as: :radio_buttons, collection: UserChallenge::DURATIONS.map { |duration| ["#{duration} jours", duration] }, wrapper: :vertical_collection_inline %>
+
+    <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-ghost btn-hover-green flat-show-btn font-raleway" %>
+  <% end %>
 </div>
+
