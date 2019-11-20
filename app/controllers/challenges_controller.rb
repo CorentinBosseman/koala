@@ -19,6 +19,15 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @user_challenge = UserChallenge.new
+
+    @challenger = @challenge.challengers.find_by(friend_id: current_user.id, status: 'Accepté')
+
+    if @challenger
+      @ongoing_user_challenge = @challenger.user_challenge
+      render :show_ongoing
+    else
+      render :show # not started
+    end
   end
 end
 
