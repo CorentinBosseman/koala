@@ -4,12 +4,9 @@
     <span>Retour</span>
   <% end %>
 <br>
-<%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %>/<%= @challenger.user_challenge.duration %>
-
 <h2><%= @challenger.user_challenge.challenge.title %></h2>
 <p><%= @challenger.user_challenge.challenge.description %></p>
 
-  <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
 
-
+TU ES INVITE !!!
 </div>

@@ -287,8 +287,8 @@ Challenger.create!(
 
 user_challenge_jarrete_lavion = UserChallenge.create!(
   start_date: Date.today - 14,
-  end_date: Date.today + 14,
-  duration: 28,
+  end_date: Date.today,
+  duration: 14,
   user: corentin,
   challenge: jarrete_lavion,
   )
@@ -297,6 +297,20 @@ Challenger.create!(
   user_challenge: user_challenge_jarrete_lavion,
   friend: corentin,
   status: "Réussi",
+)
+
+user_challenge_jarrete_lavion_2 = UserChallenge.create!(
+  start_date: Date.today - 14,
+  end_date: Date.today + 14,
+  duration: 28,
+  user: corentin,
+  challenge: jarrete_lavion,
+  )
+
+Challenger.create!(
+  user_challenge: user_challenge_jarrete_lavion_2,
+  friend: corentin,
+  status: "Accepté",
 )
 
 user_challenge_achete_en_vrac = UserChallenge.create!(
