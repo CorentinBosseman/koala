@@ -3,8 +3,11 @@
   <p><%= @program.description %></p>
   <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
   <ul>
-    <% @program.tasks.each do |task| %>
-    <li> <%= task.title %></li>
+    <% @tasks.each do |task| %>
+    <li> <%= task.title %>
+      <%= task.completed %>
+        <%= task.status %>
+      </li>
     <% end %>
   </ul>
 </div>

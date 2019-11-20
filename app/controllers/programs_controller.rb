@@ -23,6 +23,20 @@ class ProgramsController < ApplicationController
 
   def show
     @program = Program.find(params[:id])
+    @tasks = @program.tasks.
+      select(
+        <<~SQL
+          tasks.*,
+          CASE user_tasks.completed
+            WHEN true  THEN 'completed'
+            WHEN false tHEN 'ongoing'
+            ELSE 'not started'
+          END AS status,
+          user_tasks.completed
+        SQL
+      ).
+      left_joins(user_tasks: :user_program).
+      where(user_programs: { user_id: [nil, current_user.id] })
   end
 
 end
