@@ -3,6 +3,7 @@
   <% @challenges_food.each do |challenge| %>
     <%= link_to challenge_path(challenge) do %>
       <%= challenge.title %>
+      <%= current_challenger(challenge).status %>
       <%#= challenge.status %>
   <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
     <% end %>
@@ -12,6 +13,7 @@
   <% @challenges_waste.each do |challenge| %>
      <%= link_to challenge_path(challenge) do %>
       <%= challenge.title %>
+      <%= current_challenger(challenge).status %>
       <%#= challenge.status %>
   <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
     <% end %>
@@ -21,6 +23,7 @@
   <% @challenges_energy.each do |challenge| %>
     <%= link_to challenge_path(challenge) do %>
       <%= challenge.title %>
+      <%= current_challenger(challenge).status %>
       <%#= challenge.status %>
   <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
     <% end %>
@@ -30,6 +33,7 @@
   <% @challenges_transport.each do |challenge| %>
     <%= link_to challenge_path(challenge) do %>
       <%= challenge.title %>
+      <%= current_challenger(challenge).status %>
       <%#= challenge.status %>
   <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
     <% end %>

@@ -17,9 +17,8 @@ Rails.application.routes.draw do
   # PROGRAMS
 
   resources :programs, only: [:index, :show] do
-    resources :tasks,         only: [:show] do
+    resources :tasks,         only: [:show]
     resources :user_programs, only: [:create]
-    end
   end
 
   resources :user_tasks, only: [] do
