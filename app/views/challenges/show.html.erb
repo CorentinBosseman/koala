@@ -1,2 +1,5 @@
-<h1>Challenges#show</h1>
-<p>Find me in app/views/challenges/show.html.erb</p>
+<div class="container">
+  <h1><%= @challenge.title  %></h1>
+  <p><%= @challenge.description %></p>
+  <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
+</div>

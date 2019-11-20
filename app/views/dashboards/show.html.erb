@@ -7,14 +7,20 @@
 <h2>programme en cours</h2>
 <% @programs_ungoing.each do |user_program| %>
 <%= user_program.program.title %>
+<%= link_to "go", program_path(user_program.program) %>
+
 <% end %>
 
 <h2>challenge en cours</h2>
 <% @challenges_ungoing.each do |user_challenge| %>
 <%= user_challenge.challenge.title %>
+<%= link_to "go", challenge_path(user_challenge.challenge) %>
+
 <% end %>
 
 <h2>challenger</h2>
 <% @challengers.each do |challenger| %>
 <%= challenger.user_challenge.user.pseudo %>
+<%= link_to "go", challenge_path(challenger.user_challenge.challenge) %>
+
 <% end %>
