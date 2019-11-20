@@ -35,6 +35,7 @@ class ProgramsController < ApplicationController
               WHEN false tHEN 'ongoing'
               ELSE 'not started'
             END AS status,
+            user_tasks.id AS user_task_id,
             user_tasks.completed
           SQL
         ).
