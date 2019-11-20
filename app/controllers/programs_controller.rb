@@ -1,13 +1,15 @@
 class ProgramsController < ApplicationController
   def index
     @programs = Program.
-      select(<<~SQL
-        programs.*,
-        CASE user_programs.completed
-          WHEN true  THEN 'completed'
-          WHEN false THEN 'ongoing'
-          ELSE 'not started'
-        END AS status
+      select(
+        <<~SQL
+          programs.*,
+          CASE user_programs.completed
+            WHEN true  THEN 'completed'
+            WHEN false THEN 'ongoing'
+            ELSE 'not started'
+          END AS status,
+        completed
         SQL
       ).
       left_joins(:user_programs).
@@ -22,28 +24,8 @@ class ProgramsController < ApplicationController
   def show
     @program = Program.find(params[:id])
   end
+
 end
-
-# l'affichage des programmes change lorsque le programme est disponible ou pas
-#   def disponible?
-#     @programs_food.each do |program_food|
-#       previous_program_index = @programs_food.index(program_food) - 1
-#       if program_food != @programs_food.first && @programs_food[previous_program_index].status == "completed"
-#         return true
-#       else false
-#       end
-#     end
-#   end
-# end
-
-# previous_program_index = @programs_food.index(program_food) - 1
-
-  # tous les programmes à position 1 sont dispo
-  # regardez le status du programme précédent (position -1) pour une même catégorie
-  # si le status précédent est completed = ok
-  # sinon le programme n'est pas disponible
-
-# l'affichage d'un programme en cours change selon sa completion
 
 
 

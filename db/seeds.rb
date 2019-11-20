@@ -98,6 +98,13 @@ un_nouveau_depart = Program.create!(
   category: "Nourriture",
   )
 
+la_santé_dabord = Program.create!(
+  title: "La santé d'abord",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  position: 3,
+  category: "Nourriture",
+  )
+
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 un_etat_desprit = Program.create!(
