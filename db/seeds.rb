@@ -61,6 +61,13 @@ daphnee = User.create!(
   password: "password",
   avatar: "",
   )
+
+yann = User.create!(
+  pseudo: "yann",
+  email: "yann@example.com",
+  password: "password",
+  avatar: "",
+  )
 # daphnee.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 puts "Creating friendships"

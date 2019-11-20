@@ -1,0 +1,16 @@
+
+<h2>Mes amis</h2>
+  <% @friendships_accepted.each do |friendship| %>
+      <%= friendship.friend.pseudo %>
+      <%#= cl_image_tag friendship.friend.pseudo.avatar, height: 200, width: 300, crop: :fill%>
+    <% end %>
+
+<h2>Mes demandes amis</h2>
+  <% @friendships_pending.each do |friendship_pending| %>
+    <%= friendship_pending.friend.pseudo %>
+    <%#= cl_image_tag friendship.friend.pseudo.avatar, height: 200, width: 300, crop: :fill%>
+    <%= link_to "Valider", accept_friendship_path(friendship_pending), method: :patch, class: "btn btn-ghost btn-border-blue"%>
+    <%= link_to "Refuser", decline_friendship_path(friendship_pending), method: :patch, class: "btn btn-ghost btn-border-red" %>
+  <% end %>
+
+<%= link_to "Ajouter un ami", new_friendship_path %>
