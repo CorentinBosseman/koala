@@ -1,0 +1,18 @@
+<h1>Profil</h1>
+
+<%= current_user.avatar %>
+<%= current_user.pseudo %>
+
+<h2>programmes Completés</h2>
+<% @programs_completed.each do |user_program| %>
+<%= user_program.program.title %>
+<%= link_to "go", program_path(user_program.program) %>
+
+<% end %>
+
+<h2>challenges Completés</h2>
+<% @challenges_completed.each do |user_challenge| %>
+<%= user_challenge.challenge.title %>
+<%= link_to "go", challenge_path(user_challenge.challenge) %>
+
+<% end %>

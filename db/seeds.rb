@@ -289,7 +289,7 @@ user_challenge_jarrete_lavion = UserChallenge.create!(
 Challenger.create!(
   user_challenge: user_challenge_jarrete_lavion,
   friend: corentin,
-  status: "Accepté",
+  status: "Réussi",
 )
 
 user_challenge_achete_en_vrac = UserChallenge.create!(
