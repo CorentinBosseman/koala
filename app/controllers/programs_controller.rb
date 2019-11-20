@@ -17,22 +17,35 @@ class ProgramsController < ApplicationController
     @programs_waste = @programs.where(category: 'Déchets').order(:position)
     @programs_energy = @programs.where(category: 'Energie').order(:position)
     @programs_transport = @programs.where(category: 'Transport').order(:position)
+    @programs_food.disponible?
   end
 
   def show
     @program = Program.find(params[:id])
   end
-end
+
 
 
 # l'affichage des programmes change lorsque le programme est disponible ou pas
+#   def disponible?
+#     @programs_food.each do |program_food|
+#       previous_program_index = @programs_food.index(program_food) - 1
+#       if program_food != @programs_food.first && @programs_food[previous_program_index].status == "completed"
+#         return true
+#       else false
+#       end
+#     end
+#   end
+# end
 
+# previous_program_index = @programs_food.index(program_food) - 1
+
+  # tous les programmes à position 1 sont dispo
+  # regardez le status du programme précédent (position -1) pour une même catégorie
+  # si le status précédent est completed = ok
+  # sinon le programme n'est pas disponible
 
 # l'affichage d'un programme en cours change selon sa completion
 
 
-# l'affichage d'un programme termine avec un marqueur
-  # si le programme en particulier se trouve dans le user_program et qu'il a le statut = completed
-  # @user_programs_done = @user_programs.where(completed: true)
-  #   if @user_programs_done.include?(@program.title)
 
