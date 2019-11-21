@@ -314,8 +314,8 @@ Challenger.create!(
 )
 
 user_challenge_achete_en_vrac = UserChallenge.create!(
-  start_date: Date.today - 14,
-  end_date: Date.today + 14,
+  start_date: Date.today,
+  end_date: Date.today + 28,
   duration: 28,
   user: remi,
   challenge: achete_en_vrac,
