@@ -1,3 +1,4 @@
+
 <div class="container background-color">
   <%= link_to challenges_path do %>
   <i class="far fa-times-circle fa-2x"></i>
@@ -8,6 +9,7 @@
     <br>
     <h2><%= @challenger.user_challenge.challenge.title %></h2>
     <p><%= @challenger.user_challenge.challenge.description %></p>
+
 
 
     <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white"  %>

@@ -1,0 +1,18 @@
+.btn-main {
+  color: #796F54;
+  background-color: #D1EECC;
+  padding: 8px 60px;
+  border-radius: 50px;
+  font-family: 'Ropa Sans', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin: 30px auto;
+
+  &:hover {
+    opacity: 0.6;
+    color: #796F54;
+  }
+}
+

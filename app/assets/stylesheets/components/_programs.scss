@@ -1,0 +1,77 @@
+.elements {
+  display:flex;
+  width: 100%;
+  justify-content:space-evenly;
+  margin-bottom: 34px;
+}
+.element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 125px;
+}
+.no-space {
+  padding: 0;
+  margin: 0;
+}
+.bkg-blue {
+  background-color: $blue_very_light;
+  border-bottom: solid 1px $blue_light;
+}
+.bkg-red {
+  background-color: $red_very_light;
+  border-bottom: solid 1px $red_light;
+}
+.bkg-yellow {
+  background-color: $yellow_very_ligth;
+  border-bottom: solid 1px $yellow_light;
+}
+.bkg-green {
+  background-color: $green_very_light;
+  border-bottom: solid 1px $green_light;
+}
+.title-thema {
+display: flex;
+justify-content: center;
+font-family: Rubik;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: $brown-very-dark;
+padding-top: 35px;
+padding-bottom: 10px;
+}
+#tt-padtop {
+  padding-top:53px;
+}
+.program-title-task {
+  font-family: Red Hat Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: $brown_very_dark;
+}
+.badge-tasks  {
+  width:  60px;
+  height: 60px;
+  border: 6px solid;
+  border-radius: 50%;
+  background-color: $white-dirt;
+}
+.bt-green  {
+  border-color: $green-light;
+}
+.bt-yellow  {
+  border-color: $yellow-light;
+}
+.bt-blue  {
+  border-color: $blue-light;
+}
+.bt-red  {
+  border-color: $red-light;
+}
