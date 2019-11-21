@@ -1,15 +1,16 @@
-<div class="container">
+<div class="container bg-warning ">
   <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
     <i class="fas fa-angle-double-left"></i>
     <span>Retour</span>
   <% end %>
 <br>
-<%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %>/<%= @challenger.user_challenge.duration %>
+  <div class="d-flex flex-column d-flex align-items-center">
+   <strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></strong>/<%= @challenger.user_challenge.duration %>
+    <h2><%= @challenger.user_challenge.challenge.title %></h2>
+    <hr width="30%"/>
+    <p><%= @challenger.user_challenge.challenge.description %></p>
 
-<h2><%= @challenger.user_challenge.challenge.title %></h2>
-<p><%= @challenger.user_challenge.challenge.description %></p>
-
-  <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
-
+      <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
+  </div>
 
 </div>
