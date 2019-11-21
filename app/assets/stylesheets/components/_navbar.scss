@@ -1,12 +1,32 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  width:100vw;
+  background-color: white;
+  display:flex;
+  padding: 15 40px;
+  align-items:center;
+  justify-content:space-around;
+  position:fixed;
+  bottom :0;
+  z-index:9999;
+
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.category {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color: #796F54;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.label {
+  font-family:'Ropa Sans', sans-serif;
+  color: #796F54;
+  font-weight:700;
+  font-size:13px;
+  margin-top:5px;
 }
+
+// position:fixed;
+// bottom: 0
+// width:100vw;
+// z-index:9999;
