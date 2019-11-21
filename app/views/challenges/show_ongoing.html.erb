@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
+  <%= link_to challenges_path,  class: 'btn btn-light-main back-btn' do %>
     <i class="fas fa-angle-double-left"></i>
     <span>Retour</span>
   <% end %>
@@ -9,7 +9,7 @@
 <h2><%= @challenger.user_challenge.challenge.title %></h2>
 <p><%= @challenger.user_challenge.challenge.description %></p>
 
-  <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
+  <%= link_to "J’ai craqué", abort_challenger_path(@challenger), method: :patch, class: "btn btn-main"  %>
 
 
 </div>

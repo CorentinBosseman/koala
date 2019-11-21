@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
+  <%= link_to challenges_path,  class: 'btn btn-light-main back-btn' do %>
     <i class="fas fa-angle-double-left"></i>
     <span>Retour</span>
   <% end %>
@@ -9,7 +9,7 @@
 
   TU ES INVITE !!!
 
-  <%= link_to "Accepter", accept_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
-  <%= link_to "Refuser", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
+  <%= link_to "Accepter", accept_challenger_path(@challenger), method: :patch, class: "btn btn-main"  %>
+  <%= link_to "Refuser", decline_challenger_path(@challenger), method: :patch, class: "btn btn-main"  %>
 
 </div>
