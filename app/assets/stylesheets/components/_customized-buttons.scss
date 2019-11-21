@@ -16,3 +16,26 @@
   }
 }
 
+/* input[type=radio] {
+  visibility: hidden;
+} */
+
+.btn-day-inact {
+    height: 30px;
+    background-color: #F2EDD4;
+    border-radius: 40px;
+    padding: 3px 24px;
+    font-family: 'Ropa Sans';
+    color: #6D4C41;
+
+}
+
+
+.btn-day-act {
+    height: 30px;
+    background-color: #D1EECC;
+    border-radius: 40px;
+    padding: 3px 24px;
+    font-family: 'Ropa Sans';
+    color: #6D4C41;
+}
