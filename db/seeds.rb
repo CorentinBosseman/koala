@@ -315,7 +315,7 @@ jarrete_lavion = Challenge.create!(
 puts "Creating User Challenges + Challengers"
 
 user_challenge_lumieres_vertes = UserChallenge.create!(
-  start_date: Date.today - 7,
+  start_date: Date.today - 2,
   end_date: Date.today,
   duration: 7,
   user: corentin,
