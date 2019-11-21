@@ -2,10 +2,11 @@
 <div class="container background-color-ongoing">
  <div class="wrapper">
     <%= link_to challenges_path do %>
+  </div>
     <i class="far fa-times-circle fa-2x"></i>
     <% end %>
 <br>
-  <div class="d-flex flex-column d-flex align-items-center">
+  <div class="d-flex flex-column d-flex align-items-center ml-4">
    <div class="daycount d-flex align-items-center">
      <h1><strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></h1></strong><p>/<%= @challenger.user_challenge.duration %></p>
    </div>
