@@ -1,8 +1,8 @@
 .background-color {
   background: linear-gradient(#FFF8CD, #D1EECC);
+  height: 100vh;
 }
 
 .wrapper {
-  display: flex-column;
-  height: 100vh;
+  display: inline-block
 }
