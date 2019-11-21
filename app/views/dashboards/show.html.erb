@@ -1,26 +1,3 @@
-
-<!-- <h1>Dashboard</h1> -->
-<%#= current_user.avatar %>
-<%#= current_user.pseudo %>
-
-<!-- <h2>programme en cours</h2> -->
-<%# @programs_ungoing.each do |user_program| %>
-<%#= user_program.program.title %>
-<%#= link_to "go", program_path(user_program.program) %>
-<%# end %>
-
-<!-- <h2>challenge en cours</h2> -->
-<%# @challenges_ungoing.each do |user_challenge| %>
-<%#= user_challenge.challenge.title %>
-<%#= link_to "go", challenge_path(user_challenge.challenge) %>
-<%# end %>
-
-<!-- <h2>challenger</h2> -->
-<%# @challengers.each do |challenger| %>
-<%#= challenger.user_challenge.user.pseudo %>
-<%#= link_to "go", challenge_path(challenger.user_challenge.challenge) %>
-<%# end %>
-
 </div>
 <div class="bkg-white">
   <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
@@ -37,7 +14,7 @@
 
           <%= link_to program_path(user_program.program) do %>
           <div class="element">
-            <div class="badge-tasks bt-yellow"></div>
+            <div class="badge-tasks <%= current_badge(user_program.program.category) %>"></div>
             <div class="program-title-task"><%= user_program.program.title %></div>
           </div>
         <% end %>
@@ -57,7 +34,7 @@
 
           <%= link_to challenge_path(user_challenge.challenge) do %>
           <div class="element">
-            <div class="badge-tasks bt-yellow"></div>
+            <div class="badge-tasks <%= current_badge(user_challenge.challenge.category) %>"></div>
             <div class="program-title-task"><%= user_challenge.challenge.title %></div>
           </div>
         <% end %>
