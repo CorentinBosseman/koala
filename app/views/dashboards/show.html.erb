@@ -35,12 +35,12 @@
 
           <% @programs_ungoing.each do |user_program| %>
 
+          <%= link_to program_path(user_program.program) do %>
           <div class="element">
             <div class="badge-tasks bt-yellow"></div>
             <div class="program-title-task"><%= user_program.program.title %></div>
-              <%= link_to "go", program_path(user_program.program) %>
-              <%# end %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
@@ -55,11 +55,12 @@
 
         <% @challenges_ungoing.each do |user_challenge| %>
 
+          <%= link_to challenge_path(user_challenge.challenge) do %>
           <div class="element">
             <div class="badge-tasks bt-yellow"></div>
             <div class="program-title-task"><%= user_challenge.challenge.title %></div>
-            <%= link_to "go", challenge_path(user_challenge.challenge) %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
@@ -74,11 +75,12 @@
 
         <% @challengers.each do |challenger| %>
 
+          <%= link_to challenge_path(challenger.user_challenge.challenge) do %>
           <div class="element tt-padtop">
             <div class="badge-avatar bt-white"></div>
             <div class="program-title-task pseudo pseudo-mini"><%= challenger.user_challenge.user.pseudo %></div>
-            <%= link_to "go", challenge_path(challenger.user_challenge.challenge) %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
