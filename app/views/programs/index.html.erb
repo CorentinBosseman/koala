@@ -13,14 +13,15 @@
 
         <% @programs_food.each_with_index do |program, index| %>
 
+              <%= link_to program_path(program) do%>
           <div class="element">
             <div class="badge-tasks bt-yellow"></div>
             <div class="program-title-task">
             <%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
-              <%= link_to "go", program_path(program) %>
             <% end %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
@@ -40,14 +41,15 @@
 
         <% @programs_waste.each_with_index do |program, index| %>
 
+        <%= link_to program_path(program) do %>
           <div class="element">
             <div class="badge-tasks bt-green"></div>
             <div class="program-title-task">
             <%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
-              <%= link_to "go", program_path(program) %>
             <% end %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
@@ -67,14 +69,15 @@
 
         <% @programs_energy.each_with_index do |program, index| %>
 
+          <%= link_to program_path(program) do%>
           <div class="element">
             <div class="badge-tasks bt-blue"></div>
             <div class="program-title-task">
             <%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
-              <%= link_to "go", program_path(program) %>
             <% end %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
@@ -94,14 +97,15 @@
 
         <% @programs_transport.each_with_index do |program, index| %>
 
+        <%= link_to program_path(program) do %>
           <div class="element">
             <div class="badge-tasks bt-red"></div>
-            <div class="program-title-task">
+            <div class="program-title-task pb-4">
             <%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
-              <%= link_to "go", program_path(program) %>
             <% end %>
           </div>
+        <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->

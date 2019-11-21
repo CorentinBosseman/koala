@@ -161,21 +161,21 @@ faisons_la_lumiere = Program.create!(
   )
 # premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
-un_nouveau_depart = Program.create!(
-  title: "Un nouveau départ",
+la_voiture_au_garage = Program.create!(
+  title: "La voiture au garage",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
   category: "Transport",
   )
-vivre_avec_saison = Program.create!(
-  title: "Vivre avec les saisons",
+mobilite_zero_carbone = Program.create!(
+  title: "Mobilité zéro carbone",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Transport",
   position: 2,
   )
 
-la_santé_dabord = Program.create!(
-  title: "La santé d'abord",
+deplacements_alternatifs = Program.create!(
+  title: "Déplacements alternatifs",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 3,
   category: "Transport",
