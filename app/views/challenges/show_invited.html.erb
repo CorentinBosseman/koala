@@ -1,15 +1,18 @@
-<div class="container">
-  <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
-    <i class="fas fa-angle-double-left"></i>
-    <span>Retour</span>
-  <% end %>
-  <br>
-  <h2><%= @challenger.user_challenge.challenge.title %></h2>
-  <p><%= @challenger.user_challenge.challenge.description %></p>
+<div class="container background-color">
+  <div class="wrapper">
+    <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
+    <i class="far fa-times-circle"></i>
+    <% end %>
 
-  TU ES INVITE !!!
+    <%= @challenger.user_challenge.user.avatar %>
+    <h2>Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
+    <br>
+    <h2><%= @challenger.user_challenge.challenge.title %></h2>
+    <p><%= @challenger.user_challenge.challenge.description %></p>
 
-  <%= link_to "Accepter", accept_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
-  <%= link_to "Refuser", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary"  %>
 
+    <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white"  %>
+    <br>
+    <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent"  %>
+  </div>
 </div>
