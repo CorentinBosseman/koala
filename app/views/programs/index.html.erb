@@ -97,12 +97,9 @@
         <%= link_to program_path(program) do %>
           <div class="element">
             <div class="badge-tasks bt-red"></div>
-<<<<<<< HEAD
-            <div class="program-title-task"><%= program.title %></div>
-=======
-            <div class="program-title-task pb-4">
-            <%= program.title %></div>
->>>>>>> 131db1542e09d673803d9fe49a5acd67757c3f8d
+
+            <div class="program-title-task pb-4"><%= program.title %></div>
+
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
             <% end %>
           </div>
