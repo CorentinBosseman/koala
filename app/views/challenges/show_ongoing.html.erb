@@ -5,7 +5,8 @@
   <% end %>
 <br>
   <div class="d-flex flex-column d-flex align-items-center">
-   <strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></strong>/<%= @challenger.user_challenge.duration %>
+   <div><strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></strong>/<%= @challenger.user_challenge.duration %>
+   </div>
     <h2><%= @challenger.user_challenge.challenge.title %></h2>
     <hr width="30%"/>
     <p><%= @challenger.user_challenge.challenge.description %></p>

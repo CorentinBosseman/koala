@@ -113,12 +113,35 @@ la_santé_dabord = Program.create!(
   )
 
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+vivre_avec_saison = Program.create!(
+  title: "Vivre avec les saisons",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  category: "Nourriture",
+  position: 2,
+  )
+# vivre_avec_saison = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 un_etat_desprit = Program.create!(
   title: "Un état d'esprit",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Déchets",
   position: 1,
+  )
+# un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+
+les_mains_dans_le_cambouis = Program.create!(
+  title: "Les mains dans le cambouis",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  category: "Déchets",
+  position: 2,
+  )
+# un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+
+la_guerre_au_plastique = Program.create!(
+  title: "La guerre au plastique",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  category: "Déchets",
+  position: 3,
   )
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -130,13 +153,34 @@ premieres_economies = Program.create!(
   )
 # premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
+faisons_la_lumiere = Program.create!(
+  title: "Faisons la lumière",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  category: "Energie",
+  position: 2,
+  )
+# premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+
+un_nouveau_depart = Program.create!(
+  title: "Un nouveau départ",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  position: 1,
+  category: "Transport",
+  )
 vivre_avec_saison = Program.create!(
   title: "Vivre avec les saisons",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
-  category: "Nourriture",
+  category: "Transport",
   position: 2,
   )
-# vivre_avec_saison = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+
+la_santé_dabord = Program.create!(
+  title: "La santé d'abord",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  position: 3,
+  category: "Transport",
+  )
+
 
 
 puts "Creating tasks"
