@@ -1,61 +1,112 @@
-<div class="container">
-  <h2>Nourriture</h2>
-  <% @programs_food.each_with_index do |program, index| %>
-      <%= program.title %>
-
 <!--
       CONDITIONS pour cliquer
       - programme démarré ou complété
       - 1er programme
       - précédent programme complété
  -->
-      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
-        <%= link_to "go", program_path(program) %>
-      <% end %>
-  <% end %>
+ <div>
+  <div class="container no-space bkg-yellow">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema" id="tt-padtop">NOURRITURE</div>
+        <div class="elements">
 
-  <h2>Déchets</h2>
-  <% @programs_waste.each_with_index do |program, index| %>
-      <%= program.title %>
+        <% @programs_food.each_with_index do |program, index| %>
 
+          <div class="element">
+            <div class="badge-tasks bt-yellow"></div>
+            <div class="program-title-task">
+            <%= program.title %></div>
+            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
+              <%= link_to "go", program_path(program) %>
+            <% end %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
 <!--
       CONDITIONS pour cliquer
       - programme démarré ou complété
       - 1er programme
       - précédent programme complété
  -->
-      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
-        <%= link_to "go", program_path(program) %>
-      <% end %>
-  <% end %>
+  <div class="container no-space bkg-green">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema">DÉCHETS</div>
+        <div class="elements">
 
-  <h2>Energie</h2>
-   <% @programs_energy.each_with_index do |program, index| %>
-      <%= program.title %>
+        <% @programs_waste.each_with_index do |program, index| %>
 
+          <div class="element">
+            <div class="badge-tasks bt-green"></div>
+            <div class="program-title-task">
+            <%= program.title %></div>
+            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
+              <%= link_to "go", program_path(program) %>
+            <% end %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
 <!--
       CONDITIONS pour cliquer
       - programme démarré ou complété
       - 1er programme
       - précédent programme complété
  -->
-      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
-        <%= link_to "go", program_path(program) %>
-      <% end %>
-  <% end %>
+    <div class="container no-space bkg-blue">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema">ÉNERGIE</div>
+        <div class="elements">
 
-  <h2>Transport</h2>
-  <% @programs_transport.each_with_index do |program, index| %>
-      <%= program.title %>
+        <% @programs_energy.each_with_index do |program, index| %>
 
+          <div class="element">
+            <div class="badge-tasks bt-blue"></div>
+            <div class="program-title-task">
+            <%= program.title %></div>
+            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
+              <%= link_to "go", program_path(program) %>
+            <% end %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
 <!--
       CONDITIONS pour cliquer
       - programme démarré ou complété
       - 1er programme
       - précédent programme complété
  -->
-      <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
-        <%= link_to "go", program_path(program) %>
-      <% end %>
-    <% end %>
+  <div class="container no-space bkg-red">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema">TRANSPORT</div>
+        <div class="elements">
+
+        <% @programs_transport.each_with_index do |program, index| %>
+
+          <div class="element">
+            <div class="badge-tasks bt-red"></div>
+            <div class="program-title-task">
+            <%= program.title %></div>
+            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
+              <%= link_to "go", program_path(program) %>
+            <% end %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+
 </div>
+
