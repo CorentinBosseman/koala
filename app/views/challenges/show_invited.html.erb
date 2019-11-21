@@ -1,10 +1,9 @@
 
 <div class="container background-color">
   <div class="wrapper">
-    <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
-    <i class="far fa-times-circle"></i>
+    <%= link_to challenges_path do %>
+    <i class="far fa-times-circle fa-2x"></i>
     <% end %>
-
     <%= @challenger.user_challenge.user.avatar %>
     <h2>Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
     <br>
