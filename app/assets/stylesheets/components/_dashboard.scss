@@ -1,0 +1,52 @@
+#dash-ban {
+  position: relative;
+  height: 64px;
+  background-color: $yellow-sand;
+}
+.bkg-white {
+  background-color: $white_dirt;
+}
+.bkg-line {
+  border-bottom: solid 2px $white_line;
+}
+.badge-avatar  {
+  width:  60px;
+  height: 60px;
+  border: 3px solid;
+  border-radius: 50%;
+  background-color: $white-dirt;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.big-avatar  {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  z-index: 10;
+  width:  85px;
+  height: 85px;
+  border: 3px solid;
+  border-radius: 50%;
+  background-color: $white-line;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.pseudo {
+height: 64px;
+font-family: Ropa Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 26px;
+text-align: center;
+color: $brown_light;
+padding-top: 20px;
+}
+.pseudo-mini {
+font-size: 20px;
+line-height: 21px;
+}
+.bt-white  {
+  border-color: $white-dirt;
+}
+#footer-pad  {
+  padding-bottom: 88px;
+}
