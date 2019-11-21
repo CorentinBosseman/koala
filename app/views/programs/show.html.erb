@@ -2,12 +2,9 @@
   <h1><%= @program.title  %></h1>
   <p><%= @program.description %></p>
   <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
-  <ul>
-    <% @tasks.each do |task| %>
-    <li> <%= task.title %>
-      <%= task.completed %>
-        <%= task.status %>
-      </li>
-    <% end %>
-  </ul>
+ <%= simple_form_for [@program, @user_program] do |f| %>
+
+    <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-ghost btn-hover-green flat-show-btn font-raleway" %>
+  <% end %>
 </div>
+
