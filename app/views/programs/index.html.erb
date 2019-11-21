@@ -98,8 +98,13 @@
           <div class="element">
             <div class="badge-tasks bt-red"></div>
 
+<<<<<<< HEAD
             <div class="program-title-task pb-4"><%= program.title %></div>
 
+=======
+            <div class="program-title-task pb-4">
+            <%= program.title %></div>
+>>>>>>> 75da81dddef2665f036866c517b69a5a50ebea63
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
             <% end %>
           </div>
