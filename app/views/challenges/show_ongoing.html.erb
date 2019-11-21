@@ -1,8 +1,8 @@
 
 <div class="container background-color-ongoing">
-  <div class="wrapper">
-    <%= link_to challenges_path,  class: 'btn btn-light-ghost back-btn' do %>
-    <i class="far fa-times-circle"></i>
+ <div class="wrapper">
+    <%= link_to challenges_path do %>
+    <i class="far fa-times-circle fa-2x"></i>
     <% end %>
 <br>
   <div class="d-flex flex-column d-flex align-items-center">
@@ -11,7 +11,7 @@
    </div>
     <h2><%= @challenger.user_challenge.challenge.title %></h2>
     <hr width="50%"/>
-    <p class="challenge-desciption"><%= @challenger.user_challenge.challenge.description %></p>
+    <p class="challenge-desciption"><%= @challenger.user_challenge.challenge.description%></p>
     <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: " btn btn-main"  %>
   </div>
 
