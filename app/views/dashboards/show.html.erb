@@ -1,30 +1,87 @@
 
-<h1>Dashboard</h1>
+<!-- <h1>Dashboard</h1> -->
+<%#= current_user.avatar %>
+<%#= current_user.pseudo %>
 
-<%= current_user.avatar %>
-<%= current_user.pseudo %>
+<!-- <h2>programme en cours</h2> -->
+<%# @programs_ungoing.each do |user_program| %>
+<%#= user_program.program.title %>
+<%#= link_to "go", program_path(user_program.program) %>
+<%# end %>
 
+<!-- <h2>challenge en cours</h2> -->
+<%# @challenges_ungoing.each do |user_challenge| %>
+<%#= user_challenge.challenge.title %>
+<%#= link_to "go", challenge_path(user_challenge.challenge) %>
+<%# end %>
 
-<h2>programme en cours</h2>
-<% @programs_ungoing.each do |user_program| %>
-<%= user_program.program.title %>
-<%= link_to "go", program_path(user_program.program) %>
+<!-- <h2>challenger</h2> -->
+<%# @challengers.each do |challenger| %>
+<%#= challenger.user_challenge.user.pseudo %>
+<%#= link_to "go", challenge_path(challenger.user_challenge.challenge) %>
+<%# end %>
 
-<% end %>
-
-<h2>challenge en cours</h2>
-<% @challenges_ungoing.each do |user_challenge| %>
-<%= user_challenge.challenge.title %>
-<%= link_to "go", challenge_path(user_challenge.challenge) %>
-
-<% end %>
-
-<h2>challenger</h2>
-<% @challengers.each do |challenger| %>
-<%= challenger.user_challenge.user.pseudo %>
-<%= link_to "go", challenge_path(challenger.user_challenge.challenge) %>
-
-<% end %>
 </div>
+<div class="bkg-white">
+  <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
+    <div class="big-avatar bt-white"><%= current_user.avatar %></div>
+  </div>
 
+  <div class="container no-space bkg-line">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema" id="tt-padtop">MES PROGRAMMES</div>
+        <div class="elements">
 
+          <% @programs_ungoing.each do |user_program| %>
+
+          <div class="element">
+            <div class="badge-tasks bt-yellow"></div>
+            <div class="program-title-task"><%= user_program.program.title %></div>
+              <%= link_to "go", program_path(user_program.program) %>
+              <%# end %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+
+  <div class="container no-space bkg-line">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema" id="tt-padtop">MES CHALLENGES</div>
+        <div class="elements">
+
+        <% @challenges_ungoing.each do |user_challenge| %>
+
+          <div class="element">
+            <div class="badge-tasks bt-yellow"></div>
+            <div class="program-title-task"><%= user_challenge.challenge.title %></div>
+            <%= link_to "go", challenge_path(user_challenge.challenge) %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+
+  <div class="container no-space" id="footer-pad">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema tt-padtop">CHALLENGERS</div>
+        <div class="elements">
+
+        <% @challengers.each do |challenger| %>
+
+          <div class="element tt-padtop">
+            <div class="badge-avatar bt-white"></div>
+            <div class="program-title-task pseudo pseudo-mini"><%= challenger.user_challenge.user.pseudo %></div>
+            <%= link_to "go", challenge_path(challenger.user_challenge.challenge) %>
+          </div>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</div>

@@ -4,7 +4,7 @@
       - 1er programme
       - précédent programme complété
  -->
- <div>
+ <div id="bottom-page">
   <div class="container no-space bkg-yellow">
     <div class="row">
       <div class="col-12">
@@ -15,8 +15,7 @@
 
           <div class="element">
             <div class="badge-tasks bt-yellow"></div>
-            <div class="program-title-task">
-            <%= program.title %></div>
+            <div class="program-title-task"><%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
               <%= link_to "go", program_path(program) %>
             <% end %>
@@ -42,8 +41,7 @@
 
           <div class="element">
             <div class="badge-tasks bt-green"></div>
-            <div class="program-title-task">
-            <%= program.title %></div>
+            <div class="program-title-task"><%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
               <%= link_to "go", program_path(program) %>
             <% end %>
@@ -69,8 +67,7 @@
 
           <div class="element">
             <div class="badge-tasks bt-blue"></div>
-            <div class="program-title-task">
-            <%= program.title %></div>
+            <div class="program-title-task"><%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
               <%= link_to "go", program_path(program) %>
             <% end %>
@@ -96,8 +93,7 @@
 
           <div class="element">
             <div class="badge-tasks bt-red"></div>
-            <div class="program-title-task">
-            <%= program.title %></div>
+            <div class="program-title-task"><%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
               <%= link_to "go", program_path(program) %>
             <% end %>
