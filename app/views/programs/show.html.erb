@@ -1,10 +1,13 @@
-<div class="container">
-  <h1><%= @program.title  %></h1>
-  <p><%= @program.description %></p>
-  <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
- <%= simple_form_for [@program, @user_program] do |f| %>
-
-    <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-ghost btn-hover-green flat-show-btn font-raleway" %>
-  <% end %>
+ <div class="wrapper background-color-program">
+    <div class="program-content text-center">
+    <%= cl_image_tag @program.picture, :class => "program_image" %>
+    <h1><%= @program.title  %></h1>
+    <hr width="50%"/>
+    <p><%= @program.description %></p>
+    <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
+    <%= simple_form_for [@program, @user_program] do |f| %>
+    <%= f.button :submit, "Commencer", class: "btn-main" %>
+    <% end %>
+    </div>
+  </div>
 </div>
-
