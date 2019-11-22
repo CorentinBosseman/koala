@@ -101,7 +101,7 @@ un_nouveau_depart = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
   category: "Nourriture",
-  icon: File.open(Rails.root.join("app/assets/images/icons/new-start.svg"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/icons/new-start.svg"))
   )
 
 la_santé_dabord = Program.create!(
