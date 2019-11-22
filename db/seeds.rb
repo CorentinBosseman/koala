@@ -125,7 +125,7 @@ un_etat_desprit = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Déchets",
   position: 1,
-  picture: File.open(Rails.root.join("db/fixtures/programs/un_etat_desprit.jpg"))
+  picture: File.open(Rails.root.join("db/fixtures/programs/un_etat_desprit.jpg")),
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/state-mind.png"))
 
   )
