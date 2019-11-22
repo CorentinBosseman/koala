@@ -35,3 +35,36 @@ line-height: 32px;
 text-align: center;
 color: $brown-very-dark;
 }
+#big-number {
+font-family: Red Hat Text;
+font-style: normal;
+font-weight: 500;
+font-size: 64px;
+line-height: 85px;
+display: flex;
+align-items: center;
+text-align: center;
+color: $brown-very-dark;
+}
+#duration-number  {
+font-family: Red Hat Text;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 34px;
+display: flex;
+align-items: center;
+text-align: center;
+color: $brown-very-dark;
+opacity: 0.5;
+}
+#daycount-color {
+  border-color: $green_button;
+}
+.top-pad  {
+  padding-top: 25px;
+}
+.adjust-desc-margin {
+  margin-top: 40px;
+  margin-bottom: 75px;
+}
