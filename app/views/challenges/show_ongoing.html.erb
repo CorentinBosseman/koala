@@ -5,14 +5,13 @@
   </div>
     <i class="far fa-times-circle fa-2x"></i>
     <% end %>
-<br>
+
   <div class="d-flex flex-column d-flex align-items-center ml-4">
-   <div class="daycount d-flex align-items-center">
-     <h1><strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></h1></strong><p>/<%= @challenger.user_challenge.duration %></p>
+   <div class="daycount d-flex align-items-center" id="daycount-color">
+     <h1 id="big-number"><strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></h1></strong><p>/<%= @challenger.user_challenge.duration %></p>
    </div>
-    <h2><%= @challenger.user_challenge.challenge.title %></h2>
-    <hr width="50%"/>
-    <p class="challenge-desciption"><%= @challenger.user_challenge.challenge.description%></p>
+    <h2 class="title-modal top-pad"><%= @challenger.user_challenge.challenge.title %></h2>
+    <p class="adjust-desc-margin thema-details"><%= @challenger.user_challenge.challenge.description%></p>
     <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: " btn btn-main"  %>
   </div>
 
