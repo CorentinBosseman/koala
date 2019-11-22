@@ -1,6 +1,10 @@
 
 
  <div id="bottom-page">
+  <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
+    <div class="top-avatar bt-white"><%= current_user.avatar %></div>
+  </div>
+
   <div class="container no-space bkg-yellow">
 <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
   </div>
@@ -8,7 +12,7 @@
 <%= link_to "Challenges ", challenges_path, class: " btn btn-switch"  %>
     <div class="row">
       <div class="col-12">
-        <div class="title-thema" id="tt-padtop">NOURRITURE</div>
+        <div class="title-thema adjust-badge-pos" id="tt-padtop">NOURRITURE</div>
         <div class="elements">
 
         <% @programs_food.each_with_index do |program, index| %>
@@ -35,7 +39,7 @@
   <div class="container no-space bkg-green">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema">DÉCHETS</div>
+        <div class="title-thema adjust-badge-pos">DÉCHETS</div>
         <div class="elements">
 
         <% @programs_waste.each_with_index do |program, index| %>
@@ -62,7 +66,7 @@
     <div class="container no-space bkg-blue">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema">ÉNERGIE</div>
+        <div class="title-thema adjust-badge-pos">ÉNERGIE</div>
         <div class="elements">
 
         <% @programs_energy.each_with_index do |program, index| %>
@@ -89,7 +93,7 @@
   <div class="container no-space bkg-red">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema">TRANSPORT</div>
+        <div class="title-thema adjust-badge-pos">TRANSPORT</div>
         <div class="elements">
 
         <% @programs_transport.each_with_index do |program, index| %>
