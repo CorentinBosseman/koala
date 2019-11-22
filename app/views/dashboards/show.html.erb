@@ -1,7 +1,7 @@
 </div>
 <div class="bkg-white">
   <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
-    <div class="big-avatar bt-white"><%= current_user.avatar %></div>
+    <%= cl_image_tag @current_user.avatar, :class => "big-avatar bt-white" %>
   </div>
 
   <div class="container no-space bkg-line">
@@ -54,7 +54,7 @@
 
           <%= link_to challenge_path(challenger.user_challenge.challenge) do %>
           <div class="element tt-padtop">
-            <div class="badge-avatar bt-white"></div>
+            <%= cl_image_tag challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
             <div class="program-title-task pseudo pseudo-mini"><%= challenger.user_challenge.user.pseudo %></div>
           </div>
         <% end %>
