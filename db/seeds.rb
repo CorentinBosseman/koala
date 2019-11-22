@@ -103,6 +103,7 @@ un_nouveau_depart = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
   category: "Nourriture",
+  icon: File.open(Rails.root.join("app/assets/images/icons/new-start.svg"))
   )
 
 la_santé_dabord = Program.create!(
@@ -112,14 +113,12 @@ la_santé_dabord = Program.create!(
   category: "Nourriture",
   )
 
-# un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 vivre_avec_saison = Program.create!(
   title: "Vivre avec les saisons",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Nourriture",
   position: 2,
   )
-# vivre_avec_saison = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 un_etat_desprit = Program.new(
   title: "Un état d'esprit",
