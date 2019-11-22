@@ -1,4 +1,19 @@
-.background-color-program {
+.background-color-program-waste {
   background-color: #FAFEF7;
+  height: 100vh;
+}
+
+.background-color-program-food {
+  background-color: $yellow_very_ligth;
+  height: 100vh;
+}
+
+.background-color-program-transport {
+  background-color: $red_very_light;
+  height: 100vh;
+}
+
+.background-color-program-energy {
+  background-color: $blue_very_light;
   height: 100vh;
 }
