@@ -6,12 +6,11 @@
   <div class="wrapper text-center">
     <%= image_tag "star.png", alt: "star", :class => "star_image" %>
     <%#= cl_image_tag @challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
-    <h2>Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
+    <h2 class="task-modal">Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
     <br>
-    <h2><%= @challenger.user_challenge.challenge.title %></h2>
-    <p><%= @challenger.user_challenge.challenge.description %></p>
-    <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white"  %>
-    <br>
-    <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent"  %>
+    <h2 class="modal-thema"><%= @challenger.user_challenge.challenge.title %></h2>
+    <p class="thema-details"><%= @challenger.user_challenge.challenge.description %></p>
+    <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white" %>
+    <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent" %>
   </div>
 </div>
