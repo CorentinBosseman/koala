@@ -6,6 +6,7 @@
   </div>
 
   <div class="container no-space bkg-yellow">
+
   <%= link_to "Programmes", programs_path, class: " btn btn-unswitch"  %><%= link_to "Challenges ", challenges_path, class: " btn btn-switch"  %>
     <div class="row">
       <div class="col-12">
@@ -16,7 +17,7 @@
 
               <%= link_to program_path(program) do%>
           <div class="element">
-            <div class="badge-tasks bt-yellow"></div>
+            <%= cl_image_tag program.icon, :class => "badge-tasks bt-yellow" %>
             <div class="program-title-task"><%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
             <% end %>
