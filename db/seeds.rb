@@ -331,7 +331,7 @@ user_challenge_lumieres_vertes = UserChallenge.create!(
   end_date: Date.today,
   duration: 7,
   user: corentin,
-  challenge: lumieres_vertes,
+  challenge: achete_en_vrac,
   )
 
 Challenger.create!(
@@ -346,7 +346,7 @@ user_challenge_jarrete_lavion = UserChallenge.create!(
   end_date: Date.today,
   duration: 14,
   user: corentin,
-  challenge: jarrete_lavion,
+  challenge: arrete_fast_foods,
   )
 
 Challenger.create!(
@@ -360,7 +360,7 @@ user_challenge_jarrete_lavion_2 = UserChallenge.create!(
   end_date: Date.today + 14,
   duration: 28,
   user: corentin,
-  challenge: jarrete_lavion,
+  challenge: arrete_fast_foods,
   )
 
 Challenger.create!(
