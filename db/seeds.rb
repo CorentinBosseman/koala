@@ -101,7 +101,7 @@ un_nouveau_depart = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
   category: "Nourriture",
-  icon: File.open(Rails.root.join("db/fixtures/programs/icons/new-start.svg"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/new-start.png"))
   )
 
 la_santé_dabord = Program.create!(
@@ -109,6 +109,7 @@ la_santé_dabord = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 3,
   category: "Nourriture",
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/health-first.png"))
   )
 
 vivre_avec_saison = Program.create!(
@@ -116,6 +117,7 @@ vivre_avec_saison = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Nourriture",
   position: 2,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/live-seasons.png"))
   )
 
 un_etat_desprit = Program.create!(
@@ -124,6 +126,8 @@ un_etat_desprit = Program.create!(
   category: "Déchets",
   position: 1,
   picture: File.open(Rails.root.join("db/fixtures/programs/un_etat_desprit.jpg"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/state-mind.png"))
+
   )
 
 les_mains_dans_le_cambouis = Program.create!(
@@ -131,6 +135,8 @@ les_mains_dans_le_cambouis = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Déchets",
   position: 2,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/hands-in.png"))
+
   )
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -139,6 +145,8 @@ la_guerre_au_plastique = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Déchets",
   position: 3,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/plastic-war.png"))
+
   )
 # un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -147,6 +155,8 @@ premieres_economies = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Energie",
   position: 1,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/first-savings.png"))
+
   )
 # premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -155,6 +165,8 @@ faisons_la_lumiere = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Energie",
   position: 2,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/light-on.png"))
+
   )
 # premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -164,6 +176,7 @@ la_voiture_au_garage = Program.create!(
   position: 1,
   category: "Transport",
   )
+
 mobilite_zero_carbone = Program.create!(
   title: "Mobilité zéro carbone",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
@@ -283,6 +296,8 @@ arrete_fast_foods = Challenge.create!(
   description: "McDonalds, KFC, Burger King, etc, je décide enfin de laisser tout ça derrière mois. Une cure aussi bonne pour l'estomac que le porte monnaie !",
   category: "Nourriture",
   position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-fastfood.png"))
+
   )
 
 # Challenge à refuser
@@ -291,6 +306,7 @@ achete_en_vrac = Challenge.create!(
   description: "Les sacs en plastique et autres emballages ne manquent pas, acheter en vrac est l'un des premiers gestes pour en limiter l'impact !",
   category: "Déchets",
   position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/buy-bulk.png"))
   )
 
 # Challenge terminé
