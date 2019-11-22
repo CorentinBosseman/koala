@@ -1,14 +1,14 @@
 
-
  <div id="bottom-page">
   <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
     <div ><%= cl_image_tag @current_user.avatar, :class => "top-avatar bt-white" %></div>
   </div>
 
   <div class="container no-space bkg-yellow">
-  </div>
-        <%= link_to "Programmes", programs_path, class: " btn btn-unswitch"  %>
-        <%= link_to "Challenges ", challenges_path, class: " btn btn-switch"  %>
+    <div id="top-pos">
+      <%= link_to "Programmes", programs_path, class: " btn btn-unswitch"  %><%= link_to "Challenges ", challenges_path, class: " btn btn-switch"  %>
+    </div>
+
     <div class="row">
       <div class="col-12">
         <div class="title-thema adjust-badge-pos" id="tt-padtop">NOURRITURE</div>
@@ -104,7 +104,7 @@
             <div class="badge-tasks bt-red"></div>
 
 
-            <div class="program-title-task pb-4">
+            <div class="program-title-task" id="bottom-page">
             <%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
             <% end %>
