@@ -18,7 +18,9 @@
 
               <%= link_to program_path(program) do%>
           <div class="element">
-            <%= cl_image_tag program.icon, :class => "badge-tasks bt-yellow" %>
+            <div class="badge-tasks bt-yellow">
+              <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+            </div>
             <div class="program-title-task"><%= program.title %></div>
             <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
             <% end %>

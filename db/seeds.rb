@@ -127,7 +127,6 @@ un_etat_desprit = Program.create!(
   position: 1,
   picture: File.open(Rails.root.join("db/fixtures/programs/un_etat_desprit.jpg")),
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/state-mind.png"))
-
   )
 
 les_mains_dans_le_cambouis = Program.create!(
