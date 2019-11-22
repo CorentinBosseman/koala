@@ -314,6 +314,8 @@ lumieres_vertes = Challenge.create!(
   description: "",
   category: "Energie",
   position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/hands-in.png"))
+
   )
 
 # Challenge en cours
@@ -331,7 +333,7 @@ user_challenge_lumieres_vertes = UserChallenge.create!(
   end_date: Date.today,
   duration: 7,
   user: corentin,
-  challenge: achete_en_vrac,
+  challenge: lumieres_vertes,
   )
 
 Challenger.create!(
@@ -380,7 +382,7 @@ user_challenge_achete_en_vrac = UserChallenge.create!(
 Challenger.create!(
   user_challenge: user_challenge_achete_en_vrac,
   friend: remi,
-  status: "Accepté",
+  status: "En attente",
 )
 
 Challenger.create!(
@@ -388,5 +390,4 @@ Challenger.create!(
   friend: corentin,
   status: "En attente",
 )
-
 
