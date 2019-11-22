@@ -27,7 +27,7 @@
   <div class="container no-space bkg-line">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema spacing-margin" id="tt-padtop">MES CHALLENGES</div>
+        <div class="title-thema spacing-margin" >MES CHALLENGES</div>
         <div class="elements">
 
         <% @challenges_ungoing.each do |user_challenge| %>
@@ -53,7 +53,7 @@
         <% @challengers.each do |challenger| %>
 
           <%= link_to challenge_path(challenger.user_challenge.challenge) do %>
-          <div class="element tt-padtop">
+          <div class="element">
             <%= cl_image_tag challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
             <div class="program-title-task pseudo pseudo-mini"><%= challenger.user_challenge.user.pseudo %></div>
           </div>
