@@ -27,17 +27,15 @@ corentin = User.create!(
   pseudo: "corentin",
   email: "corentin@example.com",
   password: "password",
-  # avatar: File.open(Rails.root.join("db/fixtures/users/corentin.jpg")),
+  avatar: File.open(Rails.root.join("db/fixtures/users/corentin_avatar.jpeg")),
   )
 
 remi = User.create!(
   pseudo: "remi",
   email: "remi@example.com",
   password: "password",
-  avatar: "",
+  avatar: File.open(Rails.root.join("db/fixtures/users/remi_avatar.jpeg")),
   )
-
-# remi.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 laszlo = User.create!(
   pseudo: "laszlo",
@@ -121,14 +119,14 @@ vivre_avec_saison = Program.create!(
   )
 # vivre_avec_saison = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
-un_etat_desprit = Program.new(
+un_etat_desprit = Program.create!(
   title: "Un état d'esprit",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Déchets",
   position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/un_etat_desprit.jpg"))
   )
-  un_etat_desprit.picture = File.open(Rails.root.join("db/fixtures/programs/un_etat_desprit.jpg"))
-  un_etat_desprit.save
+
 les_mains_dans_le_cambouis = Program.create!(
   title: "Les mains dans le cambouis",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
