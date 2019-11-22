@@ -1,4 +1,12 @@
- <div class="wrapper background-color-program">
+<% if @program.category == "Déchets" %>
+  <div class="wrapper background-color-program-waste">
+  <% elsif @program.category == "Nourriture" %>
+  <div class="wrapper background-color-program-food">
+  <% elsif @program.category == "Transport" %>
+  <div class="wrapper background-color-program-transport">
+  <% else %>
+  <div class="wrapper background-color-program-energy">
+  <% end %>
     <div class="program-content text-center">
     <%= cl_image_tag @program.picture, :class => "program_image" %>
     <h1><%= @program.title  %></h1>
