@@ -18,7 +18,7 @@
      <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %></div>
 
       <div class="program-title-task pseudo pseudo-mini"><%= friendship.friend.pseudo %></div>
-
+</div>
     <% end %>
     </div> <!-- elements -->
       </div> <!-- col-12 -->
@@ -31,7 +31,9 @@
 
   <% @friendships_pending.each do |friendship_pending| %>
   <div class="element">
-         <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %>
+      <div class="badge-tasks bt-yellow">
+
+         <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %></div>
 
      <div class="program-title-task pseudo pseudo-mini"><%= friendship_pending.friend.pseudo %></div>
   <% end %>

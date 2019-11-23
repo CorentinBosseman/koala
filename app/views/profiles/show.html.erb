@@ -1,9 +1,9 @@
-<div id="bottom-page">
+<div class="background-color-profile">
   <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
     <div ><%= cl_image_tag @current_user.avatar, :class => "top-avatar bt-white" %></div>
   </div>
 
-  <div class="container no-space bkg-yellow">
+  <div class="container no-space ">
       <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch"  %><%= link_to "Mes Amis", friendships_path, class: " btn btn-switch"  %>
 
 <div class="row">
@@ -25,7 +25,6 @@
         </div> <!-- elements -->
       </div> <!-- col-12 -->
     </div> <!-- row -->
-  </div> <!-- container -->
 
 <div class="row">
       <div class="col-12">
@@ -43,7 +42,4 @@
 </div>
         <% end %>
         <% end %>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
-  </div> <!-- container -->
+
