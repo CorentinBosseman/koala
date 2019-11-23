@@ -302,7 +302,7 @@ arrete_fast_foods = Challenge.create!(
 # Challenge à refuser
 achete_en_vrac = Challenge.create!(
   title: "J'achète en vrac",
-  description: "Les sacs en plastique et autres emballages ne manquent pas, acheter en vrac est l'un des premiers gestes pour en limiter l'impact !",
+  description: "Les sacs en plastique et autres emballages sont partout, acheter en vrac est l'un des premiers gestes pour en limiter l'impact !",
   category: "Déchets",
   position: 1,
   picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/buy-bulk.png"))
