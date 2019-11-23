@@ -9,6 +9,8 @@
   transition: opacity 0.3s ease;
   width: 140px;
   text-align: center;
+  position: relative;
+  bottom: 12px;
 
     &:hover {
     opacity: 0.6;
@@ -25,8 +27,11 @@
   opacity: 1;
   transition: opacity 0.3s ease;
   width: 140px;
-  margin-left: 44px;
+  margin-left: 54px;
   text-align: center;
+  position: relative;
+  bottom: 12px;
+
     &:hover {
     opacity: 0.6;
     color: #796F54;
