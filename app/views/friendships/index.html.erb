@@ -16,7 +16,7 @@
 
   <% @friendships_accepted.each do |friendship| %>
   <div class="element">
-  <div class="badge-tasks bt-yellow">
+  <div class="badge-tasks bt-white">
      <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %></div>
 
       <div class="program-title-task pseudo pseudo-mini"><%= friendship.friend.pseudo %></div>
@@ -33,7 +33,7 @@
 
   <% @friendships_pending.each do |friendship_pending| %>
   <div class="element">
-      <div class="badge-tasks bt-yellow">
+      <div class="badge-tasks bt-white">
 
          <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %></div>
 
