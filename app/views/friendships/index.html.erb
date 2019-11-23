@@ -1,16 +1,46 @@
+<div class="background-color-profile">
 
-<h2>Mes amis</h2>
+<div id="bottom-page">
+  <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
+    <div ><%= cl_image_tag current_user.avatar, :class => "top-avatar bt-white" %></div>
+  </div>
+
+
+  <div class="container no-space ">
+      <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch-challenges"  %><%= link_to "Mes Amis ", friendships_path, class: " btn btn-switch-challenges"  %>
+
+<div class="row">
+      <div class="col-12">
+        <div class="title-thema adjust-badge-pos" id="tt-padtop">Mes amis</div>
+        <div class="elements">
+
   <% @friendships_accepted.each do |friendship| %>
-      <%= friendship.friend.pseudo %>
-      <%#= cl_image_tag friendship.friend.pseudo.avatar, height: 200, width: 300, crop: :fill%>
+  <div class="element">
+  <div class="badge-tasks bt-yellow">
+     <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %></div>
+
+      <div class="program-title-task pseudo pseudo-mini"><%= friendship.friend.pseudo %></div>
+</div>
     <% end %>
+    </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
 
-<h2>Mes demandes amis</h2>
+<div class="row">
+      <div class="col-12">
+        <div class="title-thema adjust-badge-pos" id="tt-padtop">Mes demandes amis</div>
+        <div class="elements">
+
   <% @friendships_pending.each do |friendship_pending| %>
-    <%= friendship_pending.friend.pseudo %>
-    <%#= cl_image_tag friendship.friend.pseudo.avatar, height: 200, width: 300, crop: :fill%>
-    <%= link_to "Valider", accept_friendship_path(friendship_pending), method: :patch, class: "btn btn-ghost btn-border-blue"%>
-    <%= link_to "Refuser", decline_friendship_path(friendship_pending), method: :patch, class: "btn btn-ghost btn-border-red" %>
-  <% end %>
+  <div class="element">
+      <div class="badge-tasks bt-yellow">
 
-<%= link_to "Ajouter un ami", new_friendship_path %>
+         <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %></div>
+
+     <div class="program-title-task pseudo pseudo-mini"><%= friendship_pending.friend.pseudo %></div>
+  <% end %>
+   </div>
+  </div>
+   </div>
+<%= link_to "Ajouter un ami", new_friendship_path, class: " btn btn-main"  %>
+

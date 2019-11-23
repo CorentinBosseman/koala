@@ -41,7 +41,7 @@ laszlo = User.create!(
   pseudo: "laszlo",
   email: "laszlo@example.com",
   password: "password",
-  avatar: "",
+  avatar: File.open(Rails.root.join("db/fixtures/users/remi_avatar.jpg")),
   )
 # laszlo.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -57,7 +57,7 @@ daphnee = User.create!(
   pseudo: "daphnée",
   email: "daphnee@example.com",
   password: "password",
-  avatar: "",
+  avatar: File.open(Rails.root.join("db/fixtures/users/remi_avatar.jpg")),
   )
 
 yann = User.create!(
