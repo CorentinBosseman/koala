@@ -1,41 +1,100 @@
-<div class="container">
-  <h2>Nourriture</h2>
+ <div id="bottom-page">
+  <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
+    <div ><%= cl_image_tag current_user.avatar, :class => "top-avatar bt-white" %></div>
+  </div>
+
+
+  <div class="container no-space bkg-yellow">
+      <%= link_to "Programmes", programs_path, class: " btn btn-unswitch-challenges"  %><%= link_to "Challenges ", challenges_path, class: " btn btn-switch-challenges"  %>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema adjust-badge-pos" id="tt-padtop">NOURRITURE</div>
+        <div class="elements">
+
   <% @challenges_food.each do |challenge| %>
+
     <%= link_to challenge_path(challenge) do %>
-      <%= challenge.title %>
-      <%= current_challenger(challenge).status %>
-      <%#= challenge.status %>
+  <div class="element">
+            <div class="badge-tasks bt-yellow">
+<!--             Icon challenge
+ -->            </div>
+      <div class="program-title-task"><%= challenge.title %></div>
+<!--       <%= current_challenger(challenge).status %>
+ -->      <%#= challenge.status %>
   <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
+  </div>
     <% end %>
   <% end %>
 
-  <h2>Déchets</h2>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div>
+
+ <div class="container no-space bkg-green">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema adjust-badge-pos">DÉCHETS</div>
+        <div class="elements">
+
   <% @challenges_waste.each do |challenge| %>
+
      <%= link_to challenge_path(challenge) do %>
-      <%= challenge.title %>
-      <%= current_challenger(challenge).status %>
-      <%#= challenge.status %>
-  <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
-    <% end %>
-  <% end %>
+     <div class="element">
+            <div class="badge-tasks bt-green">
+              <!-- icon challenge -->
+              </div>
+      <div class="program-title-task"><%= challenge.title %></div>
+       </div>
+        <% end %>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div>
 
-  <h2>Energie</h2>
+<div class="container no-space bkg-blue">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema adjust-badge-pos">ÉNERGIE</div>
+        <div class="elements">
+
   <% @challenges_energy.each do |challenge| %>
-    <%= link_to challenge_path(challenge) do %>
-      <%= challenge.title %>
-      <%= current_challenger(challenge).status %>
-      <%#= challenge.status %>
-  <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
-    <% end %>
-  <% end %>
 
-  <h2>Transport</h2>
+     <%= link_to challenge_path(challenge) do %>
+     <div class="element">
+            <div class="badge-tasks bt-blue">
+              <!-- icon challenge -->
+              </div>
+      <div class="program-title-task"><%= challenge.title %></div>
+       </div>
+        <% end %>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div>
+
+
+<div class="container no-space bkg-red">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-thema adjust-badge-pos">TRANSPORT</div>
+        <div class="elements">
+
   <% @challenges_transport.each do |challenge| %>
-    <%= link_to challenge_path(challenge) do %>
-      <%= challenge.title %>
-      <%= current_challenger(challenge).status %>
-      <%#= challenge.status %>
-  <%#= cl_image_tag challenge.photo, height: 200, width: 300, crop: :fill%>
-    <% end %>
-  <% end %>
-</div>
+
+     <%= link_to challenge_path(challenge) do %>
+     <div class="element">
+            <div class="badge-tasks bt-red">
+              <!-- icon challenge -->
+              </div>
+      <div class="program-title-task"><%= challenge.title %></div>
+       </div>
+        <% end %>
+        <% end %>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div>
