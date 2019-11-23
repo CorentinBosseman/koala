@@ -9,6 +9,7 @@
     <h2 class="task-modal">Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
     <br>
     <h2 class="modal-thema"><%= @challenger.user_challenge.challenge.title %></h2>
+    <br>
     <p class="thema-details"><%= @challenger.user_challenge.challenge.description %></p>
     <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white" %>
     <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent" %>
