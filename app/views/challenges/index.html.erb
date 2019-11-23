@@ -17,8 +17,8 @@
     <%= link_to challenge_path(challenge) do %>
   <div class="element">
             <div class="badge-tasks bt-yellow">
-<!--             Icon challenge
- -->            </div>
+              <%= cl_image_tag challenge.picture, crop: :fill, height: 30 %>
+          </div>
       <div class="program-title-task"><%= challenge.title %></div>
 <!--       <%= current_challenger(challenge).status %>
  -->      <%#= challenge.status %>
@@ -43,7 +43,7 @@
      <%= link_to challenge_path(challenge) do %>
      <div class="element">
             <div class="badge-tasks bt-green">
-              <!-- icon challenge -->
+              <%= cl_image_tag challenge.picture, crop: :fill, height: 30 %>
               </div>
       <div class="program-title-task"><%= challenge.title %></div>
        </div>
@@ -65,7 +65,7 @@
      <%= link_to challenge_path(challenge) do %>
      <div class="element">
             <div class="badge-tasks bt-blue">
-              <!-- icon challenge -->
+              <%= cl_image_tag challenge.picture, crop: :fill, height: 30 %>
               </div>
       <div class="program-title-task"><%= challenge.title %></div>
        </div>
@@ -88,7 +88,7 @@
      <%= link_to challenge_path(challenge) do %>
      <div class="element">
             <div class="badge-tasks bt-red">
-              <!-- icon challenge -->
+              <%= cl_image_tag challenge.picture, crop: :fill, height: 30 %>
               </div>
       <div class="program-title-task"><%= challenge.title %></div>
        </div>
