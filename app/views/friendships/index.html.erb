@@ -1,10 +1,12 @@
+<div class="background-color-profile">
+
 <div id="bottom-page">
   <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
     <div ><%= cl_image_tag current_user.avatar, :class => "top-avatar bt-white" %></div>
   </div>
 
 
-  <div class="container no-space bkg-yellow">
+  <div class="container no-space ">
       <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch-challenges"  %><%= link_to "Mes Amis ", friendships_path, class: " btn btn-switch-challenges"  %>
 
 <div class="row">
