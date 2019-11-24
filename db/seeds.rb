@@ -283,42 +283,99 @@ program_ongoing2 = UserProgram.create!(
   completed: false,
   )
 
+program_ongoing3 = UserProgram.create!(
+  user: corentin,
+  program: la_voiture_au_garage,
+  completed: false,
+  )
 UserTask.create!(user_program: program_ongoing2, task: task_1_vivre_avec_saison, completed: true)
 UserTask.create!(user_program: program_ongoing2, task: task_2_vivre_avec_saison, completed: false)
 
 
 puts "Creating Challenges"
 
-# challenge à créer
+# challenge Nourriture
+jarrete_soda = Challenge.create!(
+  title: "J'arrête les sodas",
+  description: "Les sodas sont des produits industriels et transformés très peu respectueux de l'environnement, privélégions l'eau !",
+  category: "Nourriture",
+  position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-soda.png"))
+  )
+
 arrete_fast_foods = Challenge.create!(
   title: "J'arrête les fast-foods",
   description: "McDonalds, KFC, Burger King, etc, je décide enfin de laisser tout ça derrière mois. Une cure aussi bonne pour l'estomac que le porte monnaie !",
   category: "Nourriture",
-  position: 1,
+  position: 2,
   picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-fastfood.png"))
-
   )
 
-# Challenge à refuser
+jarrete_plats_prepares = Challenge.create!(
+  title: "J'arrête les plats préparés",
+  description: "Les plats préparés sont des produits industriels et transformés très peu respectueux de l'environnement, privélégions les plats faits maison !",
+  category: "Nourriture",
+  position: 3,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-pizza.png"))
+  )
+
+# Challenge Dechets
+jarrete_plastique = Challenge.create!(
+  title: "J'achète les bouteilles en plastique",
+  description: "Les bouteilles plastiques sont l'une des causes du développement d'un continent plastique, passons à l'eau du robinet !",
+  category: "Déchets",
+  position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-plastic-bottle.png"))
+  )
+
+achete_produits_neufs = Challenge.create!(
+  title: "J'arrête les produits neufs",
+  description: "Bien souvent, nous jetons des produits facilement réparables, pensons à réparer avant d'acheter et si nécessaire privilégions l'occasion !",
+  category: "Déchets",
+  position: 2,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-new.png"))
+  )
+
 achete_en_vrac = Challenge.create!(
   title: "J'achète en vrac",
   description: "Les sacs en plastique et autres emballages sont partout, acheter en vrac est l'un des premiers gestes pour en limiter l'impact !",
   category: "Déchets",
-  position: 1,
+  position: 3,
   picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/buy-bulk.png"))
   )
 
-# Challenge terminé
-lumieres_vertes = Challenge.create!(
-  title: "Lumières vertes",
-  description: "",
-  category: "Energie",
-  position: 1,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/hands-in.png"))
-
+faire_savon = Challenge.create!(
+  title: "Je fais mes savons",
+  description: "Faire ses produits ménagers et un acte simple et économe autant pour vos poches que l'environnement !",
+  category: "Déchets",
+  position: 4,
   )
 
-# Challenge en cours
+# Challenge Energie
+exces_electriques = Challenge.create!(
+  title: "Excès électriques",
+  description: "De simples gestes peuvent à la fois réduire notre facture électrique et environnemental, pensez à éteindre la lumière et vos multiprises !",
+  category: "Energie",
+  position: 1,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/energy-excess.png"))
+  )
+
+reduire_chauffage = Challenge.create!(
+  title: "Réduire son chauffage",
+  description: "Réduire de quelques degrés notre chauffage peut à la fois réduire nos factures et notre impact environnemental !",
+  category: "Energie",
+  position: 2,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/reduce-heater.png"))
+  )
+
+gachis_deau = Challenge.create!(
+  title: "Le gachis d'eau",
+  description: "Un français consomme des centaines de litres d'eau par jour directement, des milliers indirectement !",
+  category: "Energie",
+  position: 3,
+  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png"))
+  )
+# Challenge transport
 jarrete_lavion = Challenge.create!(
   title: "J'arrête l'avion",
   description: "L'avion est l'un des moyens de transports des plus polluants, je vais donc limiter mes déplacements ou privilégier le train !",
@@ -326,31 +383,38 @@ jarrete_lavion = Challenge.create!(
   position: 1,
   )
 
-jarrete_soda = Challenge.create!(
-  title: "J'arrête les sodas",
-  description: "Les sodas sont des produits industriels et transformés très peu respectueux de l'environnement, privélégions l'eau !",
-  category: "Nourriture",
-  position: 1,
+challenge_velo = Challenge.create!(
+  title: "Je prends le vélo",
+  description: "Pour les petits trajets, privilégions le vélo et si possible pour aller au travail !",
+  category: "Transport",
+  position: 2,
+  )
+
+mes_10000_pas = Challenge.create!(
+  title: "Mes 10 000 pas",
+  description: "10000 pas par jour",
+  category: "Transport",
+  position: 3,
   )
 
 puts "Creating User Challenges + Challengers"
 
-user_challenge_lumieres_vertes = UserChallenge.create!(
+user_challenge_exces_electriques = UserChallenge.create!(
   start_date: Date.today - 2,
   end_date: Date.today,
   duration: 7,
   user: corentin,
-  challenge: lumieres_vertes,
+  challenge: exces_electriques,
   )
 
 Challenger.create!(
-  user_challenge: user_challenge_lumieres_vertes,
+  user_challenge: user_challenge_exces_electriques,
   friend: corentin,
   status: "Accepté",
 )
 
 
-user_challenge_jarrete_lavion = UserChallenge.create!(
+user_challenge_jarrete_fast_foods = UserChallenge.create!(
   start_date: Date.today - 14,
   end_date: Date.today,
   duration: 14,
@@ -359,7 +423,21 @@ user_challenge_jarrete_lavion = UserChallenge.create!(
   )
 
 Challenger.create!(
-  user_challenge: user_challenge_jarrete_lavion,
+  user_challenge: user_challenge_jarrete_fast_foods,
+  friend: corentin,
+  status: "Réussi",
+)
+
+user_challenge_exces_electriques = UserChallenge.create!(
+  start_date: Date.today - 14,
+  end_date: Date.today,
+  duration: 14,
+  user: corentin,
+  challenge: exces_electriques,
+  )
+
+Challenger.create!(
+  user_challenge: user_challenge_exces_electriques,
   friend: corentin,
   status: "Réussi",
 )
