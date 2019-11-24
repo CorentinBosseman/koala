@@ -6,37 +6,35 @@
   <div class="container no-space ">
       <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch"  %><%= link_to "Mes Amis", friendships_path, class: " btn btn-switch"  %>
 
-<div class="row">
-      <div class="col-12">
-        <div class="title-thema adjust-badge-pos" id="tt-padtop">Programmes Completés</div>
-        <div class="elements">
-
-<% @programs_completed.each do |user_program| %>
-<%= link_to program_path(user_program.program) do %>
-<div class="element">
-            <div class="badge-tasks bt-yellow">
-              <%= cl_image_tag user_program.program.icon, crop: :fill, height: 30 %>
-            </div>
-<div class="program-title-task"><%= user_program.program.title %></div>
-
-</div>
+  <div class="row">
+    <div class="col-12">
+      <div class="title-thema adjust-badge-pos" id="tt-padtop">Programmes Completés</div>
+      <div class="elements">
+        <% @programs_completed.each do |user_program| %>
+        <%= link_to program_path(user_program.program) do %>
+        <div class="element">
+          <div class="badge-tasks bt-yellow">
+            <%= cl_image_tag user_program.program.icon, crop: :fill, height: 30 %>
+          </div>
+          <div class="program-title-task"><%= user_program.program.title %></div>
+        </div>
         <% end %>
         <% end %>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
+      </div> <!-- elements -->
+    </div> <!-- col-12 -->
+  </div> <!-- row -->
 
-<div class="row">
-      <div class="col-12">
-        <div class="title-thema adjust-badge-pos" id="tt-padtop">challenges Completés</div>
-        <div class="elements">
-<% @challenges_completed.each do |user_challenge| %>
-<%= link_to challenge_path(user_challenge.challenge) do %>
-<div class="element">
+  <div class="row">
+    <div class="col-12">
+      <div class="title-thema adjust-badge-pos" id="tt-padtop">challenges Completés</div>
+      <div class="elements">
+        <% @challenges_completed.each do |user_challenge| %>
+        <%= link_to challenge_path(user_challenge.challenge) do %>
+          <div class="element">
             <div class="badge-tasks bt-yellow">
               <%= cl_image_tag user_challenge.challenge.picture, crop: :fill, height: 30 %>
-</div>
-<div class="program-title-task"><%= user_challenge.challenge.title %></div>
+            </div>
+            <div class="program-title-task"><%= user_challenge.challenge.title %></div>
 
 
 </div>
