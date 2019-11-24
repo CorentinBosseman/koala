@@ -321,8 +321,15 @@ lumieres_vertes = Challenge.create!(
 # Challenge en cours
 jarrete_lavion = Challenge.create!(
   title: "J'arrête l'avion",
-  description: "",
+  description: "L'avion est l'un des moyens de transports des plus polluants, je vais donc limiter mes déplacements ou privilégier le train !",
   category: "Transport",
+  position: 1,
+  )
+
+jarrete_soda = Challenge.create!(
+  title: "J'arrête les sodas",
+  description: "Les sodas sont des produits industriels et transformés très peu respectueux de l'environnement, privélégions l'eau !",
+  category: "Nourriture",
   position: 1,
   )
 
