@@ -5,11 +5,11 @@
 
 
   <div class="container no-space bkg-yellow">
-      <%= link_to "Programmes", programs_path, class: " btn btn-unswitch-challenges"  %><%= link_to "Challenges ", challenges_path, class: " btn btn-switch-challenges"  %>
+      <%= link_to "Programmes", programs_path, class: "btn btn-unswitch-challenges"  %><%= link_to "Challenges ", challenges_path, class: " btn btn-switch-challenges"  %>
 
     <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos" id="tt-padtop">NOURRITURE</div>
+        <div class="title-thema adjust-badge-pos">Nourriture</div>
         <div class="elements">
 
   <% @challenges_food.each do |challenge| %>
@@ -35,7 +35,7 @@
  <div class="container no-space bkg-green">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos">DÉCHETS</div>
+        <div class="title-thema adjust-badge-pos">Déchets</div>
         <div class="elements">
 
   <% @challenges_waste.each do |challenge| %>
@@ -57,7 +57,7 @@
 <div class="container no-space bkg-blue">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos">ÉNERGIE</div>
+        <div class="title-thema adjust-badge-pos">Énergie</div>
         <div class="elements">
 
   <% @challenges_energy.each do |challenge| %>
@@ -80,7 +80,7 @@
 <div class="container no-space bkg-red">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos">TRANSPORT</div>
+        <div class="title-thema adjust-badge-pos">Transport</div>
         <div class="elements">
 
   <% @challenges_transport.each do |challenge| %>
@@ -90,7 +90,7 @@
             <div class="badge-tasks bt-red">
               <%= cl_image_tag challenge.icon, crop: :fill, height: 30 %>
               </div>
-      <div class="program-title-task"><%= challenge.title %></div>
+      <div class="program-title-task"id="bottom-page"><%= challenge.title %></div>
        </div>
         <% end %>
         <% end %>
