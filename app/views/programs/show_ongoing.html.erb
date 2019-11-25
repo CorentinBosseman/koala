@@ -1,5 +1,3 @@
-
-
 <div class="container-task">
   <div class="program-content text-center">
   <h1><%= @program.title  %></h1>
@@ -8,19 +6,21 @@
 
   <% @tasks.each do |task| %>
     <% if task.completed %>
-      <div class="badge-task-validated"></div>
-      <%#= task.status %>
-    <% elsif task.status == 'ongoing' %>
-      <div class="badge-task-ongoing">
+      <div class="badge-task-validated">
+        <%= link_to "Regarder", program_task_path(@program, task)%>
       <%#= task.status %>
       </div>
-    <% else task.status == 'not started' %>
+    <% elsif task.status == 'ongoing' %>
+      <div class="badge-task-ongoing">
+        <%= link_to "Regarder", program_task_path(@program, task)%>
+      <%#= task.title %>
+      </div>
+    <% else %>
       <div class="badge-task-locked"></div>
-      <%#= task.status %>
+      <%#= task.title %>
     <% end %>
   <% end %>
 </div>
-
 
 
 

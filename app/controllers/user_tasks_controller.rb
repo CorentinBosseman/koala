@@ -3,7 +3,7 @@ class UserTasksController < ApplicationController
     @user_task = UserTask.find(params[:id])
     program = @user_task.task.program
 
-    @user_task.completed = "true"
+    @user_task.completed = true
     @user_task.save
 
     next_task = Task.find_by(program: program, position: @user_task.task.position + 1)
