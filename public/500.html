@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title> oups! (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
+  <head>
+    <title> oups! (404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      .error-page {
+        background-color: #FCFCFC;
+        color: #A0573E;
+        text-align: center;
+        font-family: Ropa, sans-serif;
+        margin: 0;
+      }
 
-  .error-page {
-    background-color: #FCFCFC;
-    color: #A0573E;
-    text-align: center;
-    font-family: Ropa, sans-serif;
-    margin: 0;
-  }
+      .error-page div.dialog {
+        width: 95%;
+        max-width: 33em;
+        margin: 18em auto 0;
+      }
 
+      .koala1 {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
 
-  .error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 18em auto 0;
-  }
+      .koala2 {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+      }
+    </style>
+  </head>
 
-
-.koala1 {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-
-.koala2 {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-}
-
-
-  </style>
-</head>
-
-<body class="error-page">
-  <!-- This file lives in public/404.html -->
-<img class="koala1" src="/images/koala1.png" alt="">
-  <div class="dialog">
-      <h1>Oups, c'est une 500</h1>
-      <p>c'est un peu la mort la...</p>
-  </div>
-<img class="koala2" src="/images/koala2.png" alt="">
-</body>
+  <body class="error-page">
+    <!-- This file lives in public/404.html -->
+    <img class="koala1" src="/images/koala1.png" alt="">
+      <div class="dialog">
+        <h1>Oups, c'est une 500</h1>
+        <p>c'est un peu la mort la...</p>
+      </div>
+    <img class="koala2" src="/images/koala2.png" alt="">
+  </body>
 </html>
 

@@ -17,9 +17,9 @@
         <input type="hidden" name="user_challenge[duration]" value="">
         <% UserChallenge::DURATIONS.each do |duration| %>
           <div class="form-check form-check-inline">
-            <div class= "btn-day-inact">
-              <input class="form-check-input radio_buttons optional" type="radio" value="<%= duration %>" name="user_challenge[duration]" id="user_challenge_duration_<%= duration %>">
-              <label class="form-check-label collection_radio_buttons" for="user_challenge_duration_<%= duration %>"><%= duration %> jours</label>
+            <div>
+              <input class="form-check-input radio_buttons optional duration-radio-input" hidden type="radio" value="<%= duration %>" name="user_challenge[duration]" id="user_challenge_duration_<%= duration %>" <%= 'checked' if duration == 7 %>>
+              <label class="form-check-label collection_radio_buttons duration-radio-label btn-day-inact" for="user_challenge_duration_<%= duration %>"><%= duration %> jours</label>
             </div>
           </div>
         <% end %>
