@@ -41,7 +41,7 @@ laszlo = User.create!(
   pseudo: "laszlo",
   email: "laszlo@example.com",
   password: "password",
-  avatar: File.open(Rails.root.join("db/fixtures/users/remi_avatar.jpg")),
+  avatar: File.open(Rails.root.join("db/fixtures/users/laszlo.jpeg")),
   )
 # laszlo.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -49,7 +49,7 @@ christophe = User.create!(
   pseudo: "christophe",
   email: "christophe@example.com",
   password: "password",
-  avatar: "",
+  avatar: File.open(Rails.root.join("db/fixtures/users/christophe.jpg")),
   )
 # christophe.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -64,7 +64,6 @@ yann = User.create!(
   pseudo: "yann",
   email: "yann@example.com",
   password: "password",
-  avatar: "",
   )
 # daphnee.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -84,14 +83,8 @@ corentin_laszlo = Friendship.create!(
 
 corentin_christophe = Friendship.create!(
   status: "Accepted",
-  user: remi,
-  friend: christophe,
-  )
-
-corentin_daphnee = Friendship.create!(
-  status: "Pending",
   user: corentin,
-  friend: daphnee,
+  friend: christophe,
   )
 
 puts "Creating programs"
@@ -189,8 +182,6 @@ deplacements_alternatifs = Program.create!(
   position: 3,
   category: "Transport",
   )
-
-
 
 puts "Creating tasks"
 
@@ -300,7 +291,7 @@ jarrete_soda = Challenge.create!(
   description: "Les sodas sont des produits industriels et transformés très peu respectueux de l'environnement, privélégions l'eau !",
   category: "Nourriture",
   position: 1,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-soda.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-soda.png")),
   )
 
 arrete_fast_foods = Challenge.create!(
@@ -308,7 +299,7 @@ arrete_fast_foods = Challenge.create!(
   description: "McDonalds, KFC, Burger King, etc, je décide enfin de laisser tout ça derrière mois. Une cure aussi bonne pour l'estomac que le porte monnaie !",
   category: "Nourriture",
   position: 2,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-fastfood.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-fastfood.png")),
   )
 
 jarrete_plats_prepares = Challenge.create!(
@@ -316,7 +307,7 @@ jarrete_plats_prepares = Challenge.create!(
   description: "Les plats préparés sont des produits industriels et transformés très peu respectueux de l'environnement, privélégions les plats faits maison !",
   category: "Nourriture",
   position: 3,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-pizza.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-pizza.png")),
   )
 
 # Challenge Dechets
@@ -325,7 +316,7 @@ jarrete_plastique = Challenge.create!(
   description: "Les bouteilles plastiques sont l'une des causes du développement d'un continent plastique, passons à l'eau du robinet !",
   category: "Déchets",
   position: 1,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-plastic-bottle.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-plastic-bottle.png")),
   )
 
 achete_produits_neufs = Challenge.create!(
@@ -333,7 +324,7 @@ achete_produits_neufs = Challenge.create!(
   description: "Bien souvent, nous jetons des produits facilement réparables, pensons à réparer avant d'acheter et si nécessaire privilégions l'occasion !",
   category: "Déchets",
   position: 2,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-new.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-new.png")),
   )
 
 achete_en_vrac = Challenge.create!(
@@ -341,7 +332,8 @@ achete_en_vrac = Challenge.create!(
   description: "Les sacs en plastique et autres emballages sont partout, acheter en vrac est l'un des premiers gestes pour en limiter l'impact !",
   category: "Déchets",
   position: 3,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/buy-bulk.png"))
+  picture: File.open(Rails.root.join("db/fixtures/challenges/bulk.png")),
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/buy-bulk.png")),
   )
 
 # faire_savon = Challenge.create!(
@@ -357,7 +349,7 @@ exces_electriques = Challenge.create!(
   description: "De simples gestes peuvent à la fois réduire notre facture électrique et environnemental, pensez à éteindre la lumière et vos multiprises !",
   category: "Energie",
   position: 1,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/energy-excess.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/energy-excess.png")),
   )
 
 reduire_chauffage = Challenge.create!(
@@ -365,7 +357,7 @@ reduire_chauffage = Challenge.create!(
   description: "Réduire de quelques degrés notre chauffage peut à la fois réduire nos factures et notre impact environnemental !",
   category: "Energie",
   position: 2,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/reduce-heater.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/reduce-heater.png")),
   )
 
 gachis_deau = Challenge.create!(
@@ -373,7 +365,7 @@ gachis_deau = Challenge.create!(
   description: "Un français consomme des centaines de litres d'eau par jour directement, des milliers indirectement !",
   category: "Energie",
   position: 3,
-  picture: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png"))
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png")),
   )
 # Challenge transport
 jarrete_lavion = Challenge.create!(
