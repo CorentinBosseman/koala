@@ -1,7 +1,17 @@
-<div class="container">
-  <h1><%= @challenge.title  %></h1>
-  <p><%= @challenge.description %></p>
-  <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
+<% if @challenge.category == "Déchets" %>
+  <div class="wrapper background-color-program-waste">
+  <% elsif @challenge.category == "Nourriture" %>
+  <div class="wrapper background-color-program-food">
+  <% elsif @challenge.category == "Transport" %>
+  <div class="wrapper background-color-program-transport">
+  <% else %>
+  <div class="wrapper background-color-program-energy">
+  <% end %>
+    <div class="challenge-content text-center">
+    <%= cl_image_tag @challenge.picture, :class => "program_image" %>
+    <h1><%= @challenge.title  %></h1>
+    <hr width="50%"/>
+    <p><%= @challenge.description %></p>
   <%= simple_form_for [@challenge, @user_challenge] do |f| %>
       <fieldset class="form-group radio_buttons optional user_challenge_duration">
         <input type="hidden" name="user_challenge[duration]" value="">
@@ -14,6 +24,7 @@
           </div>
         <% end %>
      </fieldset>
+    <%= link_to "inviter un ami", new_friendship_path, class: "btn btn-main", style:"padding: 3px 30px" %>
     <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-main" %>
   <% end %>
 </div>
