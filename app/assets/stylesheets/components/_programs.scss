@@ -1,15 +1,16 @@
 .elements {
   display:flex;
   width: 100%;
-  justify-content:space-evenly;
+  justify-content:normal;
   margin-bottom: 34px;
-  overflow: hidden;
+  overflow: auto;
 }
 .element {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 125px;
+  flex-shrink: 0;
 }
 .no-space {
   padding: 0;

@@ -349,14 +349,14 @@ achete_en_vrac = Challenge.create!(
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/buy-bulk.png")),
   )
 
-# faire_savon = Challenge.create!(
-#   title: "Je fais mes savons",
-#   description: "Faire ses produits ménagers et un acte simple et économe autant pour vos poches que l'environnement !",
-#   category: "Déchets",
-#   position: 4,
-#   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/own-soap.png")),
+faire_savon = Challenge.create!(
+  title: "Je fais mes savons",
+  description: "Faire ses produits ménagers et un acte simple et économe autant pour vos poches que l'environnement !",
+  category: "Déchets",
+  position: 4,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/own-soap.png")),
 
-#   )
+  )
 
 # Challenge Energie
 exces_electriques = Challenge.create!(
