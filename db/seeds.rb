@@ -41,7 +41,7 @@ laszlo = User.create!(
   pseudo: "laszlo",
   email: "laszlo@example.com",
   password: "password",
-  avatar: File.open(Rails.root.join("db/fixtures/users/remi_avatar.jpg")),
+  avatar: File.open(Rails.root.join("db/fixtures/users/laszlo.jpeg")),
   )
 # laszlo.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -49,7 +49,7 @@ christophe = User.create!(
   pseudo: "christophe",
   email: "christophe@example.com",
   password: "password",
-  avatar: "",
+  avatar: File.open(Rails.root.join("db/fixtures/users/christophe.jpg")),
   )
 # christophe.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -64,7 +64,6 @@ yann = User.create!(
   pseudo: "yann",
   email: "yann@example.com",
   password: "password",
-  avatar: "",
   )
 # daphnee.avatar = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
@@ -86,12 +85,6 @@ corentin_christophe = Friendship.create!(
   status: "Accepted",
   user: remi,
   friend: christophe,
-  )
-
-corentin_daphnee = Friendship.create!(
-  status: "Pending",
-  user: corentin,
-  friend: daphnee,
   )
 
 puts "Creating programs"
