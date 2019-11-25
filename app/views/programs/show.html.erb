@@ -9,9 +9,9 @@
   <% end %>
     <div class="program-content text-center">
     <%= cl_image_tag @program.picture, :class => "program_image" %>
-    <h1><%= @program.title  %></h1>
+    <h1 class="title-thema"><%= @program.title  %></h1>
     <hr width="50%"/>
-    <p><%= @program.description %></p>
+    <p class="program-desc"><%= @program.description %></p>
     <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
     <%= simple_form_for [@program, @user_program] do |f| %>
     <%= f.button :submit, "Commencer", class: "btn-main" %>

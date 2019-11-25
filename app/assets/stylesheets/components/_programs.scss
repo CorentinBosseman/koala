@@ -84,7 +84,18 @@ letter-spacing: 0.5px;
 .bt-red  {
   border-color: $red-light;
 }
-
+.program-desc {
+  font-family: Red Hat Text;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  padding: 0 15px;
+  color: $brown_very_dark;
+}
 .transparent {
   opacity: 0.4;
 }
