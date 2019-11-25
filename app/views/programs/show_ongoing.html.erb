@@ -7,9 +7,8 @@
         <%= task.status %>
 
         <% if task.status == 'ongoing' %>
-          <%= link_to "Valider", done_user_task_path(task.user_task_id), method: :patch, class: "btn btn-ghost btn-border-blue"%>
-        <% end %>
-
+  <%= link_to "Regarder", program_task_path(@program, task), class: "btn btn-ghost btn-border-blue"%>
+      <% end %>
       </li>
     <% end %>
   </ul>
