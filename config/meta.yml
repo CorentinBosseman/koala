@@ -2,4 +2,4 @@
 meta_product_name: "Koala"
 meta_title: "Koala"
 meta_description: "Koala te propose de challenger tes habitudes pour réduire ton emprunte carbone. Tu pourras ainsi adopter un mode de vie plus responsable à travers des programmes adaptés ou des challenges avec tes amis."
-meta_image: "star.png" # should exist in `app/assets/images/`
+meta_image: "favicon-32x32.png" # should exist in `app/assets/images/`
