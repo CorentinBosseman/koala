@@ -1,15 +1,30 @@
+
+
+<div class="container-task">
+  <div class="program-content text-center">
   <h1><%= @program.title  %></h1>
+  <hr width="50%"/>
+  </div>
 
-  <ul>
-    <% @tasks.each do |task| %>
-    <li> <%= task.title %>
-      <%= task.completed %>
-        <%= task.status %>
-
-        <% if task.status == 'ongoing' %>
-          <%= link_to "Valider", done_user_task_path(task.user_task_id), method: :patch, class: "btn btn-ghost btn-border-blue"%>
-        <% end %>
-
-      </li>
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <div class="badge-task-validated"></div>
+      <%#= task.status %>
+    <% elsif task.status == 'ongoing' %>
+      <div class="badge-task-ongoing">
+      <%#= task.status %>
+      </div>
+    <% else task.status == 'not started' %>
+      <div class="badge-task-locked"></div>
+      <%#= task.status %>
     <% end %>
-  </ul>
+  <% end %>
+</div>
+
+
+
+
+  <%#= task.title %>
+  <%#= task.completed %>
+
+      <%#= link_to "Valider", done_user_task_path(task.user_task_id), method: :patch, class: "btn btn-ghost btn-border-blue"%>
