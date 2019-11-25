@@ -346,6 +346,8 @@ achete_en_vrac = Challenge.create!(
 #   description: "Faire ses produits ménagers et un acte simple et économe autant pour vos poches que l'environnement !",
 #   category: "Déchets",
 #   position: 4,
+#   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/own-soap.png")),
+
 #   )
 
 # Challenge Energie
@@ -378,6 +380,8 @@ jarrete_lavion = Challenge.create!(
   description: "L'avion est l'un des moyens de transports des plus polluants, je vais donc limiter mes déplacements ou privilégier le train !",
   category: "Transport",
   position: 1,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/stop-plane.png")),
+
   )
 
 challenge_velo = Challenge.create!(
@@ -385,6 +389,8 @@ challenge_velo = Challenge.create!(
   description: "Pour les petits trajets, privilégions le vélo et si possible pour aller au travail !",
   category: "Transport",
   position: 2,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/take-bike.png")),
+
   )
 
 mes_10000_pas = Challenge.create!(
@@ -392,6 +398,8 @@ mes_10000_pas = Challenge.create!(
   description: "10000 pas par jour",
   category: "Transport",
   position: 3,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/walking.png")),
+
   )
 
 puts "Creating User Challenges + Challengers"
