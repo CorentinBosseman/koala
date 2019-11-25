@@ -6,18 +6,17 @@
 
   <% @tasks.each do |task| %>
     <% if task.completed %>
-      <div class="badge-task-validated">
-        <%= link_to "Regarder", program_task_path(@program, task)%>
-      <%#= task.status %>
+        <%= link_to program_task_path(@program, task) do%>
+      <div class="badge-task-validated mb-5">
       </div>
+      <% end %>
     <% elsif task.status == 'ongoing' %>
-      <div class="badge-task-ongoing">
-        <%= link_to "Regarder", program_task_path(@program, task)%>
-      <%#= task.title %>
+        <%= link_to program_task_path(@program, task) do%>
+      <div class="badge-task-ongoing mb-5">
       </div>
+      <% end %>
     <% else %>
-      <div class="badge-task-locked"></div>
-      <%#= task.title %>
+      <div class="badge-task-locked mb-5"></div>
     <% end %>
   <% end %>
 </div>
