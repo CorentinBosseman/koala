@@ -167,6 +167,8 @@ la_voiture_au_garage = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
   category: "Transport",
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/car-garage.png"))
+
   )
 
 mobilite_zero_carbone = Program.create!(
@@ -174,6 +176,8 @@ mobilite_zero_carbone = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Transport",
   position: 2,
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/fair-mobility.png"))
+
   )
 
 deplacements_alternatifs = Program.create!(
@@ -181,6 +185,7 @@ deplacements_alternatifs = Program.create!(
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 3,
   category: "Transport",
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/alternative-mobility.png"))
   )
 
 puts "Creating tasks"
