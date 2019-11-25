@@ -1,0 +1,17 @@
+
+
+<div class="container background-color-invited text-align: center">
+  <%= link_to program_path(@task.program) do %>
+  <i class="far fa-times-circle fa-2x"></i>
+  <% end %>
+  <br>
+
+  <div class="wrapper text-center">
+    <%= image_tag "star.png", alt: "star", :class => "star_image" %>
+    <%#= cl_image_tag @challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
+    <br>
+    <h2 class="modal-thema"><%= @task.title %></h2>
+    <br>
+    <%= link_to "Valider", done_user_task_path(@user_task), method: :patch, class: "btn btn-light button-white"%>
+  </div>
+</div>
