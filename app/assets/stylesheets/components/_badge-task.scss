@@ -5,8 +5,10 @@
   height: 80px;
   border-radius: 50%;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-  background-color: green;
   margin: auto;
+  background-image: image-url('green_ball.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .badge-task-ongoing {
@@ -16,8 +18,10 @@
   height: 80px;
   border-radius: 50%;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-  background-color: orange;
   margin: auto;
+  background-image: image-url('orange_ball.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .badge-task-locked {
@@ -27,6 +31,8 @@
   height: 80px;
   border-radius: 50%;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-  background-color: black;
   margin: auto;
+  background-image: image-url('grey_ball.png');
+  background-position: center;
+  background-size: cover;
 }
