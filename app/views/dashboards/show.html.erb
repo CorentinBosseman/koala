@@ -36,7 +36,7 @@
           <%= link_to challenge_path(user_challenge.challenge) do %>
           <div class="element">
             <div class="badge-tasks <%= current_badge(user_challenge.challenge.category) %>">
-              <%= cl_image_tag user_challenge.challenge.picture, crop: :fill, height: 30 %>
+              <%= cl_image_tag user_challenge.challenge.icon, crop: :fill, height: 30 %>
             </div>
             <div class="program-title-task"><%= user_challenge.challenge.title %></div>
           </div>
