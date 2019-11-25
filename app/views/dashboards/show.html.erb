@@ -1,12 +1,12 @@
-<div class="background-color-profile">
+<div>
   <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
     <%= cl_image_tag @current_user.avatar, :class => "big-avatar bt-white" %>
   </div>
 
-  <div class="container no-space bkg-line">
+  <div class="container no-space bkg-line dash-bg">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema spacing-margin" id="tt-padtop">MES PROGRAMMES</div>
+        <div class="title-thema spacing-margin">Mes programmes</div>
         <div class="elements">
 
           <% @programs_ungoing.each do |user_program| %>
@@ -28,7 +28,7 @@
   <div class="container no-space bkg-line">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema spacing-margin" >MES CHALLENGES</div>
+        <div class="title-thema spacing-margin" >Mes challenges</div>
         <div class="elements">
 
         <% @challenges_ungoing.each do |user_challenge| %>
@@ -47,10 +47,10 @@
     </div> <!-- row -->
   </div> <!-- container -->
 
-  <div class="container no-space" id="footer-pad">
+  <div class="container no-space dash-bg">
     <div class="row">
       <div class="col-12">
-        <div class="title-thema spacing-margin">CHALLENGERS</div>
+        <div class="title-thema spacing-margin">Challengers</div>
         <div class="elements">
 
         <% @challengers.each do |challenger| %>
@@ -58,7 +58,7 @@
           <%= link_to challenge_path(challenger.user_challenge.challenge) do %>
           <div class="element">
             <%= cl_image_tag challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
-            <div class="program-title-task pseudo pseudo-mini"><%= challenger.user_challenge.user.pseudo %></div>
+            <div class="program-title-task text-capitalize"><%= challenger.user_challenge.user.pseudo %></div>
           </div>
         <% end %>
         <% end %>
