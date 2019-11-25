@@ -3,23 +3,27 @@
   <h1><%= @program.title  %></h1>
   <hr width="50%"/>
   </div>
-
+  <div class="container">
+    <div class="row">
       <% @tasks.each_with_index do |task, index| %>
-      <div class="<%= index % 3 == 0 ? 'col-12' : 'col-6' %>">
-        <% if task.completed %>
-            <%= link_to program_task_path(@program, task) do%>
-          <div class="badge-task-validated mb-5"></div>
+        <div class="<%= task_col_class(index, @tasks.size) %>">
+          <% if task.completed %>
+              <%= link_to program_task_path(@program, task) do%>
+            <div class="badge-task-validated mb-5"></div>
+            <% end %>
+          <% elsif task.status == 'ongoing' %>
+              <%= link_to program_task_path(@program, task) do%>
+            <div class="badge-task-ongoing mb-5"></div>
+            <% end %>
+          <% else %>
+            <div class="badge-task-locked mb-5"></div>
           <% end %>
-        <% elsif task.status == 'ongoing' %>
-            <%= link_to program_task_path(@program, task) do%>
-          <div class="badge-task-ongoing mb-5"></div>
-          <% end %>
-        <% else %>
-          <div class="badge-task-locked mb-5"></div>
-        <% end %>
+        </div>
       <% end %>
-      </div>
     </div>
+  </div>
+  </div>
+</div>
 
 
   <%#= task.title %>
