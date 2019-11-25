@@ -13,105 +13,111 @@
         <div class="elements">
 
         <% @programs_food.each_with_index do |program, index| %>
-
-              <%= link_to program_path(program) do%>
-          <div class="element">
-            <div class="badge-tasks bt-yellow">
-              <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
-            </div>
-            <div class="program-title-task"><%= program.title %></div>
-            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
+          <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_food[index - 1].completed? %>
+            <%= link_to program_path(program) do%>
+              <div class="element">
+                <div class="badge-tasks bt-yellow">
+                  <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+                </div>
+                <div class="program-title-task"><%= program.title %></div>
+              </div>
             <% end %>
-          </div>
-        <% end %>
+          <% else %>
+            <div class="element transparent">
+              <div class="badge-tasks bt-yellow">
+                <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+              </div>
+              <div class="program-title-task"><%= program.title %></div>
+            </div>
+          <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
     </div> <!-- row -->
   </div> <!-- container -->
-<!--
-      CONDITIONS pour cliquer
-      - programme démarré ou complété
-      - 1er programme
-      - précédent programme complété
- -->
+
   <div class="container no-space bkg-green">
-    <div class="row">
+   <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos">Déchets</div>
+        <div class="title-thema adjust-badge-pos" id="tt-prog-padtop">Déchets</div>
         <div class="elements">
 
         <% @programs_waste.each_with_index do |program, index| %>
-
-        <%= link_to program_path(program) do %>
-          <div class="element">
-            <div class="badge-tasks bt-green">
-              <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
-            </div>
-            <div class="program-title-task"><%= program.title %></div>
-            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
+          <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_waste[index - 1].completed? %>
+            <%= link_to program_path(program) do%>
+              <div class="element">
+                <div class="badge-tasks bt-green">
+                  <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+                </div>
+                <div class="program-title-task"><%= program.title %></div>
+              </div>
             <% end %>
-          </div>
-        <% end %>
+          <% else %>
+            <div class="element transparent">
+              <div class="badge-tasks bt-green">
+                <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+              </div>
+              <div class="program-title-task"><%= program.title %></div>
+            </div>
+          <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
     </div> <!-- row -->
   </div> <!-- container -->
-<!--
-      CONDITIONS pour cliquer
-      - programme démarré ou complété
-      - 1er programme
-      - précédent programme complété
- -->
-    <div class="container no-space bkg-blue">
+
+  <div class="container no-space bkg-blue">
     <div class="row">
       <div class="col-12">
         <div class="title-thema adjust-badge-pos">Énergie</div>
         <div class="elements">
-
         <% @programs_energy.each_with_index do |program, index| %>
-
-          <%= link_to program_path(program) do%>
-          <div class="element">
-            <div class="badge-tasks bt-blue">
-              <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
-            </div>
-            <div class="program-title-task"><%= program.title %></div>
-            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
+          <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_energy[index - 1].completed? %>
+            <%= link_to program_path(program) do%>
+              <div class="element">
+                <div class="badge-tasks bt-blue">
+                  <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+                </div>
+                <div class="program-title-task"><%= program.title %></div>
+              </div>
             <% end %>
-          </div>
-        <% end %>
+          <% else %>
+            <div class="element transparent">
+              <div class="badge-tasks bt-blue">
+                <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+              </div>
+              <div class="program-title-task"><%= program.title %></div>
+            </div>
+          <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
     </div> <!-- row -->
   </div> <!-- container -->
-<!--
-      CONDITIONS pour cliquer
-      - programme démarré ou complété
-      - 1er programme
-      - précédent programme complété
- -->
+
   <div class="container no-space bkg-red">
     <div class="row">
       <div class="col-12">
         <div class="title-thema adjust-badge-pos">Transport</div>
         <div class="elements">
-
         <% @programs_transport.each_with_index do |program, index| %>
-
-        <%= link_to program_path(program) do %>
-          <div class="element">
-            <div class="badge-tasks bt-red">
-              <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
-            </div>
-            <div class="program-title-task" id="bottom-page">
-            <%= program.title %></div>
-            <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
+          <% if ['ongoing', 'completed'].include?(program.status) || index == 0 || @programs_transport[index - 1].completed? %>
+            <%= link_to program_path(program) do%>
+              <div class="element">
+                <div class="badge-tasks bt-red">
+                  <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+                </div>
+                <div class="program-title-task"><%= program.title %></div>
+              </div>
             <% end %>
-          </div>
-        <% end %>
+          <% else %>
+            <div class="element transparent">
+              <div class="badge-tasks bt-red">
+                <%= cl_image_tag program.icon, crop: :fill, height: 30 %>
+              </div>
+              <div class="program-title-task"><%= program.title %></div>
+            </div>
+          <% end %>
         <% end %>
         </div> <!-- elements -->
       </div> <!-- col-12 -->
