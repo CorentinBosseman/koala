@@ -12,6 +12,8 @@
     <br>
     <h2 class="modal-thema"><%= @task.title %></h2>
     <br>
+    <% unless @user_task.completed %>
     <%= link_to "Valider", done_user_task_path(@user_task), method: :patch, class: "btn btn-light button-white"%>
+    <% end %>
   </div>
 </div>
