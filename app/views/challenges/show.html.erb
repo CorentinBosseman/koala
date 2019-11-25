@@ -9,9 +9,9 @@
   <% end %>
     <div class="challenge-content text-center">
     <%= cl_image_tag @challenge.picture, :class => "program_image" %>
-    <h1><%= @challenge.title  %></h1>
+    <h1 class="title-thema"><%= @challenge.title  %></h1>
     <hr width="50%"/>
-    <p><%= @challenge.description %></p>
+    <p class="program-desc"><%= @challenge.description %></p>
   <%= simple_form_for [@challenge, @user_challenge] do |f| %>
       <fieldset class="form-group radio_buttons optional user_challenge_duration">
         <input type="hidden" name="user_challenge[duration]" value="">
