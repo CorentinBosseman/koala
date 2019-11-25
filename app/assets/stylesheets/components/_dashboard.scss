@@ -1,7 +1,8 @@
 #dash-ban {
   position: relative;
-  height: 64px;
+  height: 72px;
   background-color: $yellow-sand;
+  border-bottom: solid 1px $yellow_dark;
 }
 #dash-ban-mini {
   display: flex;
@@ -16,10 +17,10 @@
 }
 .top-avatar {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  height: 40px;
-  width:  40px;
+  top: 5px;
+  left: 5px;
+  height: 60px;
+  width:  60px;
   border: 3px solid;
   border-radius: 50%;
   background-color: $white-dirt;
@@ -50,7 +51,7 @@ height: 64px;
 font-family: Ropa Sans;
 font-style: normal;
 font-weight: normal;
-font-size: 24px;
+font-size: 28px;
 line-height: 26px;
 text-align: center;
 color: $brown_light;
@@ -64,8 +65,14 @@ line-height: 21px;
   border-color: $white-dirt;
 }
 .spacing-margin  {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
+}
+.dash-bg  {
+  background-color: $yellow_very_ligth;
 }
 #footer-pad  {
   padding-bottom: 20px;
+}
+.tiny-shad  {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }

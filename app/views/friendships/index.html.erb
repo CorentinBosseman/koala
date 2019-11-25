@@ -11,15 +11,15 @@
 
 <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos" id="tt-padtop">Mes amis</div>
+        <div class="title-thema adjust-badge-pos">Mes amis</div>
         <div class="elements">
 
   <% @friendships_accepted.each do |friendship| %>
   <div class="element">
-  <div class="badge-tasks bt-white">
+  <div class="badge-tasks">
      <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %></div>
 
-      <div class="program-title-task pseudo pseudo-mini"><%= friendship.friend.pseudo %></div>
+      <div class="program-title-task text-capitalize"><%= friendship.friend.pseudo %></div>
 </div>
     <% end %>
     </div> <!-- elements -->
@@ -28,19 +28,19 @@
 
 <div class="row">
       <div class="col-12">
-        <div class="title-thema adjust-badge-pos" id="tt-padtop">Mes demandes amis</div>
+        <div class="title-thema adjust-badge-pos">Mes demandes d'amis</div>
         <div class="elements">
 
   <% @friendships_pending.each do |friendship_pending| %>
   <div class="element">
-      <div class="badge-tasks bt-white">
+      <div class="badge-tasks">
 
          <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %></div>
 
-     <div class="program-title-task pseudo pseudo-mini"><%= friendship_pending.friend.pseudo %></div>
-  <% end %>
+     <div class="program-title-task text-capitalize"><%= friendship_pending.friend.pseudo %></div>
+    <% end %>
    </div>
   </div>
-   </div>
+</div>
 <%= link_to "Ajouter un ami", new_friendship_path, class: " btn btn-main"  %>
 
