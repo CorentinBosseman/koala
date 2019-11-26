@@ -1,0 +1,18 @@
+.icon-task {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0.5;
+  border: 5px solid white;
+  border-opacity: 1;
+  padding: 30px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
