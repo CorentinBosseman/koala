@@ -20,8 +20,7 @@
       <div class="row">
         <% @friends.each do |friend| %>
           <div class="col-4">
-            <!-- <div class="elements"> -->
-              <!-- <div class="element"> -->
+
                 <%= check_box_tag 'challengers[]',
                                   friend.id,
                                   false,
@@ -36,8 +35,7 @@
                   <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
                   <p class="program-title-task text-capitalize"><%= friend.pseudo %></p>
                 <% end %>
-              <!-- </div> -->
-            <!-- </div> elements -->
+
           </div> <!-- col-12 -->
         <% end %>
         <%= submit_tag(name="Inviter !", :class => "btn btn-main") %>
