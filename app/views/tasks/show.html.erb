@@ -1,8 +1,8 @@
 <% if @task.program.category == "Déchets" %>
   <div class="wrapper background-color-task-waste">
-<% elsif @challenge.category == "Nourriture" %>
+<% elsif @program.category == "Nourriture" %>
   <div class="wrapper background-color-task-food">
-<% elsif @challenge.category == "Transport" %>
+<% elsif @program.category == "Transport" %>
   <div class="wrapper background-color-task-transport">
 <% else %>
   <div class="wrapper background-color-task-energy">
@@ -15,13 +15,14 @@
   <br>
 
     <div class="wrapper text-center">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center mb-4">
         <h4><strong><%= @task.position %></strong></h4>
         <p> /<%= @program.tasks.count %></p>
       </div>
-      <div class="icon-task">
-      <%= cl_image_tag @task.program.icon %>
+      <div class="icon-task mb-4">
+        <%= cl_image_tag @task.program.icon %>
       </div>
+      <br>
       <hr width="50%"/>
       <h2 class="title-thema"><%= @task.title %></h2>
       <hr width="50%"/>
