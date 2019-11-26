@@ -15,11 +15,9 @@
     color: #796F54;
   }
 }
-
 /* input[type=radio] {
   visibility: hidden;
 } */
-
 .btn-day-inact {
     height: 30px;
     background-color: #F2EDD4;
@@ -29,8 +27,6 @@
     color: #6D4C41;
 
 }
-
-
 .btn-day-act {
     height: 30px;
     background-color: #D1EECC;
@@ -67,4 +63,13 @@
     opacity: 0.6;
     color: #796F54;
   }
+}
+.btn-friends  {
+  height: 48px;
+  width: 240px;
+  color: $green_very_dark;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-left: 50px;
 }

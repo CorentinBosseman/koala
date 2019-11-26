@@ -3,67 +3,53 @@
     <%= cl_image_tag @current_user.avatar, :class => "big-avatar bt-white" %>
   </div>
 
-  <div class="container no-space bkg-line dash-bg respacing">
-    <div class="row">
-      <div class="col-12">
-        <div class="title-thema spacing-margin">Mes programmes</div>
-        <div class="elements">
+  <div class="container bkg-line dash-bg respacing">
+    <div class="title-thema spacing-margin">Mes programmes</div>
+    <div class="elements">
 
-          <% @programs_ungoing.each do |user_program| %>
-
-          <%= link_to program_path(user_program.program) do %>
-          <div class="element">
+      <% @programs_ungoing.each do |user_program| %>
+        <%= link_to program_path(user_program.program), class: 'element' do %>
+          <!-- <div class="element"> -->
             <div class="badge-tasks <%= current_badge(user_program.program.category) %>">
               <%= cl_image_tag user_program.program.icon, crop: :fill, height: 30 %>
             </div>
             <div class="program-title-task"><%= user_program.program.title %></div>
-          </div>
+          <!-- </div> -->
         <% end %>
-        <% end %>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
+      <% end %>
+    </div> <!-- elements -->
   </div> <!-- container -->
 
-  <div class="container no-space bkg-line respacing">
-    <div class="row">
-      <div class="col-12">
-        <div class="title-thema spacing-margin" >Mes challenges</div>
-        <div class="elements">
+  <div class="container bkg-line respacing">
+    <div class="title-thema spacing-margin" >Mes challenges</div>
+    <div class="elements">
 
-        <% @challenges_ungoing.each do |user_challenge| %>
-
-          <%= link_to challenge_path(user_challenge.challenge) do %>
-          <div class="element">
-            <div class="badge-tasks <%= current_badge(user_challenge.challenge.category) %>">
-              <%= cl_image_tag user_challenge.challenge.icon, crop: :fill, height: 30 %>
-            </div>
-            <div class="program-title-task"><%= user_challenge.challenge.title %></div>
+    <% @challenges_ungoing.each do |user_challenge| %>
+      <%= link_to challenge_path(user_challenge.challenge), class: 'element' do %>
+        <!-- <div class="element"> -->
+          <div class="badge-tasks <%= current_badge(user_challenge.challenge.category) %>">
+            <%= cl_image_tag user_challenge.challenge.icon, crop: :fill, height: 30 %>
           </div>
-        <% end %>
-        <% end %>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
+          <div class="program-title-task"><%= user_challenge.challenge.title %></div>
+        <!-- </div> -->
+      <% end %>
+    <% end %>
+    </div> <!-- elements -->
   </div> <!-- container -->
 
-  <div class="container no-space dash-bg respacing" id="no-bottom-room">
-    <div class="row">
-      <div class="col-12">
-        <div class="title-thema spacing-margin">Challengers</div>
-        <div class="elements">
-
-        <% @challengers.each do |challenger| %>
-
-          <%= link_to challenge_path(challenger.user_challenge.challenge) do %>
-          <div class="element">
+  <div class="container dash-bg respacing" id="no-bottom-room">
+    <div class="title-thema spacing-margin">Challengers</div>
+    <div class="elements">
+      <% @challengers.each do |challenger| %>
+        <%= link_to challenge_path(challenger.user_challenge.challenge), class: 'element' do %>
+          <!-- <div class="element"> -->
             <%= cl_image_tag challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
-            <div class="program-title-task text-capitalize"><%= challenger.user_challenge.user.pseudo %></div>
-          </div>
+            <div class="program-title-task text-capitalize">
+              <%= challenger.user_challenge.user.pseudo %>
+            </div>
+          <!-- </div> -->
         <% end %>
-        <% end %>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
+      <% end %>
+    </div> <!-- elements -->
   </div> <!-- container -->
 </div>
