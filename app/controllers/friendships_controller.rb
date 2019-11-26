@@ -9,15 +9,15 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.new
   end
 
-  # def create
-  #   @friendship = Friendship.new
-  #   @friendship
-  #   @friendship.user = current_user
-  #   hello = User.all.where(pseudo: "#{friendship_params}")
-  #   @friendship.friend = hello
-  #   @friendship.save
-  #   redirect_to friendships_path
-  # end
+  def create
+    @friendship = Friendship.new
+    @friendship.user = current_user
+    hello = User.all.find_by(pseudo: "#{friendship_params}")
+    @friendship.friend = hello
+    @friendship.status = "Pending"
+    @friendship.save
+    redirect_to friendships_path
+  end
 
   def accept
       @friendship = Friendship.find(params[:id])
@@ -35,7 +35,7 @@ class FriendshipsController < ApplicationController
 
 private
 
-  # def friendship_params
-  #   params.require(:friendship).permit(:pseudo)
-  # end
+  def friendship_params
+    params.require(:friendship).permit(:pseudo)
+  end
 end

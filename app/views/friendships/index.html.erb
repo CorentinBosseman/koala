@@ -38,6 +38,7 @@
       </div>
 
      <div class="program-title-task text-capitalize"><%= friendship_pending.friend.pseudo %></div>
+        <%= link_to "Valider", accept_friendship_path(friendship_pending), method: :patch, class: "btn btn-friend-pending"%>
     <% end %>
    </div>
   </div>

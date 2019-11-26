@@ -2,7 +2,7 @@
   <h1>Ajouter un ami</h1>
 
   <%= simple_form_for @friendship do |f| %>
-    <%= f.input :pseudo, label: 'pseudo ou email' %>
+    <%= f.input :friend, label: 'pseudo' %>
 
     <%= f.button :submit, "Valider", class: "btn btn-primary btn-primary-flat" %>
   <% end %>

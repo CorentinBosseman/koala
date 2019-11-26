@@ -5,5 +5,9 @@ button:focus {
 outline: 0 !important;
 }
 ::-webkit-scrollbar {
+  -webkit-overflow-scrolling: touch;
   display: none;
+}
+html {
+  overflow: -moz-scrollbars-none;
 }

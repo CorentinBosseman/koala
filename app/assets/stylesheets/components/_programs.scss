@@ -1,3 +1,22 @@
+//Loop from 1-12.
+@for $i from 1 through 12 {
+  .element {
+    &:nth-child(#{$i}) {
+      // Delay the animation. Delay increases as items loop.
+      animation-delay: $i * (.15s);
+    }
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .elements {
   display:flex;
   width: 100%;
@@ -10,7 +29,8 @@
   flex-direction: column;
   align-items: center;
   width: 125px;
-  flex-shrink: 0;
+  // flex-shrink: 0;
+  // animation: .9s ease-in-out both fade-in;
 }
 .no-space {
   padding: 0;
@@ -98,7 +118,7 @@ letter-spacing: 0.5px;
   color: $brown_very_dark;
 }
 .transparent {
-  opacity: 0.4;
+  opacity: 0.4 !important;
 }
 #bottom-page  {
   padding-bottom: 28px;
@@ -108,4 +128,7 @@ letter-spacing: 0.5px;
 }
 #tt-prog-padtop {
   padding-top:15px;
+}
+#minus-pad-top  {
+  padding-top: 20px;
 }
