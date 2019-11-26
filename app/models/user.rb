@@ -12,4 +12,10 @@ class User < ApplicationRecord
   has_many :user_all_challenges, through: :challengers, source: :user_challenge
 
   mount_uploader :avatar, PhotoUploader
+
+  def friends
+    relationships = Friendship.where("user_id = :id OR friend_id = :id", id: id).where(status: "Accepted")
+    friend_ids    = relationships.map(&:user_id) + relationships.map(&:friend_id)
+    User.where.not(id: id).where(id: friend_ids.uniq)
+  end
 end
