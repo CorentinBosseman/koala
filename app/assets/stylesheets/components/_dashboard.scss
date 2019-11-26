@@ -15,6 +15,9 @@
 .bkg-line {
   border-bottom: solid 2px $white_line;
 }
+.bkg-dash {
+  background-color: $yellow_very_ligth;
+}
 .top-avatar {
   position: absolute;
   top: 5px;
@@ -70,9 +73,9 @@ line-height: 21px;
 .dash-bg  {
   background-color: $yellow_very_ligth;
 }
-#footer-pad  {
-  padding-bottom: 20px;
-}
 .tiny-shad  {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+#footer-pad  {
+  padding-bottom: 20px;
 }
