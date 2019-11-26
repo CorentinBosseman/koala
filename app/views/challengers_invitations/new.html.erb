@@ -15,20 +15,36 @@
   <div class="btn btn-second"><%= @user_challenge.duration %> jours</div>
 
 
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="elements">
-          <div><% current_user.friends.each do |friend| %></div>
-          <div class="element">
-            <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
-          <div class="program-title-task text-capitalize"><%= friend.pseudo %></div>
+  <%= form_tag user_challenge_challengers_invitation_path(@user_challenge) do %>
+    <div class="container">
+      <div class="row">
+        <% @friends.each do |friend| %>
+          <div class="col-4">
+            <!-- <div class="elements"> -->
+              <!-- <div class="element"> -->
+                <%= check_box_tag 'challengers[]',
+                                  friend.id,
+                                  false,
+                                  hidden: true,
+                                  id: "challenger-#{friend.id}",
+                                  class: "friend-input"
+                %>
+                <%= label_tag "challenger-#{friend.id}",
+                              "",
+                              class: "friend-label",
+                              id: "challenger-#{friend.id}" do %>
+                  <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
+                  <p class="program-title-task text-capitalize"><%= friend.pseudo %></p>
+                <% end %>
+              <!-- </div> -->
+            <!-- </div> elements -->
+          </div> <!-- col-12 -->
         <% end %>
-          </div>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
-  </div>
-
-    <%= link_to "Inviter !", challenge_path(@challenge), class: "btn btn-main mt-3" %>
+        <%= submit_tag(name="Inviter !", :class => "btn btn-main") %>
+      </div> <!-- row -->
+    </div>
+  <% end %>
     <%= link_to "Non merci", challenge_path(@challenge), class: "btn btn-primary button-transparent" %>
+
+
+
