@@ -1,5 +1,14 @@
 .container-task {
   background-image: image-url('background-task.png');
   padding-bottom: 50px;
+  height: 190vh;
 }
 
+.index-task{
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  top: 110px;
+  opacity: 0.5;
+  pointer-events: none;
+}
