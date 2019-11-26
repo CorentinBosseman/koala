@@ -7,23 +7,21 @@
 
     <div class="container ">
       <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch-challenges"  %><%= link_to "Mes Amis ", friendships_path, class: " btn btn-switch-challenges"  %>
-      <div class="row">
-        <div class="col-12">
-          <div class="title-thema icons-down">Mes amis</div>
-          <div class="elements">
 
-          <% @friendships_accepted.each do |friendship| %>
+      <div class="title-thema icons-down">Mes amis</div>
+      <div class="elements">
 
-            <div class="element">
-              <div>
-                <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %>
-              </div>
-            <div class="program-title-task text-capitalize"><%= friendship.friend.pseudo %></div>
+      <% @friendships_accepted.each do |friendship| %>
+
+        <div class="element">
+          <div>
+            <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %>
           </div>
-          <% end %>
-        </div> <!-- elements -->
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
+        <div class="program-title-task text-capitalize"><%= friendship.friend.pseudo %></div>
+      </div>
+      <% end %>
+    </div> <!-- elements -->
+
   <div class="title-thema icons-down">Mes demandes d'amis</div>
     <div class="elements">
     <% @friendships_pending.each do |friendship_pending| %>
