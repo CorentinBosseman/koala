@@ -1,6 +1,19 @@
 // Specific CSS for your home-page
 
 
+.background_home {
+   background-color: #FFF8CD;
+}
+
+.container_home {
+  background-color: #FFF8CD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  flex-shrink: 0;
+}
+
 .h1_home {
   margin-top: 30px;
   margin-bottom: 10px;
