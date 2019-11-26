@@ -6,7 +6,7 @@
   <div class="container">
     <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch"  %><%= link_to "Mes Amis", friendships_path, class: " btn btn-switch tiny-shad"  %>
 
-  <div class="title-thema adjust-badge-pos" id="tt-padtop">Programmes completés</div>
+  <div class="title-thema icons-down">Programmes completés</div>
   <div class="elements">
     <% @programs_completed.each do |user_program| %>
       <%= link_to program_path(user_program.program) do %>
@@ -20,7 +20,7 @@
     <% end %>
   </div> <!-- elements -->
 
-  <div class="title-thema spacing-margin" >Challenges completés</div>
+  <div class="title-thema icons-down" >Challenges completés</div>
   <div class="elements">
 
   <% @challenges_completed.each do |user_challenge| %>
