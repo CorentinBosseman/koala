@@ -91,8 +91,8 @@ corentin_christophe = Friendship.create!(
 
 corentin_yann = Friendship.create!(
   status: "Pending",
-  user: corentin,
-  friend: yann,
+  user: yann,
+  friend: corentin,
   )
 
 puts "Creating programs"
