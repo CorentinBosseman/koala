@@ -1,8 +1,8 @@
 class FriendshipsController < ApplicationController
   def index
 
-    @friendships_accepted = current_user.friendships.where(status: "Accepted")
-    @friendships_pending = current_user.friendships.where(status: "Pending")
+    @friends             = current_user.friends
+    @friendships_pending = Friendship.where(status: "Pending", friend: current_user)
   end
 
   def new
@@ -12,9 +12,11 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = Friendship.new
     @friendship.user = current_user
-    hello = User.all.find_by(pseudo: "#{friendship_params}")
+    hello = User.find_by(pseudo: friendship_params[:friend])
+
     @friendship.friend = hello
     @friendship.status = "Pending"
+    flash[:notice] = "coucou"
     @friendship.save
     redirect_to friendships_path
   end
@@ -36,6 +38,6 @@ class FriendshipsController < ApplicationController
 private
 
   def friendship_params
-    params.require(:friendship).permit(:pseudo)
+    params.require(:friendship).permit(:friend)
   end
 end
