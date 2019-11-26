@@ -1,47 +1,39 @@
 <div class="background-color-profile">
 
-<div id="bottom-page">
-  <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
-    <div ><%= cl_image_tag current_user.avatar, :class => "top-avatar bt-white" %></div>
-  </div>
+  <div id="bottom-page">
+    <div class="pseudo text-capitalize" id="dash-ban"><%= current_user.pseudo %>
+      <div ><%= cl_image_tag current_user.avatar, :class => "top-avatar bt-white" %></div>
+    </div>
 
-
-  <div class="container no-space ">
+    <div class="container ">
       <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch-challenges"  %><%= link_to "Mes Amis ", friendships_path, class: " btn btn-switch-challenges"  %>
+      <div class="row">
+        <div class="col-12">
+          <div class="title-thema adjust-badge-pos">Mes amis</div>
+          <div class="elements">
 
-<div class="row">
-      <div class="col-12">
-        <div class="title-thema adjust-badge-pos">Mes amis</div>
-        <div class="elements">
+          <% @friendships_accepted.each do |friendship| %>
 
-  <% @friendships_accepted.each do |friendship| %>
-  <div class="element">
-  <div>
-     <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %>
-  </div>
-      <div class="program-title-task text-capitalize"><%= friendship.friend.pseudo %></div>
-</div>
-    <% end %>
-    </div> <!-- elements -->
+            <div class="element">
+              <div>
+                <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %>
+              </div>
+            <div class="program-title-task text-capitalize"><%= friendship.friend.pseudo %></div>
+          </div>
+          <% end %>
+        </div> <!-- elements -->
       </div> <!-- col-12 -->
     </div> <!-- row -->
-
-<div class="row">
-      <div class="col-12">
-        <div class="title-thema adjust-badge-pos">Mes demandes d'amis</div>
-        <div class="elements">
-
-  <% @friendships_pending.each do |friendship_pending| %>
-  <div class="element">
-      <div>
-        <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %>
-      </div>
-
-     <div class="program-title-task text-capitalize"><%= friendship_pending.friend.pseudo %></div>
-        <%= link_to "Valider", accept_friendship_path(friendship_pending), method: :patch, class: "btn btn-friend-pending"%>
+  <div class="title-thema adjust-badge-pos">Mes demandes d'amis</div>
+    <div class="elements">
+    <% @friendships_pending.each do |friendship_pending| %>
+      <div class="element">
+        <div>
+          <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %>
+        </div>
+      <div class="program-title-task text-capitalize"><%= friendship_pending.friend.pseudo %></div>
+      <%= link_to "Valider", accept_friendship_path(friendship_pending), method: :patch, class: "btn btn-friend-pending"%>
     <% end %>
-   </div>
   </div>
-</div>
 <%= link_to "Ajouter un ami", new_friendship_path, class: " btn btn-main"  %>
 
