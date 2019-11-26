@@ -1,19 +1,37 @@
+
 .background-color-program-waste {
   background-color: #FAFEF7;
   height: 100vh;
 }
-
 .background-color-program-food {
   background-color: $yellow_very_ligth;
   height: 100vh;
 }
-
 .background-color-program-transport {
   background-color: $red_very_light;
   height: 100vh;
 }
-
 .background-color-program-energy {
   background-color: $blue_very_light;
+  height: 100vh;
+}
+
+.background-color-task-waste {
+  height: 100vh;
+  background: linear-gradient(#cff9af, #a6e577);
+}
+
+.background-color-task-food {
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100vh;
+}
+
+.background-color-task-transport {
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100vh;
+}
+
+.background-color-task-energy {
+  background: linear-gradient(#e66465, #9198e5);
   height: 100vh;
 }

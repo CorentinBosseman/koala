@@ -1,19 +1,35 @@
+<% if @task.program.category == "Déchets" %>
+  <div class="wrapper background-color-task-waste">
+<% elsif @challenge.category == "Nourriture" %>
+  <div class="wrapper background-color-task-food">
+<% elsif @challenge.category == "Transport" %>
+  <div class="wrapper background-color-task-transport">
+<% else %>
+  <div class="wrapper background-color-task-energy">
+<% end %>
+  <div class="container text-align: center">
 
-
-<div class="container background-color-invited text-align: center">
   <%= link_to program_path(@task.program) do %>
   <i class="far fa-times-circle fa-2x"></i>
   <% end %>
   <br>
 
-  <div class="wrapper text-center">
-    <%= image_tag "star.png", alt: "star", :class => "star_image" %>
-    <%#= cl_image_tag @challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
-    <br>
-    <h2 class="modal-thema"><%= @task.title %></h2>
-    <br>
-    <% unless @user_task.completed %>
-    <%= link_to "Valider", done_user_task_path(@user_task), method: :patch, class: "btn btn-light button-white"%>
-    <% end %>
+    <div class="wrapper text-center">
+      <div class="d-flex justify-content-center">
+        <h4><strong><%= @task.position %></strong></h4>
+        <p> /<%= @program.tasks.count %></p>
+      </div>
+      <div class="icon-task">
+      <%= cl_image_tag @task.program.icon %>
+      </div>
+      <hr width="50%"/>
+      <h2 class="title-thema"><%= @task.title %></h2>
+      <hr width="50%"/>
+      <br>
+      <% unless @user_task.completed %>
+      <%= link_to "Valider", done_user_task_path(@user_task), method: :patch, class: "btn btn-light button-white"%>
+      <% end %>
+    </div>
+
   </div>
 </div>
