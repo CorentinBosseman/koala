@@ -1,11 +1,11 @@
 // Specific CSS for your home-page
 
 
-.background_home {
+.background-home {
    background-color: #FFF8CD;
 }
 
-.container_home {
+.container-home {
   background-color: #FFF8CD;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   margin: auto;
 }
 
-.h1_home {
+.h1-home {
   margin-top: 30px;
   margin-bottom: 10px;
   font-family: 'Fredericka the Great', cursive;
@@ -24,18 +24,18 @@
   transform: rotate(-10deg);
 }
 
-.img_home {
+.img-home {
   margin-bottom: 50px;
 }
 
-.p1_home {
+.p1-home {
   font-family: 'Pacifico', cursive;
   color: #6D4C41;
   font-size: 20px;
   text-align: center;
 }
 
-.btn_home1 {
+.btn-home1 {
   margin: 20px;
   color: $green_very_dark;
   background-color: #D1EECC;
@@ -53,7 +53,7 @@
   }
 }
 
-.btn_home2 {
+.btn-home2 {
   color: $green_very_dark;
   background-color: #D1EECC;
   padding: 8px 60px;
