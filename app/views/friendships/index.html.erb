@@ -11,13 +11,13 @@
       <div class="title-thema icons-down">Mes amis</div>
       <div class="elements">
 
-      <% @friendships_accepted.each do |friendship| %>
+      <%  @friends.each do |friend| %>
 
         <div class="element">
           <div>
-            <%= cl_image_tag friendship.friend.avatar, :class => "badge-avatar bt-white" %>
+            <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
           </div>
-        <div class="program-title-task text-capitalize"><%= friendship.friend.pseudo %></div>
+        <div class="program-title-task text-capitalize"><%= friend.pseudo %></div>
 
       </div>
       <% end %>
@@ -28,9 +28,9 @@
     <% @friendships_pending.each do |friendship_pending| %>
       <div class="element">
         <div>
-          <%= cl_image_tag friendship_pending.friend.avatar, :class => "badge-avatar bt-white" %>
+          <%= cl_image_tag friendship_pending.user.avatar, :class => "badge-avatar bt-white" %>
         </div>
-      <div class="program-title-task text-capitalize"><%= friendship_pending.friend.pseudo %></div>
+      <div class="program-title-task text-capitalize"><%= friendship_pending.user.pseudo %></div>
       <%= link_to "Valider", accept_friendship_path(friendship_pending), method: :patch, class: "btn btn-friend-pending"%>
 
     <% end %>
