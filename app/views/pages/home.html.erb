@@ -1,5 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-
+<div class="background_home">
+  <div class="container_home">
+    <h1 class= h1_home>Koala</h1>
+      <%= image_tag "home_logo.png", class: "img_home" %>
+      <p class= p1_home>Koala te propose de challenger tes habitudes pour réduire ton emprunte carbone.</p>
+      <p class = p1_home>Tu pourras ainsi  adopter un mode de vie plus responsable à travers des programmes adaptés ou des challenges avec tes amis. </p>
+    <%= link_to "Se connecter", user_session_path, class: "btn_home1"  %>
+    <%= link_to "S'enregistrer", new_user_registration_path, class: "btn_home2"  %>
+  </div>
+</div>
