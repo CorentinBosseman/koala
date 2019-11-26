@@ -11,12 +11,12 @@
     <%= cl_image_tag @challenge.picture, :class => "program_image" %>
     <h1 class="title-thema"><%= @challenge.title  %></h1>
     <hr width="50%"/>
-    <p class="program-desc"><%= @challenge.description %></p>
+    <p class="program-desc mb-5"><%= @challenge.description %></p>
   <%= simple_form_for [@challenge, @user_challenge] do |f| %>
       <fieldset class="form-group radio_buttons optional user_challenge_duration">
         <input type="hidden" name="user_challenge[duration]" value="">
         <% UserChallenge::DURATIONS.each do |duration| %>
-          <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline mb-4">
             <div>
               <input class="form-check-input radio_buttons optional duration-radio-input" hidden type="radio" value="<%= duration %>" name="user_challenge[duration]" id="user_challenge_duration_<%= duration %>" <%= 'checked' if duration == 7 %>>
               <label class="form-check-label collection_radio_buttons duration-radio-label btn-day-inact" for="user_challenge_duration_<%= duration %>"><%= duration %> jours</label>
@@ -24,7 +24,6 @@
           </div>
         <% end %>
      </fieldset>
-    <%= link_to "inviter un ami", new_friendship_path, class: "btn btn-main", style:"padding: 3px 30px" %>
     <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-main" %>
   <% end %>
 </div>

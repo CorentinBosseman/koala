@@ -1,18 +1,37 @@
-
 <div class="container background-color-ongoing">
- <div class="wrapper">
-    <%= link_to challenges_path do %>
-  </div>
+  <%= link_to challenges_path do %>
     <i class="far fa-times-circle fa-2x"></i>
-    <% end %>
+  <% end %>
+ <!-- <div class="wrapper"> -->
+  <!-- </div> -->
 
   <div class="d-flex flex-column d-flex align-items-center ml-4">
-   <div class="daycount d-flex align-items-center" id="daycount-color">
-     <h1 id="big-number"><strong><%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %></h1></strong><p>/<%= @challenger.user_challenge.duration %></p>
-   </div>
-    <h2 class="title-modal top-pad"><%= @challenger.user_challenge.challenge.title %></h2>
-    <p class="adjust-desc-margin thema-details"><%= @challenger.user_challenge.challenge.description%></p>
-    <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: " btn btn-main"  %>
+    <div class="daycount d-flex align-items-center" id="daycount-color">
+      <h1 id="big-number">
+        <strong>
+          <%= (Date.today - @challenger.user_challenge.start_date).to_i + 1 %>
+        </strong>
+      </h1>
+      <p>/<%= @challenger.user_challenge.duration %></p>
+    </div>
+    <h2 class="title-modal top-pad">
+      <%= @challenger.user_challenge.challenge.title %>
+    </h2>
+    <p class="adjust-desc-margin thema-details mb-5">
+      <%= @challenger.user_challenge.challenge.description%>
+    </p>
   </div>
 
+    <div class="d-flex justify-content-center align-items-center">
+      <% @challengers.where(status: 'Accepté').where.not(friend: current_user).each do |challenger| %>
+        <div class="mx-2">
+          <div class="d-flex justify-content-center align-items-center">
+            <%= cl_image_tag challenger.friend.avatar, :class => "badge-avatar bt-white" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= link_to "J'ai craqué", abort_challenger_path(@challenger), method: :patch, class: "btn btn-main"  %>
+    </div>
 </div>
