@@ -1,0 +1,31 @@
+.bkg-login {
+  background-color: $yellow_sand;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+.avatar-login {
+  width: 120px;
+  height: 120px;
+  margin: 75px;
+}
+.form-input {
+  width: 260px;
+  border: solid 0 $beige;
+  border-radius: 10px;
+  align-items: center;
+}
+.text-login  {
+  font-family: Ropa Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 30px;
+  color: $brown_light;
+  margin-top: 20px;
+}
+.btn-pos  {
+  margin-top: 70px;
+}
