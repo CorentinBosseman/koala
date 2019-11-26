@@ -29,8 +29,8 @@
   flex-direction: column;
   align-items: center;
   width: 125px;
-  flex-shrink: 0;
-  animation: .9s ease-in-out both fade-in;
+  // flex-shrink: 0;
+  // animation: .9s ease-in-out both fade-in;
 }
 .no-space {
   padding: 0;
@@ -118,7 +118,7 @@ letter-spacing: 0.5px;
   color: $brown_very_dark;
 }
 .transparent {
-  opacity: 0.4;
+  opacity: 0.4 !important;
 }
 #bottom-page  {
   padding-bottom: 28px;
