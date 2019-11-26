@@ -3,7 +3,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 }
 .avatar-login {
@@ -28,4 +27,7 @@
 }
 .btn-pos  {
   margin-top: 70px;
+}
+.dark-in  {
+box-shadow: inset 2px 2px 4px rgba(109, 76, 65, 0.15);
 }
