@@ -39,3 +39,16 @@
     font-family: 'Ropa Sans';
     color: #6D4C41;
 }
+
+.btn-second {
+  color: $green_very_dark;
+  background-color: #D1EECC;
+  padding: 4px 30px;
+  border-radius: 50px;
+  font-family: 'Ropa Sans', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin: 35px auto;
+}

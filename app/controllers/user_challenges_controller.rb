@@ -8,7 +8,8 @@ class UserChallengesController < ApplicationController
     @user_challenge.challenge = @challenge
     @user_challenge.challengers.new(friend: current_user, status: "Accepté")
     @user_challenge.save
-    redirect_to challenge_path(@challenge)
+
+    redirect_to new_user_challenge_challengers_invitation_path(@user_challenge)
   end
 
   private

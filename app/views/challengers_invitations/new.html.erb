@@ -1,0 +1,34 @@
+<% if @challenge.category == "Déchets" %>
+  <div class="background-color-program-waste">
+<% elsif @challenge.category == "Nourriture" %>
+  <div class="background-color-program-food">
+<% elsif @challenge.category == "Transport" %>
+  <div class="background-color-program-transport">
+<% else %>
+  <div class="background-color-program-energy">
+<% end %>
+
+  <div class="challenge-content text-center">
+  <%= cl_image_tag @challenge.picture, :class => "program_image" %>
+  <h1 class="title-thema"><%= @challenge.title %></h1>
+  <hr width="50%"/>
+  <div class="btn btn-second"><%= @user_challenge.duration %> jours</div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="elements">
+          <div><% current_user.friends.each do |friend| %></div>
+          <div class="element">
+            <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
+          <div class="program-title-task text-capitalize"><%= friend.pseudo %></div>
+        <% end %>
+          </div>
+        </div> <!-- elements -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div>
+
+    <%= link_to "Inviter !", challenge_path(@challenge), class: "btn btn-main mt-3" %>
+    <%= link_to "Non merci", challenge_path(@challenge), class: "btn btn-primary button-transparent" %>

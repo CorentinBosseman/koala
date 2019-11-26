@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index, :show] do
     resources :user_challenges, only: [:create]
   end
+  resources :user_challenges, only: [] do
+    resource :challengers_invitation, only: [:new, :create]
+  end
 
   resources :challengers, only: [] do
     member do
