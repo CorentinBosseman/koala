@@ -6,16 +6,17 @@
   <div class="container">
     <div class="row">
       <% @tasks.each_with_index do |task, index| %>
-
-        <div class="<%= task_col_class(index, @tasks.size) %>" >
+        <div class="<%= task_col_class(index, @tasks.size) %>">
           <div class="index-task"><%= index +1 %></div>
           <% if task.completed %>
-              <%= link_to program_task_path(@program, task) do%>
-            <div class="badge-task-validated mb-5 mt-5"></div>
+            <%= link_to program_task_path(@program, task) do%>
+              <div class="task-star task-star-completed mb-5 mt-5 mx-auto">
+                <%= render 'icons/star' %>
+              </div>
             <% end %>
           <% elsif task.status == 'ongoing' %>
-              <%= link_to program_task_path(@program, task) do%>
-            <div class="badge-task-ongoing mb-5 mt-5"></div>
+            <%= link_to program_task_path(@program, task) do%>
+              <div class="badge-task-ongoing mb-5 mt-5"></div>
             <% end %>
           <% else %>
             <div class="badge-task-locked mb-5 mt-5"></div>
