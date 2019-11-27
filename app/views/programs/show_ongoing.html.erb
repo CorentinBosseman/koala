@@ -1,7 +1,7 @@
 <div class="container-task pt-5">
   <div class="program-header text-center">
     <h1 class="title-thema"><%= @program.title  %></h1>
-    <p class="prog-head-sub-title program-desc mt-0">3 défis réalisés sur <%= @program.tasks.count %></p>
+    <p class="prog-head-sub-title program-desc mt-0"><%= french_pluralize 0, 'défi réalisé', 'défis réalisés' %> sur <%= @program.tasks.count %></p>
   </div>
   <div class="container mt-5">
     <div class="row">
