@@ -12,7 +12,7 @@
     <h1 class="title-thema"><%= @challenge.title  %></h1>
     <hr width="50%"/>
     <p class="program-desc mb-5"><%= @challenge.description %></p>
-  <%= simple_form_for [@challenge, @user_challenge] do |f| %>
+    <%= simple_form_for [@challenge, @user_challenge] do |f| %>
       <fieldset class="form-group radio_buttons optional user_challenge_duration">
         <input type="hidden" name="user_challenge[duration]" value="">
         <% UserChallenge::DURATIONS.each do |duration| %>
@@ -24,7 +24,7 @@
           </div>
         <% end %>
      </fieldset>
-    <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-main" %>
-  <% end %>
+    <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-main", id: "btn-begin-challenge" %>
+    <% end %>
+  </div>
 </div>
-
