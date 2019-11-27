@@ -469,22 +469,22 @@ Challenger.create!(
   status: "Accepté",
 )
 
-user_challenge_achete_en_vrac = UserChallenge.create!(
+user_challenge_achete_produits_neufs = UserChallenge.create!(
   start_date: Date.today,
   end_date: Date.today + 28,
   duration: 28,
   user: remi,
-  challenge: achete_en_vrac,
+  challenge: achete_produits_neufs,
   )
 
 Challenger.create!(
-  user_challenge: user_challenge_achete_en_vrac,
+  user_challenge: user_challenge_achete_produits_neufs,
   friend: remi,
-  status: "En attente",
+  status: "Accepté",
 )
 
 Challenger.create!(
-  user_challenge: user_challenge_achete_en_vrac,
+  user_challenge: user_challenge_achete_produits_neufs,
   friend: corentin,
   status: "En attente",
 )
