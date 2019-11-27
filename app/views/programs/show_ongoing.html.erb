@@ -1,24 +1,33 @@
-<div class="container-task">
-  <div class="program-content text-center pt-5">
-  <h1><%= @program.title  %></h1>
-  <hr width="50%"/>
+<div class="container-task pt-5">
+  <div class="program-header text-center">
+    <h1 class="title-thema"><%= @program.title  %></h1>
+    <p class="prog-head-sub-title program-desc mt-0">3 défis réalisés sur <%= @program.tasks.count %></p>
   </div>
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
       <% @tasks.each_with_index do |task, index| %>
-
-        <div class="<%= task_col_class(index, @tasks.size) %>" >
-          <div class="index-task"><%= index +1 %></div>
+        <div class="<%= task_col_class(index, @tasks.size) %>">
           <% if task.completed %>
-              <%= link_to program_task_path(@program, task) do%>
-            <div class="badge-task-validated mb-5 mt-5"></div>
+            <%= link_to program_task_path(@program, task), class: 'd-block mb-5 mt-5' do%>
+              <div class="task-star task-star-completed mx-auto">
+                <%= render 'icons/star' %>
+              </div>
+              <div class="mt-3 task-position-text text-center">- Défi nº<%= task.position %> -</div>
             <% end %>
           <% elsif task.status == 'ongoing' %>
-              <%= link_to program_task_path(@program, task) do%>
-            <div class="badge-task-ongoing mb-5 mt-5"></div>
+            <%= link_to program_task_path(@program, task), class: 'd-block mb-5 mt-5' do%>
+              <div class="task-star task-star-ongoing mx-auto">
+                <%= render 'icons/star' %>
+              </div>
+              <div class="mt-3 task-position-text text-center">- Défi nº<%= task.position %> -</div>
             <% end %>
           <% else %>
-            <div class="badge-task-locked mb-5 mt-5"></div>
+            <div class="mb-5 mt-5">
+              <div class="task-star task-star-locked mx-auto">
+                <%= render 'icons/star' %>
+              </div>
+              <div class="mt-3 text-center task-position-text task-locked-text">- Défi nº<%= task.position %> -</div>
+            </div>
           <% end %>
         </div>
       <% end %>
