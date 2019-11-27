@@ -97,6 +97,14 @@ corentin_yann = Friendship.create!(
 
 puts "Creating programs"
 
+autonomie = Program.create!(
+  title: "Viser l'autonomie",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  position: 3,
+  category: "Energie",
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png")),
+  )
+
 un_nouveau_depart = Program.create!(
   title: "Un nouveau départ",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
@@ -441,6 +449,20 @@ Challenger.create!(
   status: "Réussi",
 )
 
+
+Challenger.create!(
+  user_challenge: user_challenge_jarrete_fast_foods,
+  friend: laszlo,
+  status: "Accepté",
+)
+
+Challenger.create!(
+  user_challenge: user_challenge_jarrete_fast_foods,
+  friend: christophe,
+  status: "Accepté",
+)
+
+
 user_challenge_exces_electriques = UserChallenge.create!(
   start_date: Date.today - 14,
   end_date: Date.today,
@@ -469,22 +491,22 @@ Challenger.create!(
   status: "Accepté",
 )
 
-user_challenge_achete_produits_neufs = UserChallenge.create!(
+user_challenge_achete_en_vrac = UserChallenge.create!(
   start_date: Date.today,
   end_date: Date.today + 28,
   duration: 28,
   user: remi,
-  challenge: achete_produits_neufs,
+  challenge: achete_en_vrac,
   )
 
 Challenger.create!(
-  user_challenge: user_challenge_achete_produits_neufs,
+  user_challenge: user_challenge_achete_en_vrac,
   friend: remi,
   status: "Accepté",
 )
 
 Challenger.create!(
-  user_challenge: user_challenge_achete_produits_neufs,
+  user_challenge: user_challenge_achete_en_vrac,
   friend: corentin,
   status: "En attente",
 )
