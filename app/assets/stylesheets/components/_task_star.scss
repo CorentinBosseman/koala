@@ -6,11 +6,14 @@
   border-radius: 50%;
 
   &.task-star-completed {
-    border-color: $green;
-    box-shadow: inset 0 0 90px 0 rgba($green, 0.8), 0 0 15px 0 rgba($green, 0.7);
+    border-color: $green_star
+    ;
+    box-shadow: inset 0 0 90px 0 rgba($green_star
+      , 0.8), 0 0 15px 0 rgba($green, 0.7);
 
     svg {
-      fill: $green;
+      fill: $green_star
+      ;
     }
   }
 
