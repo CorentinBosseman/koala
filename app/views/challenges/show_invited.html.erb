@@ -12,6 +12,6 @@
     <br>
     <p class="thema-details"><%= @challenger.user_challenge.challenge.description %></p>
     <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white" %>
-    <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent" %>
+    <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent border-0" %>
   </div>
 </div>
