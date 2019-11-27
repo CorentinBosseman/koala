@@ -3,7 +3,7 @@
     <div ><%= cl_image_tag @current_user.avatar, :class => "top-avatar bt-white" %></div>
   </div>
 
-  <div class="container">
+  <div class="container pb-5">
     <%= link_to "Mon Profil", profile_path, class: " btn btn-unswitch"  %><%= link_to "Mes Amis", friendships_path, class: " btn btn-switch tiny-shad"  %>
 
   <div class="title-thema icons-down">Programmes completés</div>
@@ -21,7 +21,7 @@
   </div> <!-- elements -->
 
   <div class="title-thema icons-down" >Challenges completés</div>
-  <div class="elements mb-0">
+  <div class="elements mb-4">
 
   <% @challenges_completed.each do |user_challenge| %>
     <%= link_to challenge_path(user_challenge.challenge), class: 'element' do %>
@@ -34,6 +34,10 @@
     <% end %>
   <% end %>
   </div> <!-- elements -->
+  <hr width="70%">
+  <div class="text-center">
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-main mb-5" %>
+  </div>
 </div>
 
 
