@@ -40,7 +40,8 @@ class ProgramsController < ApplicationController
           SQL
         ).
         left_joins(user_tasks: :user_program).
-        where(user_programs: { user_id: [nil, current_user.id] })
+        where(user_programs: { user_id: [nil, current_user.id] }).
+        order(:position)
 
       render :show_ongoing
     else
