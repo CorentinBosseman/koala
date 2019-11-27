@@ -21,7 +21,7 @@
   </div> <!-- elements -->
 
   <div class="title-thema icons-down" >Challenges completés</div>
-  <div class="elements">
+  <div class="elements mb-0">
 
   <% @challenges_completed.each do |user_challenge| %>
     <%= link_to challenge_path(user_challenge.challenge), class: 'element' do %>

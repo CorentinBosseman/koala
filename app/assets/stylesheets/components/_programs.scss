@@ -23,7 +23,9 @@
   width: 100%;
   // justify-content:center;
   margin-bottom: 34px;
-  overflow: auto;
+  // overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .element {
   display: flex;
