@@ -16,8 +16,8 @@
 
     <div class="wrapper text-center">
       <div class="d-flex justify-content-center mb-4">
-        <h4><strong><%= @task.position %></strong></h4>
-        <p> /<%= @program.tasks.count %></p>
+        <h4 class="task-numbers"><strong><%= @task.position %></strong></h4>
+        <p class="task-count"> /<%= @program.tasks.count %></p>
       </div>
       <div class="icon-task mb-4">
         <%= cl_image_tag @task.program.icon %>

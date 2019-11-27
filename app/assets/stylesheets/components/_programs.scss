@@ -125,6 +125,16 @@ letter-spacing: 0.5px;
 .transparent {
   opacity: 0.4 !important;
 }
+.task-numbers {
+  color: $brown_very_dark;
+  font-family: Rubik;
+  font-size: 36px;
+}
+.task-count {
+  color: $brown_very_dark;
+  font-family: Rubik;
+  font-size: 18px;
+}
 #bottom-page  {
   padding-bottom: 28px;
 }
