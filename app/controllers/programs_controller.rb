@@ -42,6 +42,7 @@ class ProgramsController < ApplicationController
         left_joins(user_tasks: :user_program).
         where(user_programs: { user_id: [nil, current_user.id] }).
         order(:position)
+      @tasks_completed = @tasks.count(&:completed)
 
       render :show_ongoing
     else
