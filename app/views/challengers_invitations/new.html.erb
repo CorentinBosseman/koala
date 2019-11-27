@@ -14,12 +14,14 @@
   <hr width="50%"/>
   <div class="btn btn-second"><%= @user_challenge.duration %> jours</div>
 
+  <p class="program-desc">Challenge tes amis</p>
+
 
   <%= form_tag user_challenge_challengers_invitation_path(@user_challenge) do %>
     <div class="container">
-      <div class="row">
+        <div class="elements pt-4">
         <% @friends.each do |friend| %>
-          <div class="col-4">
+          <div class="element">
 
                 <%= check_box_tag 'challengers[]',
                                   friend.id,
@@ -38,9 +40,9 @@
 
           </div> <!-- col-12 -->
         <% end %>
-        <%= submit_tag(name="Inviter !", :class => "btn btn-main") %>
-    <%= link_to "Non merci", challenge_path(@challenge), class: "btn btn-primary button-transparent" %>
-      </div> <!-- row -->
+        </div>
+        <%= submit_tag(name="Inviter !", :class => "btn btn-main mt-1") %>
+        <%= link_to "Non merci", challenge_path(@challenge), class: "btn btn-primary button-transparent mt-1 border-0" %>
     </div>
   <% end %>
 

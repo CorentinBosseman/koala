@@ -24,7 +24,7 @@
     </div> <!-- elements -->
 
   <div class="title-thema icons-down">Mes demandes d'amis</div>
-    <div class="elements">
+    <div class="elements mb-0">
     <% @friendships_pending.each do |friendship_pending| %>
       <div class="element">
         <div>
@@ -36,4 +36,6 @@
     <% end %>
     <%= link_to "Ajouter un ami", new_friendship_path, class: "btn btn-main btn-friends" %>
   </div>
+  </div>
+</div>
 

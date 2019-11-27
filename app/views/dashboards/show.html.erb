@@ -37,11 +37,11 @@
     </div> <!-- elements -->
   </div> <!-- container -->
 
-  <div class="container dash-bg respacing" id="no-bottom-room">
+  <div class="container dash-bg respacing " id="no-bottom-room pb-5">
     <div class="title-thema spacing-margin">Challengers</div>
-    <div class="elements">
+    <div class="elements ">
       <% @challengers.each do |challenger| %>
-        <%= link_to challenge_path(challenger.user_challenge.challenge), class: 'element' do %>
+        <%= link_to challenge_path(challenger.user_challenge.challenge), class: 'element mb-5' do %>
           <!-- <div class="element"> -->
             <%= cl_image_tag challenger.user_challenge.user.avatar, :class => "badge-avatar bt-white" %>
             <div class="program-title-task text-capitalize">
