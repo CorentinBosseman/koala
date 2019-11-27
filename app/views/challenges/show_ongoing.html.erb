@@ -17,16 +17,19 @@
     <h2 class="title-modal top-pad">
       <%= @challenger.user_challenge.challenge.title %>
     </h2>
-    <p class="adjust-desc-margin thema-details mb-5">
+    <p class="adjust-desc-margin thema-details mb-4">
       <%= @challenger.user_challenge.challenge.description%>
     </p>
+         <p class="program-desc">Mes challengers :</p>
   </div>
-
     <div class="d-flex justify-content-center align-items-center">
       <% @challengers.where(status: 'Accepté').where.not(friend: current_user).each do |challenger| %>
         <div class="mx-2">
           <div class="d-flex justify-content-center align-items-center">
+              <div class="element">
             <%= cl_image_tag challenger.friend.avatar, :class => "badge-avatar bt-white" %>
+            <div class="program-title-task text-capitalize"><%= challenger.friend.pseudo %></div>
+              </div>
           </div>
         </div>
       <% end %>
