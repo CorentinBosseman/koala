@@ -1,9 +1,11 @@
-<div class="container">
-  <h1>Ajouter un ami</h1>
+<div class="container d-flex add-friend">
+  <div class="d-flex flex-column d-flex align-items-cente m-auto text-center">
+  <h1 class="title-thema">Ajouter un ami</h1>
 
   <%= simple_form_for @friendship do |f| %>
-    <%= f.input :friend, label: 'pseudo' %>
+    <%= f.input :friend , placeholder: "Entrer un Pseudo", label: false%>
 
-    <%= f.button :submit, "Valider", class: "btn btn-primary btn-primary-flat" %>
+    <%= f.button :submit, "Valider", class: "btn btn-light button-white" %>
   <% end %>
+  </div>
 </div>
