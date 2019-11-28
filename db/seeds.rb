@@ -422,8 +422,8 @@ puts "Creating User Challenges + Challengers"
 
 user_challenge_exces_electriques = UserChallenge.create!(
   start_date: Date.today - 2,
-  end_date: Date.today,
-  duration: 7,
+  end_date: Date.today - 1,
+  duration: 28,
   user: corentin,
   challenge: exces_electriques,
   )
