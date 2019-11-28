@@ -23,7 +23,7 @@ class DashboardsController < ApplicationController
             elsif challenge.user_challenge.duration == 14
               current_user.update(points: (current_user.points + 200))
               recalculate_level!
-            elsif challenge.user_challenge.duration == 28
+            else
               current_user.update(points: (current_user.points + 500))
               recalculate_level!
             end

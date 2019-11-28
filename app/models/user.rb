@@ -42,8 +42,11 @@ class User < ApplicationRecord
   }
 
   def self.level_from_points(points)
-    LEVELS.find { |level, range| range.include?(points) }[0]
+   LEVELS.find { |level, range| range.include?(points) }[0]
   end
 
-
+  def next_level
+    next_level = LEVELS.find { |level, range| range.include?(points) }[1]
+    next_level.last
+  end
 end
