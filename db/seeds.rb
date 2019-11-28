@@ -422,8 +422,8 @@ puts "Creating User Challenges + Challengers"
 
 user_challenge_exces_electriques = UserChallenge.create!(
   start_date: Date.today - 2,
-  end_date: Date.today,
-  duration: 7,
+  end_date: Date.today - 1,
+  duration: 28,
   user: corentin,
   challenge: exces_electriques,
   )
@@ -443,8 +443,15 @@ user_challenge_jarrete_fast_foods = UserChallenge.create!(
   challenge: arrete_fast_foods,
   )
 
+user_challenge_jarrete_soda = UserChallenge.create!(
+  start_date: Date.today - 2,
+  end_date: Date.today - 1,
+  duration: 7,
+  user: corentin,
+  challenge: jarrete_soda,
+  )
 Challenger.create!(
-  user_challenge: user_challenge_jarrete_fast_foods,
+  user_challenge: user_challenge_jarrete_soda,
   friend: corentin,
   status: "Réussi",
 )
@@ -463,19 +470,8 @@ Challenger.create!(
 )
 
 
-user_challenge_exces_electriques = UserChallenge.create!(
-  start_date: Date.today - 14,
-  end_date: Date.today,
-  duration: 14,
-  user: corentin,
-  challenge: exces_electriques,
-  )
 
-Challenger.create!(
-  user_challenge: user_challenge_exces_electriques,
-  friend: corentin,
-  status: "Réussi",
-)
+
 
 user_challenge_jarrete_lavion_2 = UserChallenge.create!(
   start_date: Date.today - 14,
