@@ -1,24 +1,24 @@
 <div class="navbar">
 
   <%= link_to dashboard_path do %>
-    <div class="category item-1">
+    <div class="category item-1 <%= "active" if current_page?(dashboard_path) %>">
       <%= icon("fas", "home") %>
-      <div class="label">ACCUEIL</div>
+      <div class="label <%= "active" if current_page?(dashboard_path) %>">ACCUEIL</div>
     </div>
   <% end %>
 
 
   <%= link_to programs_path do %>
-    <div class="category item-2">
+    <div class="category item-2 <%= "active" if current_page?(programs_path) || current_page?(challenges_path)%>">
       <%= icon("fas", "book-open") %>
-      <div class="label">DÉCOUVRIR</div>
+      <div class="label <%= "active" if current_page?(programs_path) || current_page?(challenges_path)%>">DÉCOUVRIR</div>
     </div>
   <% end %>
 
   <%= link_to profile_path do %>
-    <div class="category item-3">
+    <div class="category item-3 <%= "active" if current_page?(profile_path) || current_page?(friendships_path)%>">
       <%= icon("fas", "user") %>
-      <div class="label">PROFIL</div>
+      <div class="label <%= "active" if current_page?(profile_path) || current_page?(friendships_path)%>">PROFIL</div>
     </div>
   <% end %>
 </div>

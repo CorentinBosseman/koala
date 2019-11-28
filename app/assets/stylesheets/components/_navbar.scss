@@ -28,3 +28,8 @@
   font-size:13px;
   margin-top:5px;
 }
+.active {
+  color: $yellow_star;
+  // color: #51CA3C;
+  text-shadow: 0px 3px 3px rgba(81, 202, 60, 0.4);
+}
