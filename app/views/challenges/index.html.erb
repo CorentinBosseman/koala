@@ -1,8 +1,6 @@
 <div id="bottom-page">
-  <div class="pseudo text-capitalize" id="dash-ban">
-    <%= current_user.pseudo %>
-    <div><%= cl_image_tag current_user.avatar, :class => "top-avatar bt-white" %></div>
-  </div>
+
+  <%= render "shared/topnav" %>
 
   <div class="container bkg-yellow">
     <%= link_to "Programmes", programs_path, class: "btn btn-unswitch-challenges"  %><%= link_to "Challenges ", challenges_path, class: " btn btn-switch-challenges"  %>
@@ -56,7 +54,6 @@
       <% end %>
     </div> <!-- elements -->
   </div>
-
 
   <div class="container bkg-red">
     <div class="title-thema adjust-badge-pos">Transport</div>
