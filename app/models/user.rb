@@ -45,7 +45,5 @@ class User < ApplicationRecord
     LEVELS.find { |level, range| range.include?(points) }[0]
   end
 
-   def recalculate_level!
-    update_attribute(:level, User.level_from_points(care_points))
-  end
+
 end

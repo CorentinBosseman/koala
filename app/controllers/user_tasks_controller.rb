@@ -15,10 +15,15 @@ class UserTasksController < ApplicationController
 
       if program.position == 1
         current_user.update(points: (current_user.points + 50))
+        recalculate_level!
       elsif program.position == 2
         current_user.update(points: (current_user.points + 80))
-      elsif program.position == 3
+        recalculate_level!
+
+      else
         current_user.update(points: (current_user.points + 130))
+        recalculate_level!
+
       end
     end
 
