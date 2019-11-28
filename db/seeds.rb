@@ -435,14 +435,6 @@ Challenger.create!(
 )
 
 
-user_challenge_jarrete_fast_foods = UserChallenge.create!(
-  start_date: Date.today - 14,
-  end_date: Date.today,
-  duration: 14,
-  user: corentin,
-  challenge: arrete_fast_foods,
-  )
-
 user_challenge_jarrete_soda = UserChallenge.create!(
   start_date: Date.today - 2,
   end_date: Date.today - 1,
@@ -450,12 +442,26 @@ user_challenge_jarrete_soda = UserChallenge.create!(
   user: corentin,
   challenge: jarrete_soda,
   )
+
 Challenger.create!(
   user_challenge: user_challenge_jarrete_soda,
   friend: corentin,
   status: "Réussi",
 )
 
+user_challenge_jarrete_fast_foods = UserChallenge.create!(
+  start_date: Date.today - 14,
+  end_date: Date.today,
+  duration: 28,
+  user: corentin,
+  challenge: arrete_fast_foods,
+  )
+
+Challenger.create!(
+  user_challenge: user_challenge_jarrete_fast_foods,
+  friend: corentin,
+  status: "Accepté",
+)
 
 Challenger.create!(
   user_challenge: user_challenge_jarrete_fast_foods,
@@ -469,16 +475,12 @@ Challenger.create!(
   status: "Accepté",
 )
 
-
-
-
-
 user_challenge_jarrete_lavion_2 = UserChallenge.create!(
   start_date: Date.today - 14,
   end_date: Date.today + 14,
   duration: 28,
   user: corentin,
-  challenge: arrete_fast_foods,
+  challenge: jarrete_lavion,
   )
 
 Challenger.create!(
@@ -507,3 +509,8 @@ Challenger.create!(
   status: "En attente",
 )
 
+# Challenger.create!(
+#   user_challenge: user_challenge_achete_en_vrac,
+#   friend: corentin,
+#   status: "Accepté",
+# )
