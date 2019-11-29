@@ -9,16 +9,16 @@
 
 
   <%= link_to programs_path do %>
-    <div class="category item-2 <%= "active" if current_page?(programs_path) || current_page?(challenges_path)%>">
+    <div class="category item-2 <%= "active" if current_page?(programs_path) || current_page?(challenges_path) %>">
       <%= icon("fas", "book-open") %>
-      <div class="label <%= "active" if current_page?(programs_path) || current_page?(challenges_path)%>">DÉCOUVRIR</div>
+      <div class="label <%= "active" if current_page?(programs_path) || current_page?(challenges_path) %>">DÉCOUVRIR</div>
     </div>
   <% end %>
 
   <%= link_to profile_path do %>
-    <div class="category item-3 <%= "active" if current_page?(profile_path) || current_page?(friendships_path)%>">
+    <div class="category item-3 <%= "active" if current_page?(profile_path) || current_page?(friendships_path) %>">
       <%= icon("fas", "user") %>
-      <div class="label <%= "active" if current_page?(profile_path) || current_page?(friendships_path)%>">PROFIL</div>
+      <div class="label <%= "active" if current_page?(profile_path) || current_page?(friendships_path) %>">PROFIL</div>
     </div>
   <% end %>
 </div>
