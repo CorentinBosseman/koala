@@ -1,17 +1,17 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = Program.
-      select(
-        <<~SQL
-          programs.*,
-          CASE user_programs.completed
-            WHEN true  THEN 'completed'
-            WHEN false THEN 'ongoing'
-            ELSE 'not started'
-          END AS status,
-        completed
-        SQL
-      ).
+    @programs = Program.all.
+      # select(
+      #   <<~SQL
+      #     programs.*,
+      #     CASE user_programs.completed
+      #       WHEN true  THEN 'completed'
+      #       WHEN false THEN 'ongoing'
+      #       ELSE 'not started'
+      #     END AS status,
+      #   completed
+      #   SQL
+      # ).
       left_joins(:user_programs).
       where(user_programs: { user_id: [nil, current_user.id] })
 
