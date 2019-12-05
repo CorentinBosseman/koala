@@ -12,6 +12,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     @user_challenge = UserChallenge.new
     @challengers = @challenge.challengers
+    @friends_challengers = []
+    @challengers.each do |challenger|
+      @friends_challengers.push(challenger) if current_user.friends.include?(challenger.friend)
+    end
     @challenger = @challenge.challengers.find_by(friend_id: current_user.id, status: ['En attente', 'Accepté'])
 
     if @challenger
