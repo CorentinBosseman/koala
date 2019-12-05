@@ -1,13 +1,13 @@
 <% if @challenge.category == "Déchets" %>
-  <div class="background-color-program-waste">
-  <% elsif @challenge.category == "Nourriture" %>
-  <div class="background-color-program-food">
-  <% elsif @challenge.category == "Transport" %>
-  <div class="background-color-program-transport">
-  <% else %>
-  <div class="background-color-program-energy">
+<div class="background-color-program-waste">
+<% elsif @challenge.category == "Nourriture" %>
+<div class="background-color-program-food">
+<% elsif @challenge.category == "Transport" %>
+<div class="background-color-program-transport">
+<% else %>
+<div class="background-color-program-energy">
 <% end %>
-    <div class="challenge-content text-center">
+  <div class="challenge-content text-center">
     <%= cl_image_tag @challenge.picture, :class => "program_image" %>
     <h1 class="title-thema"><%= @challenge.title  %></h1>
     <hr width="50%"/>
@@ -23,7 +23,7 @@
             </div>
           </div>
         <% end %>
-     </div>
+      </div>
     <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-main" %>
     <% end %>
   </div>

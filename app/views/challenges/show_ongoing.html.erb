@@ -23,7 +23,7 @@
          <p class="program-desc">Mes challengers :</p>
   </div>
     <div class="d-flex justify-content-center align-items-center">
-      <% @challengers.where(status: 'Accepté').where.not(friend: current_user).each do |challenger| %>
+      <% @friends_challengers.each do |challenger| %>
         <div class="mx-2">
           <div class="d-flex justify-content-center align-items-center">
               <div class="element">
