@@ -1,6 +1,7 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = Program.
+
+      @programs = Program.
       select(
         <<~SQL
           programs.*,
@@ -14,6 +15,7 @@ class ProgramsController < ApplicationController
       ).
       left_joins(:user_programs).
       where(user_programs: { user_id: [nil, current_user.id] })
+
 
     @programs_food = @programs.where(category: 'Nourriture').order(:position)
     @programs_waste = @programs.where(category: 'Déchets').order(:position)

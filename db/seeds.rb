@@ -97,13 +97,6 @@ corentin_yann = Friendship.create!(
 
 puts "Creating programs"
 
-autonomie = Program.create!(
-  title: "Viser l'autonomie",
-  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
-  position: 3,
-  category: "Energie",
-  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png")),
-  )
 
 un_nouveau_depart = Program.create!(
   title: "Un nouveau départ",
@@ -113,20 +106,20 @@ un_nouveau_depart = Program.create!(
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/new-start.png"))
   )
 
-la_santé_dabord = Program.create!(
-  title: "La santé d'abord",
-  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
-  position: 3,
-  category: "Nourriture",
-  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/health-first.png"))
-  )
-
 vivre_avec_saison = Program.create!(
   title: "Vivre avec les saisons",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Nourriture",
   position: 2,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/live-seasons.png"))
+  )
+
+la_santé_dabord = Program.create!(
+  title: "La santé d'abord",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  position: 3,
+  category: "Nourriture",
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/health-first.png"))
   )
 
 un_etat_desprit = Program.create!(
@@ -177,6 +170,13 @@ faisons_la_lumiere = Program.create!(
 
   )
 # premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+autonomie = Program.create!(
+  title: "Viser l'autonomie",
+  description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
+  position: 3,
+  category: "Energie",
+  icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png")),
+  )
 
 la_voiture_au_garage = Program.create!(
   title: "La voiture au garage",
@@ -205,6 +205,11 @@ deplacements_alternatifs = Program.create!(
   )
 
 puts "Creating tasks"
+task_1_un_nouveau_depart = Task.create!(
+  title: "Je colle un autocollant STOP-PUB sur ma boîte aux lettres",
+  position: 1,
+  program: un_nouveau_depart,
+  )
 
 task_1_un_etat_desprit = Task.create!(
   title: "Je colle un autocollant STOP-PUB sur ma boîte aux lettres",
@@ -273,35 +278,6 @@ task_3_vivre_avec_saison = Task.create!(
   program: vivre_avec_saison
 )
 
-puts "Creating users programs"
-
-# programme complété
-program_completed1 = UserProgram.create!(
-  user: corentin,
-  program: un_nouveau_depart,
-  completed: true,
-  )
-
-# programme en cours
-program_ongoing1 = UserProgram.create!(
-  user: corentin,
-  program: premieres_economies,
-  completed: false,
-  )
-
-program_ongoing2 = UserProgram.create!(
-  user: corentin,
-  program: vivre_avec_saison,
-  completed: false,
-  )
-
-program_ongoing3 = UserProgram.create!(
-  user: corentin,
-  program: la_voiture_au_garage,
-  completed: false,
-  )
-UserTask.create!(user_program: program_ongoing2, task: task_1_vivre_avec_saison, completed: true)
-UserTask.create!(user_program: program_ongoing2, task: task_2_vivre_avec_saison, completed: false)
 
 
 puts "Creating Challenges"
