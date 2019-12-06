@@ -1,17 +1,11 @@
-<% if @challenge.category == "Déchets" %>
-<div class="background-color-program-waste">
-<% elsif @challenge.category == "Nourriture" %>
-<div class="background-color-program-food">
-<% elsif @challenge.category == "Transport" %>
-<div class="background-color-program-transport">
-<% else %>
-<div class="background-color-program-energy">
-<% end %>
-  <div class="challenge-content text-center">
-    <%= cl_image_tag @challenge.picture, :class => "program_image" %>
+<div class="<%= background_category(@challenge.category) %>">
+
+  <div class="text-center">
+    <%= cl_image_tag @challenge.picture, class: "program_image" %>
     <h1 class="title-thema"><%= @challenge.title  %></h1>
     <hr width="50%"/>
     <p class="program-desc mb-5"><%= @challenge.description %></p>
+
     <%= simple_form_for [@challenge, @user_challenge] do |f| %>
       <div class="form-group radio_buttons optional user_challenge_duration d-flex justify-content-center">
         <input type="hidden" name="user_challenge[duration]" value="">
@@ -24,6 +18,7 @@
           </div>
         <% end %>
       </div>
+
     <%= f.button :submit, "Commencer", class: "reservation-submit btn btn-main" %>
     <% end %>
   </div>

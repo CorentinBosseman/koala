@@ -1,28 +1,20 @@
-<% if @challenger.user_challenge.challenge.category == "Déchets" %>
-  <div class="wrapper background-color-task-waste">
-<% elsif @challenger.user_challenge.challenge.category == "Nourriture" %>
-  <div class="wrapper background-color-task-food">
-<% elsif @challenger.user_challenge.challenge.category == "Transport" %>
-  <div class="wrapper background-color-task-transport">
-<% else %>
-  <div class="wrapper background-color-task-energy">
-<% end %>
+<div class="container-fluid <%= background_category(@challenger.user_challenge.challenge.category) %>">
 
-    <div class="container text-align: center">
-      <%= link_to challenges_path do %>
-      <i class="far fa-times-circle fa-2x"></i>
-      <% end %>
-      <div class="wrapper text-center">
-        <div class="icon-task mb-4">
-          <%= cl_image_tag @challenger.user_challenge.challenge.icon %>
-        </div>
-        <h2 class="task-modal">Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
-        <br>
-        <h2 class="modal-thema"><%= @challenger.user_challenge.challenge.title %></h2>
-        <br>
-        <p class="thema-details"><%= @challenger.user_challenge.challenge.description %></p>
-        <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white" %>
-        <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent border-0" %>
-      </div>
+    <%= link_to challenges_path do %>
+    <i class="far fa-times-circle fa-2x"></i>
+    <% end %>
+
+  <div class="text-align: center text-center">
+    <div class="icon-task mb-4">
+      <%= cl_image_tag @challenger.user_challenge.challenge.icon %>
     </div>
+    <h2 class="task-modal">Voulez-vous accepter le challenge de <%= @challenger.user_challenge.user.pseudo %>?</h2>
+    <br>
+    <h2 class="modal-thema"><%= @challenger.user_challenge.challenge.title %></h2>
+    <br>
+    <p class="thema-details"><%= @challenger.user_challenge.challenge.description %></p>
+    <%= link_to "Avec Joie !", accept_challenger_path(@challenger), method: :patch, class: "btn btn-light button-white" %>
+    <%= link_to "Non merci", decline_challenger_path(@challenger), method: :patch, class: "btn btn-primary button-transparent border-0" %>
   </div>
+</div>
+
