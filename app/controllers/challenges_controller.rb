@@ -13,7 +13,7 @@ class ChallengesController < ApplicationController
     @user_challenge = UserChallenge.new
     @challengers = @challenge.challengers.where(status: ['En attente', 'Accepté'])
     @challenger = @challenge.challengers.find_by(friend_id: current_user.id, status: ['En attente', 'Accepté'])
-    console
+
 
     if @challenger != nil && @challenger.status == 'En attente'
       render :show_invited
