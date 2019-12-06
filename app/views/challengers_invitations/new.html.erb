@@ -1,21 +1,11 @@
-<% if @challenge.category == "Déchets" %>
-  <div class="background-color-program-waste">
-<% elsif @challenge.category == "Nourriture" %>
-  <div class="background-color-program-food">
-<% elsif @challenge.category == "Transport" %>
-  <div class="background-color-program-transport">
-<% else %>
-  <div class="background-color-program-energy">
-<% end %>
+<div class="<%= background_category(@challenge.category) %>">
 
   <div class="challenge-content text-center">
-  <%= cl_image_tag @challenge.picture, :class => "program_image" %>
+    <%= cl_image_tag @challenge.picture, class: "program_image" %>
   <h1 class="title-thema"><%= @challenge.title %></h1>
   <hr width="50%"/>
   <div class="btn btn-second"><%= @user_challenge.duration %> jours</div>
-
   <p class="program-desc">Challenge tes amis</p>
-
 
   <%= form_tag user_challenge_challengers_invitation_path(@user_challenge) do %>
     <div class="container">
@@ -23,28 +13,29 @@
         <% @friends.each do |friend| %>
           <div class="element">
 
-                <%= check_box_tag 'challengers[]',
-                                  friend.id,
-                                  false,
-                                  hidden: true,
-                                  id: "challenger-#{friend.id}",
-                                  class: "friend-input"
-                %>
-                <%= label_tag "challenger-#{friend.id}",
-                              "",
-                              class: "friend-label",
-                              id: "challenger-#{friend.id}" do %>
-                  <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
-                  <p class="program-title-task text-capitalize"><%= friend.pseudo %></p>
-                <% end %>
+            <%= check_box_tag 'challengers[]',
+                              friend.id,
+                              false,
+                              hidden: true,
+                              id: "challenger-#{friend.id}",
+                              class: "friend-input"
+            %>
+            <%= label_tag "challenger-#{friend.id}",
+                          "",
+                          class: "friend-label",
+                          id: "challenger-#{friend.id}" do %>
+              <%= cl_image_tag friend.avatar, :class => "badge-avatar bt-white" %>
+              <p class="program-title-task text-capitalize"><%= friend.pseudo %></p>
+            <% end %>
 
-          </div> <!-- col-12 -->
+          </div> <!-- element -->
         <% end %>
-        </div>
+        </div> <!-- elements -->
         <%= submit_tag(name="Inviter !", :class => "btn btn-main mt-1") %>
         <%= link_to "Non merci", challenge_path(@challenge), class: "btn btn-primary button-transparent mt-1 border-0" %>
-    </div>
+    </div> <!-- container -->
   <% end %>
-
+  </div>
+</div>
 
 

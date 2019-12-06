@@ -1,21 +1,13 @@
-<% if @program.category == "Déchets" %>
-  <div class="wrapper background-color-program-waste">
-  <% elsif @program.category == "Nourriture" %>
-  <div class="wrapper background-color-program-food">
-  <% elsif @program.category == "Transport" %>
-  <div class="wrapper background-color-program-transport">
-  <% else %>
-  <div class="wrapper background-color-program-energy">
-  <% end %>
-    <div class="program-content text-center">
-    <%= cl_image_tag @program.picture, :class => "program_image" %>
-    <h1 class="title-thema"><%= @program.title  %></h1>
-    <hr width="50%"/>
-    <p class="program-desc mb-4 mt-5"><%= @program.description %></p>
-    <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
-    <%= simple_form_for [@program, @user_program] do |f| %>
+<div class="container-fluid <%= background_category(@program.category) %>">
+
+  <div class="program-content text-center">
+  <%= cl_image_tag @program.picture, :class => "program_image" %>
+  <h1 class="title-thema"><%= @program.title  %></h1>
+  <hr width="50%"/>
+  <p class="program-desc mb-4 mt-5"><%= @program.description %></p>
+  <%#= cl_image_tag @program.picture, height: 200, width: 300, crop: :fill%>
+  <%= simple_form_for [@program, @user_program] do |f| %>
     <%= f.button :submit, "Commencer", class: "btn-main" %>
-    <% end %>
-    </div>
+  <% end %>
   </div>
 </div>
