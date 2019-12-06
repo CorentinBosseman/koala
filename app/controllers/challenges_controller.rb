@@ -11,13 +11,14 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @user_challenge = UserChallenge.new
-    @challengers = @challenge.challengers
+    @user_challenge.challenge = @challenge
+    @challengers = @challenge.challengers.where(status: ['En attente', 'Accepté'])
     @friends_challengers = []
     @challengers.each do |challenger|
-      @friends_challengers.push(challenger) if current_user.friends.include?(challenger.friend)
+      @friends_challengers.push(challenger) if current_user.friends.include?(challenger.friend) && challenger.user_challenge == @challenge.challengers.find_by(friend_id: current_user.id).user_challenge
     end
     @challenger = @challenge.challengers.find_by(friend_id: current_user.id, status: ['En attente', 'Accepté'])
-
+    console
     if @challenger
       @ongoing_user_challenge = @challenger.user_challenge
 
@@ -31,5 +32,3 @@ class ChallengesController < ApplicationController
     end
   end
 end
-
-# si un challenge a été complété il faut lui apposer un marqueur
