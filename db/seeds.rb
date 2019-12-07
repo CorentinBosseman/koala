@@ -309,7 +309,7 @@ jarrete_plats_prepares = Challenge.create!(
 
 # Challenge Dechets
 jarrete_plastique = Challenge.create!(
-  title: "J'achète les bouteilles en plastique",
+  title: "J'arrête les bouteilles en plastique",
   description: "Les bouteilles plastiques sont l'une des causes du développement d'un continent plastique, passons à l'eau du robinet !",
   category: "Déchets",
   position: 1,
