@@ -26,14 +26,41 @@
                   label_html: { class: "h2-signup" },
                   label: 'Confirmez votre mot de passe',
                   required: false %>
-      <%= f.input :avatar %>
+      <%= f.input :avatar,
+                  input_html: { id: 'avatar-preview'} %>
+
       <%= f.input :avatar_cache, as: :hidden %>
-
     </div>
-
-    <div class="form-actions btn-main">
-      <%= f.button :submit, "S'enregistrer" %>
+    <div class="image-preview m-3"  id="imagePreview">
+      <img src="" alt="" class="image-preview__image badge-avatar-preview bt-white mt-3">
     </div>
-    <%= image_tag "koala_signup.png", class: "img-signup" %>
+    <div class="form-actions">
+    <%= image_tag "koala_signup.png", class: "img-signup mt-3" %>
+      <%= f.button :submit, "S'enregistrer", :class =>" btn-main btn-pos" %>
+    </div>
   <% end %>
 </div>
+
+<script>
+  const Ifile = document.getElementById("avatar-preview")
+  const previewContainer = document.getElementById("imagePreview")
+  const previewImage = previewContainer.querySelector(".image-preview__image")
+
+  Ifile.addEventListener("change", function() {
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        previewImage.style.display = "block";
+
+        reader.addEventListener("load", function() {
+          previewImage.setAttribute("src", this.result);
+        });
+        reader.readAsDataURL(file);
+    } else {
+      previewImage.style.display = null;
+    }
+
+  });
+</script>
