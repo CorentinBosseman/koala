@@ -12,7 +12,7 @@
 <div class="bkg-line dash-bg respacing" id="no-bottom-room">
   <div class="title-thema spacing-margin">Mes programmes</div>
   <% if @programs_ungoing.empty? %>
-    <p class="text-center">Ajouter un programme</p>
+    <p class="text-center thema-details">Ajouter un programme</p>
   <% else %>
   <div class="elements">
     <% @programs_ungoing.each do |user_program| %>
@@ -30,7 +30,7 @@
 <div class="bkg-line respacing" id="no-bottom-room">
   <div class="title-thema spacing-margin" >Mes challenges</div>
   <% if @challenges_ungoing.empty? %>
-    <p class="text-center">Ajouter un challenge</p>
+    <p class="text-center thema-details">Ajouter un challenge</p>
   <% else %>
   <div class="elements">
     <% @challenges_ungoing.each do |user_challenge| %>
@@ -48,7 +48,7 @@
 <div class="dash-bg respacing mb-5" id="no-bottom-room">
   <div class="title-thema spacing-margin">Challengers</div>
   <% if @challengers.empty? %>
-    <p class="text-center">Vous n'avez pas reçu d'invitation !</p>
+    <p class="text-center thema-details">Vous n'avez pas reçu d'invitation !</p>
   <% else %>
   <div class="elements">
     <% @challengers.each do |challenger| %>
