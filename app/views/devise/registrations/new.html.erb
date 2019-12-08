@@ -20,6 +20,7 @@
                   label_html: { class: "h2-signup" },
                   label: 'Email',
                   required: false %>
+
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
@@ -34,16 +35,25 @@
                   label_html: { class: "h2-signup" },
                   label: 'Confirmez votre mot de passe',
                   required: false %>
-      <%= f.input :avatar,
-                  input_html: { id: 'avatar-preview'} %>
 
-      <%= f.input :avatar_cache, as: :hidden %>
+      <label class="btn btn-light button-white float-left mt-4 mr-3 mb-5">
+        Ajouter une photo
+        <span style="display:none;">
+          <%= f.input :avatar,
+                      required: true,
+                      input_html: { id: 'avatar-preview'},
+                      label_html: { class: "h2-signup" },
+                      label: 'Avatar',
+                      required: false %>
+        </span>
+      </label>
+
     </div>
     <div class="image-preview m-3"  id="imagePreview">
-      <img src="" alt="" class="image-preview__image badge-avatar-preview bt-white mt-3">
+      <img src="" alt="" class="image-preview__image badge-avatar-preview bt-white ml-2 mt-3">
     </div>
-    <div class="form-actions">
-    <%= image_tag "koala_signup.png", class: "img-signup mt-3" %>
+    <div class="form-actions d-inline-flex mt-4">
+      <%= image_tag "koala_signup.png", class: "img-signup mt-4" %>
       <%= f.button :submit, "S'enregistrer", :class =>" btn-main btn-pos" %>
     </div>
   <% end %>
