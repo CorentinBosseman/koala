@@ -205,6 +205,37 @@ deplacements_alternatifs = Program.create!(
   )
 
 puts "Creating tasks"
+
+task_1_la_voiture_au_garage = Task.create!(
+  title: "Je fais les trajets de moins d'un kilomètre à pieds",
+  position: 1,
+  program: la_voiture_au_garage,
+  )
+
+task_2_la_voiture_au_garage = Task.create!(
+  title: "Je fais un trajet de moins de 5 kilomètres à vélo/trotinette",
+  position: 2,
+  program: la_voiture_au_garage,
+  )
+
+task_3_la_voiture_au_garage = Task.create!(
+  title: "J'organise un covoiturage entre collègues pour me rendre au travail",
+  position: 3,
+  program: la_voiture_au_garage,
+  )
+
+task_4_la_voiture_au_garage = Task.create!(
+  title: "J'organise un covoiturage entre voisins pour aller faire des courses",
+  position: 4,
+  program: la_voiture_au_garage,
+  )
+
+task_5_la_voiture_au_garage = Task.create!(
+  title: "Je passe une journée en télétravail si mon job me le permet",
+  position: 5,
+  program: la_voiture_au_garage,
+  )
+
 task_1_un_nouveau_depart = Task.create!(
   title: "Je colle un autocollant STOP-PUB sur ma boîte aux lettres",
   position: 1,
