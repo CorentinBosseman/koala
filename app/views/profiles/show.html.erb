@@ -39,8 +39,12 @@
   </div> <!-- elements -->
   <hr width="70%">
   <div class="text-center">
-  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn logout mt-3 mb-5" %>
-  </div>
+  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn logout mt-3 mb-3" %>
+  <p> Changer votre avatar</p>
+  <%= form_for current_user, :url => {:action => 'update'} do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit "upload" %>
+  <% end %>
 </div>
 
 
