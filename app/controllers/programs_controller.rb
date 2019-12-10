@@ -15,7 +15,7 @@ class ProgramsController < ApplicationController
   SQL
     @programs = Program.find_by_sql([custom_query, current_user.id])
 
-     @programs_food      = @programs.select { |p| p.category == 'Nourriture' }.sort_by(&:position)
+    @programs_food      = @programs.select { |p| p.category == 'Nourriture' }.sort_by(&:position)
     @programs_waste     = @programs.select { |p| p.category == 'Déchets' }.sort_by(&:position)
     @programs_energy    = @programs.select { |p| p.category == 'Energie' }.sort_by(&:position)
     @programs_transport = @programs.select { |p| p.category == 'Transport' }.sort_by(&:position)
@@ -26,10 +26,9 @@ class ProgramsController < ApplicationController
     @ongoing_user_program = @program.user_programs.find_by(user_id: current_user.id)
 
     if @ongoing_user_program
-      @tasks = @program.tasks.
-        select(
+      custom =
           <<~SQL
-            tasks.*,
+            SELECT tasks.*,
             CASE user_tasks.completed
               WHEN true  THEN 'completed'
               WHEN false tHEN 'ongoing'
@@ -37,11 +36,14 @@ class ProgramsController < ApplicationController
             END AS status,
             user_tasks.id AS user_task_id,
             user_tasks.completed
+            FROM tasks
+            LEFT OUTER JOIN user_tasks
+            ON user_tasks.task_id = tasks.id
+            LEFT OUTER JOIN user_programs
+            ON user_tasks.user_program_id = user_programs.id
+            WHERE user_programs.user_id = ?
           SQL
-        ).
-        left_joins(user_tasks: :user_program).
-        where(user_programs: { user_id: [nil, current_user.id] }).
-        order(:position)
+      @tasks = Task.find_by_sql([custom, current_user.id])
       @tasks_completed = @tasks.count(&:completed)
 
       render :show_ongoing
@@ -51,6 +53,5 @@ class ProgramsController < ApplicationController
     end
   end
 end
-
 
 

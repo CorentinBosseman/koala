@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resource :profile, only: :show
+  resource :profile, only: [:show, :update]
 
   resources :friendships, only: [:index, :new, :create] do
     member do
