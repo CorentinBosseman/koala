@@ -1,0 +1,8 @@
+function insertUserCards(innerHTML) {
+  const cardsContainer = document.getElementById('badges-container')
+  cardsContainer.innerHTML = innerHTML
+}
+
+insertUserCards('<%= j render "friendships/badges", users: @users %>')
+
+console.log('<%= @users.count %>')

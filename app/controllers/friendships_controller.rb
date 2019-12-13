@@ -11,26 +11,12 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = Friendship.new
+    @friendship = Friendship.new(friendship_params)
     @friendship.user = current_user
-
-    hello = User.find_by(pseudo: friendship_params[:friend])
-    if hello.nil?
-      flash[:notice] = "Pseudo Invalide"
-      redirect_to friendships_path
-    elsif hello.pseudo == current_user.pseudo
-      flash[:notice] = "C'est toi petit Koala!"
-      redirect_to friendships_path
-    elsif current_user.friends.include?(hello)
-      flash[:notice] = "Tu es déja ami!"
-      redirect_to friendships_path
-    else hello
-      @friendship.friend = hello
-      @friendship.status = "Pending"
-      flash[:notice] = "Invitation envoyée!"
-      @friendship.save
-      redirect_to friendships_path
-    end
+    @friendship.status = "Pending"
+    @friendship.save
+    flash[:notice] = "Invitation envoyée!"
+    redirect_to friendships_path
   end
 
   def accept
@@ -52,6 +38,6 @@ private
   end
 
   def friendship_params
-    params.require(:friendship).permit(:friend)
+    params.require(:friendship).permit(:friend_id, :user_id)
   end
 end

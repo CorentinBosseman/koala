@@ -2,10 +2,20 @@
   <div class="d-flex flex-column d-flex align-items-cente m-auto text-center">
   <h1 class="title-thema">Ajouter un ami</h1>
 
-  <%= simple_form_for @friendship do |f| %>
-    <%= f.input :friend , placeholder: "Entrer un Pseudo", label: false%>
-
-    <%= f.button :submit, "Valider", class: "btn btn-light button-white" %>
-  <% end %>
+  <div class="form-group pt-5" style="margin-top: -1em;">
+    <%= form_tag users_path, method: :get, class: 'input-group', remote: true do %>
+      <%= text_field_tag :search,
+        params[:search],
+        class: "form-control",
+        placeholder: "pseudo"
+      %>
+      <span>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    <% end %>
+  </div>
+  <div id="badges-container" style="margin-top: 1em;">
   </div>
 </div>
