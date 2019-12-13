@@ -52,4 +52,12 @@ class User < ApplicationRecord
     next_level = LEVELS.find { |level, range| range.include?(points) }[1]
     next_level.last
   end
+
+  include PgSearch
+
+  pg_search_scope :search,
+                  against: [:pseudo],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
