@@ -206,6 +206,30 @@ deplacements_alternatifs = Program.create!(
 
 puts "Creating tasks"
 
+task_1_premieres_economies = Task.create!(
+  title: "J'equipe l'intégralité du domicile avec des ampoules de type LEDs",
+  position: 1,
+  program: premieres_economies,
+  )
+
+task_2_premieres_economies = Task.create!(
+  title: "Je débranche tout les appareils en veille",
+  position: 2,
+  program: premieres_economies,
+  )
+
+task_3_premieres_economies = Task.create!(
+  title: "je limite les branchements de multiprises",
+  position: 3,
+  program: premieres_economies,
+  )
+
+task_4_premieres_economies = Task.create!(
+  title: "je vérifie les joints de mes fenêtres et les remplace si besoin",
+  position: 4,
+  program: premieres_economies,
+  )
+
 task_1_la_voiture_au_garage = Task.create!(
   title: "Je fais les trajets de moins d'un kilomètre à pieds",
   position: 1,
