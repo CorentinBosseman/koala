@@ -70,15 +70,16 @@
 
 
    <div class="bkg-green">
-    <div class="title-thema adjust-badge-pos">Vos Challenges</div>
+    <div class="title-thema adjust-badge-pos">Vos Challenges Créés</div>
     <div class="elements">
-
-      <% @challenges_custom.each do |challenge| %>
-        <%= link_to challenge_path(challenge), class: 'element' do %>
-            <div class="badge-tasks bt-green">
-              <%= cl_image_tag challenge.icon, crop: :fill, height: 30 %>
-            </div>
-            <div class="program-title-task"id="bottom-page"><%= challenge.title %></div>
+        <% @challenges_custom.each do |challenge| %>
+      <% if challenge.owner == current_user.id %>
+          <%= link_to challenge_path(challenge), class: 'element' do %>
+              <div class="badge-tasks bt-green">
+                <%= cl_image_tag challenge.icon, crop: :fill, height: 30 %>
+              </div>
+              <div class="program-title-task"id="bottom-page"><%= challenge.title %></div>
+          <% end %>
         <% end %>
       <% end %>
     </div> <!-- elements -->

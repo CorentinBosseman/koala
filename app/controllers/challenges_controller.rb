@@ -38,7 +38,7 @@ class ChallengesController < ApplicationController
   def create
     @challenge = Challenge.new(challenge_params)
     @challenge.category = 'Custom'
-    @challenge.save
+    @challenge.owner = current_user.id
     if @challenge.save
       redirect_to challenges_path
       flash[:notice] = "challenge créé"
