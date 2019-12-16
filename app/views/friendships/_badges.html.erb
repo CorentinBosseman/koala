@@ -6,6 +6,6 @@
   <div class="program-title-task text-capitalize"><%= user.pseudo %></div>
   <%= simple_form_for Friendship.new do |f| %>
     <%= f.input :friend_id, as: :hidden, input_html: { value: user.id } %>
-    <%= f.submit "Inviter", class: "btn link-success" %>
+    <%= f.submit "Inviter", class: "btn btn-success" %>
   <% end %>
 <% end %>
