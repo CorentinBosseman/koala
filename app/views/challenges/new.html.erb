@@ -1,0 +1,22 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-4 col-sm-offset-4">
+
+  <div class="form-inputs">
+
+
+
+<%= simple_form_for [@challenge] do |f| %>
+  <%= f.input :title, label: 'Titre' %>
+  <%= f.input :description %>
+  <%= f.input :picture %>
+  <%= f.input :picture_cache, as: :hidden %>
+
+  <%= f.button :submit, "Valider", class: "btn btn-main" %>
+<% end %>
+
+ </div>
+
+    </div>
+  </div>
+</div>

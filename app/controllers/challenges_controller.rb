@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
     @challenges_waste = @challenges.where(category: 'Déchets').order(:position)
     @challenges_energy = @challenges.where(category: 'Energie').order(:position)
     @challenges_transport = @challenges.where(category: 'Transport').order(:position)
+    @challenges_custom = @challenges.where(category: 'Custom')
   end
 
   def show
@@ -28,5 +29,28 @@ class ChallengesController < ApplicationController
     else
       render :show # not started
     end
+  end
+
+  def new
+    @challenge = Challenge.new
+  end
+
+  def create
+    @challenge = Challenge.new(challenge_params)
+    @challenge.category = 'Custom'
+    @challenge.save
+    if @challenge.save
+      redirect_to challenges_path
+      flash[:notice] = "challenge créé"
+    else
+      render :new
+      flash[:alert] = "Something went wrong..."
+    end
+  end
+
+   private
+
+  def challenge_params
+    params.require(:challenge).permit(:title, :description, :picture)
   end
 end
