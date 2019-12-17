@@ -97,7 +97,7 @@ corentin_yann = Friendship.create!(
 
 puts "Creating programs"
 
-
+#FOOD
 un_nouveau_depart = Program.create!(
   title: "Un nouveau départ",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
@@ -122,6 +122,7 @@ la_santé_dabord = Program.create!(
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/health-first.png"))
   )
 
+#WASTE
 un_etat_desprit = Program.create!(
   title: "Un état d'esprit",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
@@ -137,9 +138,7 @@ les_mains_dans_le_cambouis = Program.create!(
   category: "Déchets",
   position: 2,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/hands-in.png"))
-
   )
-# un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 la_guerre_au_plastique = Program.create!(
   title: "La guerre au plastique",
@@ -147,19 +146,16 @@ la_guerre_au_plastique = Program.create!(
   category: "Déchets",
   position: 3,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/plastic-war.png"))
-
   )
-# un_nouveau_depart.picture = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
+#ENERGIE
 premieres_economies = Program.create!(
   title: "Mes premières économies",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   category: "Energie",
   position: 1,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/first-savings.png"))
-
   )
-# premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
 
 faisons_la_lumiere = Program.create!(
   title: "Faisons la lumière",
@@ -167,9 +163,8 @@ faisons_la_lumiere = Program.create!(
   category: "Energie",
   position: 2,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/light-on.png"))
-
   )
-# premieres_economies = File.open(Rails.root.join("db/fitures/flats/six_flat_image.jpg"))
+
 autonomie = Program.create!(
   title: "Viser l'autonomie",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
@@ -177,14 +172,13 @@ autonomie = Program.create!(
   category: "Energie",
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/water-wasting.png")),
   )
-
+#TRANSPORT
 la_voiture_au_garage = Program.create!(
   title: "La voiture au garage",
   description: "Apprenez les bases à travers ce programme de mise à niveau ! De simples taches vous permettrons de poser de solides fondations et implémenter de nouvelles habitudes.",
   position: 1,
   category: "Transport",
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/car-garage.png"))
-
   )
 
 mobilite_zero_carbone = Program.create!(
@@ -193,7 +187,6 @@ mobilite_zero_carbone = Program.create!(
   category: "Transport",
   position: 2,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/fair-mobility.png"))
-
   )
 
 deplacements_alternatifs = Program.create!(
@@ -206,66 +199,94 @@ deplacements_alternatifs = Program.create!(
 
 puts "Creating tasks"
 
-task_1_premieres_economies = Task.create!(
-  title: "J'equipe l'intégralité du domicile avec des ampoules de type LEDs",
-  position: 1,
-  program: premieres_economies,
-  )
-
-task_2_premieres_economies = Task.create!(
-  title: "Je débranche tout les appareils en veille",
-  position: 2,
-  program: premieres_economies,
-  )
-
-task_3_premieres_economies = Task.create!(
-  title: "je limite les branchements de multiprises",
-  position: 3,
-  program: premieres_economies,
-  )
-
-task_4_premieres_economies = Task.create!(
-  title: "je vérifie les joints de mes fenêtres et les remplace si besoin",
-  position: 4,
-  program: premieres_economies,
-  )
-
-task_1_la_voiture_au_garage = Task.create!(
-  title: "Je fais les trajets de moins d'un kilomètre à pieds",
-  position: 1,
-  program: la_voiture_au_garage,
-  )
-
-task_2_la_voiture_au_garage = Task.create!(
-  title: "Je fais un trajet de moins de 5 kilomètres à vélo/trotinette",
-  position: 2,
-  program: la_voiture_au_garage,
-  )
-
-task_3_la_voiture_au_garage = Task.create!(
-  title: "J'organise un covoiturage entre collègues pour me rendre au travail",
-  position: 3,
-  program: la_voiture_au_garage,
-  )
-
-task_4_la_voiture_au_garage = Task.create!(
-  title: "J'organise un covoiturage entre voisins pour aller faire des courses",
-  position: 4,
-  program: la_voiture_au_garage,
-  )
-
-task_5_la_voiture_au_garage = Task.create!(
-  title: "Je passe une journée en télétravail si mon job me le permet",
-  position: 5,
-  program: la_voiture_au_garage,
-  )
-
+# FOOD
 task_1_un_nouveau_depart = Task.create!(
-  title: "Je colle un autocollant STOP-PUB sur ma boîte aux lettres",
+  title: "Je ne fais pas les courses le ventre vide",
   position: 1,
   program: un_nouveau_depart,
   )
 
+task_2_un_nouveau_depart = Task.create!(
+  title: "J'arrête les contenants de plastique pour faire chauffer les aliments au micro-ondes",
+  position: 2,
+  program: un_nouveau_depart,
+  )
+
+task_3_un_nouveau_depart = Task.create!(
+  title: "J'utilise des contenants en verre pour conserver les aliments au réfrigérateur",
+  position: 3,
+  program: un_nouveau_depart,
+  )
+
+task_4_un_nouveau_depart = Task.create!(
+  title: "Je privilégie les produits frais au détriment des plats préparés",
+  position: 4,
+  program: un_nouveau_depart,
+  )
+
+task_5_un_nouveau_depart = Task.create!(
+  title: "Je privilégie les produits frais sur le territoire national et les pays voisins",
+  position: 5,
+  program: un_nouveau_depart,
+  )
+
+task_6_un_nouveau_depart = Task.create!(
+  title: "Je déchiffre les codes œufs :
+  0 = élevage en plein air « BIO »
+  1 = élevage en plein air
+  2 = élevage intensif au sol
+  3 = élevage intensif en batterie",
+  position: 6,
+  program: un_nouveau_depart,
+  )
+
+task_7_un_nouveau_depart = Task.create!(
+  title: "Je déchiffre les codes œufs :
+  0 = élevage en plein air « BIO »
+  1 = élevage en plein air
+  2 = élevage intensif au sol
+  3 = élevage intensif en batterie",
+  position: 7,
+  program: un_nouveau_depart,
+  )
+
+task_8_un_nouveau_depart = Task.create!(
+  title: " Je fais la différence entre : « A consommer jusqu’au » et « A consommer de préférence avant le ... » ",
+  position: 8,
+  program: un_nouveau_depart,
+  )
+
+task_9_un_nouveau_depart = Task.create!(
+  title: "J'arrête l'utilisation d'huile de palme",
+  position: 9,
+  program: un_nouveau_depart,
+  )
+
+task_10_un_nouveau_depart = Task.create!(
+  title: "Je fais le point sur les différents labels",
+  position: 10,
+  program: un_nouveau_depart,
+  )
+
+task_1_vivre_avec_saison = Task.create!(
+  title: "J'achète un calendrier avec la saisonnalité des produits",
+  position: 1,
+  program: vivre_avec_saison,
+  )
+
+task_2_vivre_avec_saison = Task.create!(
+  title: "J'évite d'acheter des produits frais venant d'un pays lointain",
+  position: 2,
+  program: vivre_avec_saison,
+  )
+
+task_3_vivre_avec_saison = Task.create!(
+  title: "Je ne mange pas d'oranges en été",
+  position: 3,
+  program: vivre_avec_saison
+)
+
+# WASTE
 task_1_un_etat_desprit = Task.create!(
   title: "Je colle un autocollant STOP-PUB sur ma boîte aux lettres",
   position: 1,
@@ -285,13 +306,13 @@ task_3_un_etat_desprit = Task.create!(
   )
 
 task_4_un_etat_desprit = Task.create!(
-  title: "Je refuse les tickets de caisse et de carte bancaire",
+  title: "Je trie mes mails et me désabonne des newsletters et mailings commerciaux inutiles",
   position: 4,
   program: un_etat_desprit,
   )
 
 task_5_un_etat_desprit = Task.create!(
-  title: "Je trie mes mails et me désabonne des newsletters et mailings commerciaux inutiles",
+  title: "Je limite les impressions même au travail et si nécessaire je privilégie le noir & blanc et le recto-verso",
   position: 5,
   program: un_etat_desprit,
   )
@@ -314,26 +335,97 @@ task_8_un_etat_desprit = Task.create!(
   program: un_etat_desprit,
   )
 
-
-task_1_vivre_avec_saison = Task.create!(
-  title: "J'achète un calendrier avec la saisonnalité des produits",
+# ENERGIE
+task_1_premieres_economies = Task.create!(
+  title: "J'utilise les heures creuses pour faire fonctionner les appareils électroménagers",
   position: 1,
-  program: vivre_avec_saison,
+  program: premieres_economies,
   )
 
-task_2_vivre_avec_saison = Task.create!(
-  title: "Je ne mange pas de tomates en hiver",
+task_2_premieres_economies = Task.create!(
+  title: "Je fais attention au niveau de consommation d’énergie de l’électroménager lorsque j'en achète ('A' étant le plus économe",
   position: 2,
-  program: vivre_avec_saison,
+  program: premieres_economies,
   )
 
-task_3_vivre_avec_saison = Task.create!(
-  title: "Je ne mange pas d'oranges en été",
+task_3_premieres_economies = Task.create!(
+  title: "J'éteins mes appareils au lieu de les laisser en veille",
   position: 3,
-  program: vivre_avec_saison
-)
+  program: premieres_economies,
+  )
 
+task_4_premieres_economies = Task.create!(
+  title: "Je pense à éteindre les lumières lorsque je ne suis pas dans la pièce",
+  position: 4,
+  program: premieres_economies,
+  )
 
+task_5_premieres_economies = Task.create!(
+  title: "J'ajuste la température de mon réfrigérateur et de mon congélateur (température idéale: 4°C, et – 18°C pour un congélateur)",
+  position: 5,
+  program: premieres_economies,
+  )
+
+task_6_premieres_economies = Task.create!(
+  title: "Je m'équipe d'ampoules basse consommation ou LEDs qui consomment 5 fois moins d’électricité et durent 10 fois plus longtemps",
+  position: 6,
+  program: premieres_economies,
+  )
+
+task_7_premieres_economies = Task.create!(
+  title: "J'installe le chaud loin du froid ! Plus le réfrigérateur sera éloigné des appareils de cuisson, moins il consommera d’énergie",
+  position: 7,
+  program: premieres_economies,
+  )
+
+task_8_premieres_economies = Task.create!(
+  title: "J'utilise une bouilloire électrique, car elle consomme moitié moins d’énergie que la cuisinière pour faire bouillir l’eau",
+  position: 8,
+  program: premieres_economies,
+  )
+
+task_9_premieres_economies = Task.create!(
+  title: "J'utilise un couvercle à casserole pour porter l'eau à ébullition",
+  position: 9,
+  program: premieres_economies,
+  )
+
+task_10_premieres_economies = Task.create!(
+  title: "La cuisson d’aliments congelés nécessite plus d’énergie, je les fais dégeler au préalable",
+  position: 10,
+  program: premieres_economies,
+  )
+
+# TRANSPORT
+task_1_la_voiture_au_garage = Task.create!(
+  title: "Je me procure un vélo ou une trotinette (d'occasion de préférence)",
+  position: 1,
+  program: la_voiture_au_garage,
+  )
+
+task_2_la_voiture_au_garage = Task.create!(
+  title: "Je m'inscris sur un site de covoiturage",
+  position: 2,
+  program: la_voiture_au_garage,
+  )
+
+task_3_la_voiture_au_garage = Task.create!(
+  title: "Je privilégie les trajets en vélo ou en bus",
+  position: 3,
+  program: la_voiture_au_garage,
+  )
+
+task_4_la_voiture_au_garage = Task.create!(
+  title: "Si je ne peux pas me passer de la voiture, je privilégie l'intermodalité",
+  position: 4,
+  program: la_voiture_au_garage,
+  )
+
+task_5_la_voiture_au_garage = Task.create!(
+  title: "J'organise des journées covoiturage avec mes collégues pour me rendre au travail",
+  position: 5,
+  program: la_voiture_au_garage,
+  )
 
 puts "Creating Challenges"
 
@@ -437,7 +529,6 @@ challenge_velo = Challenge.create!(
   category: "Transport",
   position: 2,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/take-bike.png")),
-
   )
 
 mes_10000_pas = Challenge.create!(
@@ -446,7 +537,6 @@ mes_10000_pas = Challenge.create!(
   category: "Transport",
   position: 3,
   icon: File.open(Rails.root.join("db/fixtures/programs/iconspng/walking.png")),
-
   )
 
 puts "Creating User Challenges + Challengers"
@@ -539,9 +629,3 @@ Challenger.create!(
   friend: corentin,
   status: "En attente",
 )
-
-# Challenger.create!(
-#   user_challenge: user_challenge_achete_en_vrac,
-#   friend: corentin,
-#   status: "Accepté",
-# )
