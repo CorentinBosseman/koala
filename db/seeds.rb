@@ -397,33 +397,56 @@ task_10_premieres_economies = Task.create!(
   )
 
 # TRANSPORT
+
 task_1_la_voiture_au_garage = Task.create!(
-  title: "Je me procure un vélo ou une trotinette (d'occasion de préférence)",
+  title: "J'adopte une conduite économique",
+  description: "Adopter une conduite économique permet d'économiser jusqu'à 30% de carburant comparé à une conduite sportive. Autant que possible il faut éviter les coups de freins et accélérations brusques",
   position: 1,
   program: la_voiture_au_garage,
   )
 
 task_2_la_voiture_au_garage = Task.create!(
-  title: "Je m'inscris sur un site de covoiturage",
+  title: "J'évite la surconsommation de carburant'",
+  description: "Il faut éviter d'ouvrir ses fenêtres trop souvent sous peine d'augmenter la prise au vent du véhicule et donc sa consommation. Il est également plus économique de couper le moteur au-delà de 30 secondes d’arrêt",
   position: 2,
   program: la_voiture_au_garage,
   )
 
 task_3_la_voiture_au_garage = Task.create!(
-  title: "Je privilégie les trajets en vélo ou en bus",
+  title: "Je gonfle mes pneus",
+  description: "un pneu sous-gonflé augmente considérablement la consommation d'un véhicule. Votre portefeuille et surtout la planète vous remercierons.",
   position: 3,
   program: la_voiture_au_garage,
   )
 
 task_4_la_voiture_au_garage = Task.create!(
-  title: "Si je ne peux pas me passer de la voiture, je privilégie l'intermodalité",
+  title: "Je me procure un vélo ou une trotinette (d'occasion de préférence)",
   position: 4,
   program: la_voiture_au_garage,
   )
 
 task_5_la_voiture_au_garage = Task.create!(
-  title: "J'organise des journées covoiturage avec mes collégues pour me rendre au travail",
+  title: "Je m'inscris sur un site de covoiturage",
   position: 5,
+  program: la_voiture_au_garage,
+  )
+
+task_6_la_voiture_au_garage = Task.create!(
+  title: "Je privilégie les trajets en vélo ou en bus",
+  position: 6,
+  program: la_voiture_au_garage,
+  )
+
+task_7_la_voiture_au_garage = Task.create!(
+  title: "Si je ne peux pas me passer de la voiture, je privilégie l'intermodalité",
+  position: 7,
+  program: la_voiture_au_garage,
+  )
+
+task_8_la_voiture_au_garage = Task.create!(
+  title: "J'organise des journées covoiturage avec mes collégues pour me rendre au travail",
+  description: "Renseignez-nous auprès du comité d’entreprise pour savoir s'il adhère à un plan de déplacement inter-entreprises (PDIE) pour multiplier vos chances de trouver des partenaires de covoiturage pour vos déplacements quotidiens"
+  position: 8,
   program: la_voiture_au_garage,
   )
 
