@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_065743) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "icon"
+    t.integer "owner"
   end
 
   create_table "friendships", force: :cascade do |t|
