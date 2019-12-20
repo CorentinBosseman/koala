@@ -445,7 +445,7 @@ task_7_la_voiture_au_garage = Task.create!(
 
 task_8_la_voiture_au_garage = Task.create!(
   title: "J'organise des journées covoiturage avec mes collégues pour me rendre au travail",
-  description: "Renseignez-nous auprès du comité d’entreprise pour savoir s'il adhère à un plan de déplacement inter-entreprises (PDIE) pour multiplier vos chances de trouver des partenaires de covoiturage pour vos déplacements quotidiens"
+  description: "Renseignez-nous auprès du comité d’entreprise pour savoir s'il adhère à un plan de déplacement inter-entreprises (PDIE) pour multiplier vos chances de trouver des partenaires de covoiturage pour vos déplacements quotidiens",
   position: 8,
   program: la_voiture_au_garage,
   )
