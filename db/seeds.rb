@@ -343,7 +343,7 @@ task_1_premieres_economies = Task.create!(
   )
 
 task_2_premieres_economies = Task.create!(
-  title: "Je fais attention au niveau de consommation d’énergie de l’électroménager lorsque j'en achète ('A' étant le plus économe",
+  title: "Je fais attention au niveau de consommation d’énergie de l’électroménager lorsque j'en achète ('A' étant le plus économe"),
   position: 2,
   program: premieres_economies,
   )
