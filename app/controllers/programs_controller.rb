@@ -27,8 +27,8 @@ class ProgramsController < ApplicationController
 
     if @ongoing_user_program
       custom =
-          <<~SQL
-            SELECT tasks.*,
+  <<~SQL
+    SELECT tasks.*,
             CASE user_tasks.completed
               WHEN true  THEN 'completed'
               WHEN false tHEN 'ongoing'
@@ -42,8 +42,10 @@ class ProgramsController < ApplicationController
             LEFT OUTER JOIN user_programs
             ON user_tasks.user_program_id = user_programs.id
             WHERE user_programs.user_id = ?
-          SQL
-      @tasks = Task.find_by_sql([custom, current_user.id])
+            AND tasks.program_id = ?
+            ORDER BY tasks.position ASC
+  SQL
+      @tasks = Task.find_by_sql([custom, current_user.id, @program.id])
       @tasks_completed = @tasks.count(&:completed)
 
       render :show_ongoing
@@ -53,5 +55,3 @@ class ProgramsController < ApplicationController
     end
   end
 end
-
-
