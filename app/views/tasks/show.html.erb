@@ -31,7 +31,7 @@
       <% if @user_task.completed %>
         <h2 class="modal-thema mt-5 mb-4">🎉 Félicitations !</h2>
       <% else %>
-        <%= link_to "Valider", done_user_task_path(@user_task), method: :patch, class: "btn btn-light button-white", id: "validation"%>
+        <%= link_to "Valider", done_user_task_path(@user_task), method: :patch, class: "btn btn-light button-white", id: "validation", data: { disable_with: false }%>
 
       <% end %>
     </div>
